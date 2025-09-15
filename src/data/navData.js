@@ -1,0 +1,113 @@
+export const navData = [
+  {
+    id: 1,
+    labelEn: "Laptops",
+    labelAr: "أجهزة الكمبيوتر المحمولة",
+    link: "/laptops",
+  },
+  {
+    id: 2,
+    labelEn: "Desktops",
+    labelAr: "أجهزة الكمبيوتر المكتبية",
+    link: "/desktops",
+  },
+  {
+    id: 3,
+    labelEn: "Monitors",
+    labelAr: "الشاشات",
+    link: "/monitors",
+  },
+  {
+    id: 4,
+    labelEn: "Printers",
+    labelAr: "الطابعات",
+    link: "/printers",
+  },
+  {
+    id: 5,
+    labelEn: "Mobile",
+    labelAr: "الهاتف المحمول",
+    link: "/mobile",
+  },
+  {
+    id: 6,
+    labelEn: "Electronics",
+    labelAr: "الإلكترونيات",
+    link: "/electronics",
+  },
+  {
+    id: 7,
+    labelEn: "Accessories",
+    labelAr: "الإكسسوارات",
+    link: "/accessories",
+  },
+  {
+    id: 8,
+    labelEn: "More",
+    labelAr: "المزيد",
+    link: "#",
+    hasDropdown: true,
+    dropdown: [
+      {
+        id: 81,
+        labelEn: "Gaming PCs",
+        labelAr: "أجهزة الألعاب",
+        link: "/gaming-pcs",
+      },
+      {
+        id: 82,
+        labelEn: "Tablets",
+        labelAr: "الأجهزة اللوحية",
+        link: "/tablets",
+      },
+      {
+        id: 83,
+        labelEn: "Software",
+        labelAr: "البرمجيات",
+        link: "/software",
+      },
+      {
+        id: 84,
+        labelEn: "Networking",
+        labelAr: "الشبكات",
+        link: "/networking",
+      },
+      {
+        id: 85,
+        labelEn: "Storage",
+        labelAr: "التخزين",
+        link: "/storage",
+      },
+      {
+        id: 86,
+        labelEn: "Components",
+        labelAr: "المكونات",
+        link: "/components",
+      },
+      {
+        id: 87,
+        labelEn: "Services",
+        labelAr: "الخدمات",
+        link: "/services",
+      },
+      {
+        id: 88,
+        labelEn: "Brands",
+        labelAr: "العلامات التجارية",
+        link: "/brands",
+      },
+      {
+        id: 89,
+        labelEn: "Support",
+        labelAr: "الدعم",
+        link: "/support",
+      },
+      {
+        id: 90,
+        labelEn: "Contact",
+        labelAr: "اتصل بنا",
+        link: "/contact",
+      },
+    ],
+  },
+];

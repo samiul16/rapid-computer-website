@@ -1,0 +1,259 @@
+ ⨯ [TypeError: l is not a function]
+node:internal/modules/cjs/loader:1251
+  throw err;
+  ^
+
+Error: Cannot find module 'next'
+Require stack:
+- /home/almaedar/public_html/excellency-catering-restaurant-sweets.com/server.js
+- /usr/local/lsws/fcgi-bin/lsnode.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)
+    at Module._load (node:internal/modules/cjs/loader:1074:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)
+    at Module.require (node:internal/modules/cjs/loader:1339:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/almaedar/public_html/excellency-catering-restaurant-sweets.com/server.js:2:14)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1691:10)
+    at Module.load (node:internal/modules/cjs/loader:1317:32) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/almaedar/public_html/excellency-catering-restaurant-sweets.com/server.js',
+    '/usr/local/lsws/fcgi-bin/lsnode.js'
+  ]
+}
+
+Node.js v22.8.0
+node:internal/modules/cjs/loader:1251
+  throw err;
+  ^
+
+Error: Cannot find module 'next'
+Require stack:
+- /home/almaedar/public_html/excellency-catering-restaurant-sweets.com/server.js
+- /usr/local/lsws/fcgi-bin/lsnode.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)
+    at Module._load (node:internal/modules/cjs/loader:1074:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)
+    at Module.require (node:internal/modules/cjs/loader:1339:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/almaedar/public_html/excellency-catering-restaurant-sweets.com/server.js:2:14)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1691:10)
+    at Module.load (node:internal/modules/cjs/loader:1317:32) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/almaedar/public_html/excellency-catering-restaurant-sweets.com/server.js',
+    '/usr/local/lsws/fcgi-bin/lsnode.js'
+  ]
+}
+
+Node.js v22.8.0
+node:internal/modules/cjs/loader:1251
+  throw err;
+  ^
+
+Error: Cannot find module 'next'
+Require stack:
+- /home/almaedar/public_html/excellency-catering-restaurant-sweets.com/server.js
+- /usr/local/lsws/fcgi-bin/lsnode.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)
+    at Module._load (node:internal/modules/cjs/loader:1074:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)
+    at Module.require (node:internal/modules/cjs/loader:1339:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/almaedar/public_html/excellency-catering-restaurant-sweets.com/server.js:2:14)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1691:10)
+    at Module.load (node:internal/modules/cjs/loader:1317:32) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/almaedar/public_html/excellency-catering-restaurant-sweets.com/server.js',
+    '/usr/local/lsws/fcgi-bin/lsnode.js'
+  ]
+}
+
+Node.js v22.8.0
+node:internal/modules/cjs/loader:1251
+  throw err;
+  ^
+
+Error: Cannot find module 'next'
+Require stack:
+- /home/almaedar/public_html/excellency-catering-restaurant-sweets.com/server.js
+- /usr/local/lsws/fcgi-bin/lsnode.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)
+    at Module._load (node:internal/modules/cjs/loader:1074:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)
+    at Module.require (node:internal/modules/cjs/loader:1339:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/almaedar/public_html/excellency-catering-restaurant-sweets.com/server.js:2:14)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1691:10)
+    at Module.load (node:internal/modules/cjs/loader:1317:32) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/almaedar/public_html/excellency-catering-restaurant-sweets.com/server.js',
+    '/usr/local/lsws/fcgi-bin/lsnode.js'
+  ]
+}
+
+Node.js v22.8.0
+node:internal/modules/cjs/loader:1251
+  throw err;
+  ^
+
+Error: Cannot find module 'next'
+Require stack:
+- /home/almaedar/public_html/excellency-catering-restaurant-sweets.com/server.js
+- /usr/local/lsws/fcgi-bin/lsnode.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)
+    at Module._load (node:internal/modules/cjs/loader:1074:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)
+    at Module.require (node:internal/modules/cjs/loader:1339:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/almaedar/public_html/excellency-catering-restaurant-sweets.com/server.js:2:14)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1691:10)
+    at Module.load (node:internal/modules/cjs/loader:1317:32) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/almaedar/public_html/excellency-catering-restaurant-sweets.com/server.js',
+    '/usr/local/lsws/fcgi-bin/lsnode.js'
+  ]
+}
+
+Node.js v22.8.0
+node:internal/modules/cjs/loader:1251
+  throw err;
+  ^
+
+Error: Cannot find module 'next'
+Require stack:
+- /home/almaedar/public_html/excellency-catering-restaurant-sweets.com/server.js
+- /usr/local/lsws/fcgi-bin/lsnode.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1248:15)
+    at Module._load (node:internal/modules/cjs/loader:1074:27)
+    at TracingChannel.traceSync (node:diagnostics_channel:315:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:217:24)
+    at Module.require (node:internal/modules/cjs/loader:1339:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (/home/almaedar/public_html/excellency-catering-restaurant-sweets.com/server.js:2:14)
+    at Module._compile (node:internal/modules/cjs/loader:1546:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1691:10)
+    at Module.load (node:internal/modules/cjs/loader:1317:32) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    '/home/almaedar/public_html/excellency-catering-restaurant-sweets.com/server.js',
+    '/usr/local/lsws/fcgi-bin/lsnode.js'
+  ]
+}
+
+Node.js v22.8.0
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource "https://ui-avatars.com/api/?name=Turan%20&size=100&rounded=true&color=fff&background=329af0" has type "image/svg+xml" but dangerouslyAllowSVG is disabled
+ ⨯ The requested resource "https://ui-avatars.com/api/?name=Turan%20&size=100&rounded=true&color=fff&background=329af0" has type "image/svg+xml" but dangerouslyAllowSVG is disabled
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource "https://ui-avatars.com/api/?name=Turan%20&size=100&rounded=true&color=fff&background=329af0" has type "image/svg+xml" but dangerouslyAllowSVG is disabled
+ ⨯ The requested resource "https://ui-avatars.com/api/?name=Turan%20&size=100&rounded=true&color=fff&background=329af0" has type "image/svg+xml" but dangerouslyAllowSVG is disabled
+ ⨯ The requested resource "https://ui-avatars.com/api/?name=Turan%20&size=100&rounded=true&color=fff&background=329af0" has type "image/svg+xml" but dangerouslyAllowSVG is disabled
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ ReferenceError: window is not defined
+    at <unknown> (.next/server/app/tracking/page.js:1:18526)
+    at 97638 (.next/server/app/tracking/page.js:1:165036)
+    at t (.next/server/webpack-runtime.js:1:128)
+    at 859 (.next/server/app/tracking/page.js:1:243)
+    at Object.t [as require] (.next/server/webpack-runtime.js:1:128) {
+  digest: '624392293'
+}
+ ⨯ The requested resource "https://ui-avatars.com/api/?name=Turan%20&size=100&rounded=true&color=fff&background=329af0" has type "image/svg+xml" but dangerouslyAllowSVG is disabled
+ ⨯ ReferenceError: window is not defined
+    at <unknown> (.next/server/app/tracking/page.js:1:18526)
+    at 97638 (.next/server/app/tracking/page.js:1:165036)
+    at t (.next/server/webpack-runtime.js:1:128)
+    at 859 (.next/server/app/tracking/page.js:1:243)
+    at Object.t [as require] (.next/server/webpack-runtime.js:1:128) {
+  digest: '624392293'
+}
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ ReferenceError: window is not defined
+    at <unknown> (.next/server/app/tracking/page.js:1:18526)
+    at 97638 (.next/server/app/tracking/page.js:1:165036)
+    at t (.next/server/webpack-runtime.js:1:128)
+    at 859 (.next/server/app/tracking/page.js:1:243)
+    at Object.t [as require] (.next/server/webpack-runtime.js:1:128) {
+  digest: '624392293'
+}
+ ⨯ ReferenceError: window is not defined
+    at <unknown> (.next/server/app/tracking/page.js:1:18526)
+    at 97638 (.next/server/app/tracking/page.js:1:165036)
+    at t (.next/server/webpack-runtime.js:1:128)
+    at 859 (.next/server/app/tracking/page.js:1:243)
+    at Object.t [as require] (.next/server/webpack-runtime.js:1:128) {
+  digest: '624392293'
+}
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ ReferenceError: window is not defined
+    at <unknown> (.next/server/app/tracking/page.js:1:19175)
+    at 97638 (.next/server/app/tracking/page.js:1:165685)
+    at t (.next/server/webpack-runtime.js:1:128)
+    at 859 (.next/server/app/tracking/page.js:1:243)
+    at Object.t [as require] (.next/server/webpack-runtime.js:1:128) {
+  digest: '1445295145'
+}
+ ⨯ ReferenceError: window is not defined
+    at <unknown> (.next/server/app/tracking/page.js:1:19175)
+    at 97638 (.next/server/app/tracking/page.js:1:165685)
+    at t (.next/server/webpack-runtime.js:1:128)
+    at 859 (.next/server/app/tracking/page.js:1:243)
+    at Object.t [as require] (.next/server/webpack-runtime.js:1:128) {
+  digest: '1445295145'
+}
+ ⨯ ReferenceError: window is not defined
+    at <unknown> (.next/server/app/tracking/page.js:1:19175)
+    at 97638 (.next/server/app/tracking/page.js:1:165685)
+    at t (.next/server/webpack-runtime.js:1:128)
+    at 859 (.next/server/app/tracking/page.js:1:243)
+    at Object.t [as require] (.next/server/webpack-runtime.js:1:128) {
+  digest: '1445295145'
+}
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
+ ⨯ ReferenceError: window is not defined
+    at <unknown> (.next/server/app/tracking/page.js:1:19175)
+    at 97638 (.next/server/app/tracking/page.js:1:165685)
+    at t (.next/server/webpack-runtime.js:1:128)
+    at 859 (.next/server/app/tracking/page.js:1:243)
+    at Object.t [as require] (.next/server/webpack-runtime.js:1:128) {
+  digest: '1445295145'
+}
+ ⨯ The requested resource isn't a valid image for /assets/logo-1.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /assets/offerThumb.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /assets/offerThumb2.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /assets/logo-1.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /assets/logo-1.png received text/html; charset=utf-8
+ ⨯ The requested resource isn't a valid image for /default-user.png received text/html; charset=utf-8
