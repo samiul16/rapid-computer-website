@@ -127,7 +127,7 @@ const Navbar = ({ from = "" }) => {
   // Handle scroll event to change navbar style
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 90);
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -139,21 +139,21 @@ const Navbar = ({ from = "" }) => {
       const tl = gsap.timeline();
       tl.from(logoRef.current, {
         opacity: 0,
-        y: -40,
-        duration: 0.6, // Reduced from 2 to 0.6
+        y: -30,
+        duration: 0.5,
         ease: "power2.out",
       });
       tl.fromTo(
         navItemsRef.current,
-        { opacity: 0, y: -30 },
+        { opacity: 0, y: -20 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.5, // Reduced from 2 to 0.5
+          duration: 0.4,
           ease: "power2.out",
-          stagger: 0.1, // Reduced from 0.5 to 0.1
+          stagger: 0.08,
         },
-        "-=0.3" // Start nav items animation 0.3s before logo finishes
+        "-=0.2"
       );
     });
     return () => ctx.revert();
@@ -187,26 +187,30 @@ const Navbar = ({ from = "" }) => {
 
   return (
     <nav
-      className={`fixed ${
-        from === "globalProvider" ? "-top-[12px]" : "top-0"
-      } left-0 right-0 z-50 transition-all duration-300 font-poppins ${
-        isScrolled
-          ? "bg-black/80 backdrop-blur-md shadow-lg border-b border-gray-200/20"
-          : "bg-black/20 backdrop-blur-sm mt-12"
+      style={{
+        fontFamily: "'Poppins', sans-serif",
+        backgroundColor: "rgba(255, 255, 255, 0.1)",
+        backdropFilter: "blur(10px)",
+        WebkitBackdropFilter: "blur(10px)",
+        height: "64px",
+      }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "shadow-lg border-b border-gray-200 bg-white/90" : ""
       }`}
     >
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <div className="w-28 h-28">
+      <div className="container mx-auto px-4 flex justify-between items-center h-full">
+        {/* Logo */}
+        <div className="h-12 w-12 flex-shrink-0">
           <Link
             href="/"
-            className="w-full h-full relative inline-block p-2"
+            className="w-full h-full relative inline-block"
             ref={logoRef}
           >
             <Image
               src="/assets/logo-1.png"
               alt="Logo"
-              width={160}
-              height={160}
+              width={48}
+              height={48}
               priority
               quality={80}
               className="object-contain"
@@ -214,23 +218,28 @@ const Navbar = ({ from = "" }) => {
           </Link>
         </div>
 
-        <div className="hidden md:flex items-center gap-8 relative">
-          {navData.slice(0, 5).map((item, idx) => (
+        {/* Desktop Navigation - Centered */}
+        <div className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
+          {navData.slice(0, 7).map((item, idx) => (
             <Link
               key={item.id}
               href={item.link}
               ref={(el) => {
                 navItemsRef.current[idx] = el;
               }}
-              className={`hover:text-brand uppercase font-semibold font-poppins transition-colors relative lg:text-16
-      ${
-        pathname === item.link
-          ? "text-brand border border-brand rounded p-1"
-          : isScrolled
-          ? "text-gray-800"
-          : "text-white"
-      }
-    `}
+              style={{
+                fontFamily: "'Poppins', sans-serif",
+                fontSize: "16px",
+                fontWeight: "400",
+                lineHeight: "24px",
+              }}
+              className={`hover:text-brand uppercase transition-colors relative ${
+                pathname === item.link
+                  ? "text-brand border border-brand rounded px-2 py-1"
+                  : isScrolled
+                  ? "text-gray-800"
+                  : "text-gray-800"
+              }`}
             >
               {locale === "ar" ? item.labelAr : item.labelEn}
             </Link>
@@ -252,32 +261,46 @@ const Navbar = ({ from = "" }) => {
               tabIndex={0}
             >
               <Heart
-                className={`w-5 h-5 ${
+                className={`w-4 h-4 ${
                   wishlist.length > 0
                     ? "text-red-600"
                     : isScrolled
                     ? "text-gray-800"
-                    : "text-white"
+                    : "text-gray-800"
                 }`}
               />
-              <span className="absolute -mt-5 ms-6 w-5 h-5 bg-white text-red-600 rounded-full text-xs flex items-center justify-center font-poppins">
+              <span
+                style={{
+                  fontFamily: "'Poppins', sans-serif",
+                  fontSize: "10px",
+                  fontWeight: "400",
+                }}
+                className="absolute -top-1 -right-1 w-4 h-4 bg-white text-red-600 rounded-full text-xs flex items-center justify-center"
+              >
                 {wishlist.length}
               </span>
             </div>
           )}
           {mounted && (
             <div
-              className="relative flex flex-col items-center"
+              className="relative flex flex-col items-center cursor-pointer"
               onClick={() => dispatch(setOpenCartModal(true))}
               role="button"
               tabIndex={0}
             >
-              <span className="absolute -mt-5 ms-6 w-5 h-5 bg-white text-brand rounded-full text-12 flex items-center justify-center font-poppins">
+              <span
+                style={{
+                  fontFamily: "'Poppins', sans-serif",
+                  fontSize: "10px",
+                  fontWeight: "400",
+                }}
+                className="absolute -top-1 -right-1 w-4 h-4 bg-white text-brand rounded-full text-xs flex items-center justify-center"
+              >
                 {cartData?.length ?? 0}
               </span>
               <ShoppingCart
-                className={`w-5 h-5 cursor-pointer ${
-                  isScrolled ? "text-gray-800" : "text-white"
+                className={`w-4 h-4 ${
+                  isScrolled ? "text-gray-800" : "text-gray-800"
                 }`}
               />
             </div>
@@ -289,8 +312,8 @@ const Navbar = ({ from = "" }) => {
             ) : (
               <User
                 onClick={handleAuthRedirect}
-                className={`w-5 h-5 cursor-pointer ${
-                  isScrolled ? "text-gray-800" : "text-white"
+                className={`w-4 h-4 cursor-pointer ${
+                  isScrolled ? "text-gray-800" : "text-gray-800"
                 }`}
                 aria-label="Login"
               />
@@ -300,16 +323,16 @@ const Navbar = ({ from = "" }) => {
             onClick={toggleSidebar}
             aria-label="Toggle menu"
             className={`md:hidden transition-colors ${
-              isScrolled ? "text-orange-600" : "text-white"
+              isScrolled ? "text-orange-600" : "text-gray-800"
             }`}
           >
-            <Menu size={24} />
+            <Menu size={20} />
           </button>
         </div>
 
         {/* Desktop search and controls */}
         <div className="hidden md:flex items-center gap-4">
-          {/* Wishlist icon (Desktop) */}
+          {/* Desktop Wishlist */}
           {mounted && (
             <div
               onClick={handleWishlistClick}
@@ -322,15 +345,22 @@ const Navbar = ({ from = "" }) => {
               tabIndex={0}
             >
               <Heart
-                className={`w-5 h-5 ${
+                className={`w-5 h-5 stroke-2 ${
                   wishlist.length > 0
-                    ? "text-red-600"
+                    ? "text-red-600 fill-red-600"
                     : isScrolled
                     ? "text-gray-800"
-                    : "text-white"
+                    : "text-gray-800"
                 }`}
               />
-              <span className="absolute -mt-5 ms-6 w-5 h-5 bg-white text-red-600 rounded-full text-xs flex items-center justify-center font-poppins">
+              <span
+                style={{
+                  fontFamily: "'Poppins', sans-serif",
+                  fontSize: "10px",
+                  fontWeight: "400",
+                }}
+                className="absolute -top-1 -right-1 w-4 h-4 bg-white text-red-600 rounded-full flex items-center justify-center"
+              >
                 {wishlist.length}
               </span>
             </div>
@@ -338,19 +368,26 @@ const Navbar = ({ from = "" }) => {
 
           {mounted && (
             <div
-              className="relative flex flex-col items-center"
+              className="relative flex flex-col items-center cursor-pointer"
               onClick={() => dispatch(setOpenCartModal(true))}
               role="button"
               tabIndex={0}
             >
-              <span className="absolute -mt-5 ms-6 w-5 h-5 bg-white text-brand rounded-full text-12 flex items-center justify-center font-poppins">
+              <span
+                style={{
+                  fontFamily: "'Poppins', sans-serif",
+                  fontSize: "10px",
+                  fontWeight: "400",
+                }}
+                className="absolute -top-1 -right-1 w-4 h-4 bg-white text-brand rounded-full flex items-center justify-center"
+              >
                 {locale === "ar"
                   ? toArabicNumerals(cartData?.length ?? 0)
                   : cartData?.length ?? 0}
               </span>
               <ShoppingCart
-                className={`w-5 h-5 cursor-pointer ${
-                  isScrolled ? "text-gray-800" : "text-white"
+                className={`w-5 h-5 stroke-2 ${
+                  isScrolled ? "text-gray-800" : "text-gray-800"
                 }`}
               />
             </div>
@@ -362,8 +399,8 @@ const Navbar = ({ from = "" }) => {
             ) : (
               <User
                 onClick={handleAuthRedirect}
-                className={`w-5 h-5 cursor-pointer ${
-                  isScrolled ? "text-gray-800" : "text-white"
+                className={`w-5 h-5 cursor-pointer stroke-2 ${
+                  isScrolled ? "text-gray-800" : "text-gray-800"
                 }`}
                 aria-label="Login"
               />
@@ -373,7 +410,13 @@ const Navbar = ({ from = "" }) => {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white/95 backdrop-blur-md z-50 shadow-lg transform transition-transform duration-300 font-poppins ${
+        style={{
+          fontFamily: "'Poppins', sans-serif",
+          backgroundColor: "rgba(255, 255, 255, 0.95)",
+          backdropFilter: "blur(10px)",
+          WebkitBackdropFilter: "blur(10px)",
+        }}
+        className={`fixed top-0 right-0 h-full w-64 z-50 shadow-lg transform transition-transform duration-300 ${
           isSidebarOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -383,7 +426,7 @@ const Navbar = ({ from = "" }) => {
             aria-label="Close menu"
             className="text-orange-600 mb-8"
           >
-            <X size={24} />
+            <X size={20} />
           </button>
           <div className="flex flex-col gap-4">
             {navData.map((item) => (
@@ -391,7 +434,13 @@ const Navbar = ({ from = "" }) => {
                 key={item.id}
                 href={item.link}
                 onClick={toggleSidebar}
-                className={`transition-colors font-poppins ${
+                style={{
+                  fontFamily: "'Poppins', sans-serif",
+                  fontSize: "16px",
+                  fontWeight: "400",
+                  lineHeight: "24px",
+                }}
+                className={`transition-colors ${
                   pathname === item.link ? "text-brand" : "text-gray-800"
                 }`}
               >
