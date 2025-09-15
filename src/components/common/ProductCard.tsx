@@ -2,9 +2,8 @@
 import Image from "next/image";
 import { AiFillStar } from "react-icons/ai";
 import { FiEye, FiHeart } from "react-icons/fi";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
-// Product Card Component
 const ProductCard: React.FC<{
   title: string;
   price: number;
@@ -20,67 +19,111 @@ const ProductCard: React.FC<{
   rating = 0,
   imageUrl = "/global/game.png",
 }) => {
-  const router = useRouter();
+  // const router = useRouter();
 
-  const handleClick = () => {
-    router.push("/product-details");
+  // const handleClick = () => {
+  //   router.push("/product-details");
+  // };
+
+  const handleAddToCart = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    // Add to cart logic here
+    console.log("Added to cart:", title);
+  };
+
+  const handleWishlist = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    // Add to wishlist logic here
+    console.log("Added to wishlist:", title);
+  };
+
+  const handleQuickView = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    // Quick view logic here
+    console.log("Quick view:", title);
   };
 
   return (
-    <div
-      onClick={handleClick}
-      className="w-72 h-80 bg-[#20B8FB0A] rounded-xl  outline-1 outline-black/20 backdrop-blur-md relative overflow-hidden group"
-    >
-      {/* Discount Badge */}
-      <div className="absolute top-4 left-4 bg-[#26ADDF] text-white text-xs font-bold px-2 py-1 rounded">
-        -{discount}%
-      </div>
-
-      {/* Product Image */}
-      <div className="w-full h-52 p-4 flex justify-center items-center relative">
+    <div className="w-72 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer">
+      {/* Image Container with Overlays */}
+      <div className="relative h-56 bg-gray-50 overflow-hidden">
+        {/* Product Image */}
         <Image
           src={imageUrl}
           alt={title}
-          width={280}
-          height={280}
-          className="object-contain"
+          fill
+          className="object-cover group-hover:scale-110 transition-transform duration-500"
         />
-        {/* Love & View Icons */}
-        <div className="absolute top-2 right-2 flex flex-col gap-2">
-          <button className="p-1 bg-white rounded-full shadow-lg hover:bg-white group-hover:text-[#26ADDF] cursor-pointer">
-            <FiHeart size={18} />
+
+        {/* Overlay for better contrast */}
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+
+        {/* Discount Badge - Top Left */}
+        {discount > 0 && (
+          <div className="absolute top-3 left-3 z-20">
+            <div className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-lg shadow-lg">
+              -{discount}%
+            </div>
+          </div>
+        )}
+
+        {/* Action Icons - Top Right */}
+        <div className="absolute top-3 right-3 z-20 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <button
+            onClick={handleWishlist}
+            className="p-2 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white hover:text-red-500 transition-all duration-200 transform hover:scale-110"
+          >
+            <FiHeart size={16} />
           </button>
-          <button className="p-1 bg-white rounded-full shadow-lg hover:bg-white group-hover:text-[#26ADDF] cursor-pointer">
-            <FiEye size={18} />
+          <button
+            onClick={handleQuickView}
+            className="p-2 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white hover:text-blue-500 transition-all duration-200 transform hover:scale-110"
+          >
+            <FiEye size={16} />
           </button>
         </div>
 
-        {/* Add to Cart */}
-        <button className="absolute bottom-4 left-4 right-4 bg-[#26ADDF] text-white py-2 rounded-br-lg rounded-bl-lg cursor-pointer">
-          Add to Cart
-        </button>
+        {/* Add to Cart Button - Bottom (slides up on hover) */}
+        <div className="absolute bottom-0 left-0 right-0 z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+          <button
+            onClick={handleAddToCart}
+            className="w-full bg-[#26ADDF] hover:bg-[#229acc] text-white py-3 font-semibold transition-colors duration-200"
+          >
+            Add to Cart
+          </button>
+        </div>
       </div>
 
-      {/* Product Info */}
-      <div className="absolute bottom-4 left-4 right-4 ">
-        <h3 className="text-base font-medium">{title}</h3>
-        <div className="flex items-center gap-2 mt-1">
-          <span className="text-[#26ADDF] font-semibold">${price}</span>
-          {oldPrice && (
-            <span className="text-black/50 line-through">${oldPrice}</span>
-          )}
-        </div>
+      {/* Product Information */}
+      <div className="p-4 space-y-3">
+        {/* Product Title */}
+        <h3 className="text-gray-800 font-semibold text-base line-clamp-2 min-h-[48px] leading-6">
+          {title}
+        </h3>
+
         {/* Rating */}
-        <div className="flex gap-1 mt-1 items-center">
-          {Array.from({ length: 5 }).map((_, idx) => (
-            <AiFillStar
-              key={idx}
-              className={`w-5 h-5 rounded-sm ${
-                idx < rating ? "text-amber-400" : "text-gray-200"
-              }`}
-            />
-          ))}
-          <span className="text-xs text-black/50 ml-1">({rating})</span>
+        <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
+            {Array.from({ length: 5 }).map((_, idx) => (
+              <AiFillStar
+                key={idx}
+                className={`w-4 h-4 ${
+                  idx < Math.floor(rating) ? "text-amber-400" : "text-gray-200"
+                }`}
+              />
+            ))}
+          </div>
+          <span className="text-xs text-gray-500">({rating})</span>
+        </div>
+
+        {/* Price */}
+        <div className="flex items-center gap-3">
+          <span className="text-[#26ADDF] font-bold text-lg">${price}</span>
+          {oldPrice && (
+            <span className="text-gray-400 line-through text-sm">
+              ${oldPrice}
+            </span>
+          )}
         </div>
       </div>
     </div>

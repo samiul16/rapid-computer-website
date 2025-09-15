@@ -25,7 +25,7 @@ const products: Product[] = [
     oldPrice: 160,
     discount: 40,
     rating: 5,
-    imageUrl: "https://placehold.co/150x120",
+    imageUrl: "/products/Mobile.png",
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ const products: Product[] = [
     oldPrice: 120,
     discount: 20,
     rating: 4,
-    imageUrl: "https://placehold.co/150x120",
+    imageUrl: "/products/headphone.webp",
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ const products: Product[] = [
     oldPrice: 220,
     discount: 18,
     rating: 5,
-    imageUrl: "https://placehold.co/150x120",
+    imageUrl: "/products/Mobile-2.png",
   },
   {
     id: 4,
@@ -52,7 +52,7 @@ const products: Product[] = [
     oldPrice: 120,
     discount: 20,
     rating: 4,
-    imageUrl: "https://placehold.co/150x120",
+    imageUrl: "/products/headphone.webp",
   },
   {
     id: 5,
@@ -61,7 +61,7 @@ const products: Product[] = [
     oldPrice: 220,
     discount: 18,
     rating: 5,
-    imageUrl: "https://placehold.co/150x120",
+    imageUrl: "/products/Mobile-4.jpg",
   },
   {
     id: 6,
@@ -70,7 +70,7 @@ const products: Product[] = [
     oldPrice: 120,
     discount: 20,
     rating: 4,
-    imageUrl: "https://placehold.co/150x120",
+    imageUrl: "/products/Mobile-3.jpg",
   },
   {
     id: 7,
@@ -79,7 +79,7 @@ const products: Product[] = [
     oldPrice: 220,
     discount: 18,
     rating: 5,
-    imageUrl: "https://placehold.co/150x120",
+    imageUrl: "/products/Mobile-3.jpg",
   },
   {
     id: 8,
@@ -88,7 +88,7 @@ const products: Product[] = [
     oldPrice: 120,
     discount: 20,
     rating: 4,
-    imageUrl: "https://placehold.co/150x120",
+    imageUrl: "/products/headphone.webp",
   },
 ];
 

@@ -50,26 +50,37 @@ const Timer: React.FC = () => {
   ];
 
   return (
-    <div className="flex gap-4" data-aos="fade-left" data-aos-delay="300">
+    <div
+      className="inline-flex bg-gray-800 rounded-2xl p-4 gap-6"
+      data-aos="fade-left"
+      data-aos-delay="300"
+    >
       {timeItems.map((item, index) => (
         <div
           key={item.label}
-          className="flex flex-col items-center"
+          className={`flex flex-col items-center text-center relative ${
+            index < timeItems.length - 1 ? "pr-6" : ""
+          }`}
           data-aos="zoom-in"
           data-aos-delay={400 + index * 100}
         >
           <div
-            className="text-xs font-medium"
-            style={{ fontFamily: "Barlow, sans-serif" }}
-          >
-            {item.label}
-          </div>
-          <div
-            className="text-3xl font-bold transition-all duration-300"
+            className="text-3xl font-bold text-white mb-1 transition-all duration-300"
             style={{ fontFamily: "Barlow, sans-serif" }}
           >
             {String(item.value).padStart(2, "0")}
           </div>
+          <div
+            className="text-sm font-medium text-gray-400"
+            style={{ fontFamily: "Barlow, sans-serif" }}
+          >
+            {item.label}
+          </div>
+
+          {/* Right border - only show for items that aren't the last one */}
+          {index < timeItems.length - 1 && (
+            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 h-12 w-px bg-gray-600"></div>
+          )}
         </div>
       ))}
     </div>

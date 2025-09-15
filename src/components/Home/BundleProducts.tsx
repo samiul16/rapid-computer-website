@@ -24,7 +24,7 @@ const BundleProducts: React.FC = () => {
       oldPrice: 160,
       discount: 40,
       rating: 5,
-      imageUrl: "https://placehold.co/150x120",
+      imageUrl: "/products/Mobile.png",
     },
     {
       title: "Wireless Headphones",
@@ -32,7 +32,7 @@ const BundleProducts: React.FC = () => {
       oldPrice: 120,
       discount: 20,
       rating: 4,
-      imageUrl: "https://placehold.co/150x120",
+      imageUrl: "/products/Mobile.png",
     },
     {
       title: "Gaming Keyboard",
@@ -40,7 +40,7 @@ const BundleProducts: React.FC = () => {
       oldPrice: 220,
       discount: 18,
       rating: 5,
-      imageUrl: "https://placehold.co/150x120",
+      imageUrl: "/products/Mobile-2.png",
     },
   ];
 
