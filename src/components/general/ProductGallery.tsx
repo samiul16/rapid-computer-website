@@ -1,9 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { FiChevronLeft, FiChevronRight, FiHeart, FiShare2 } from "react-icons/fi";
+import {
+  FiChevronLeft,
+  FiChevronRight,
+  FiHeart,
+  FiShare2,
+} from "react-icons/fi";
 import Image from "next/image";
-import Link from "next/link";
 
 interface ProductGalleryProps {
   images: string[];
@@ -37,7 +41,6 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
               width={64}
               height={64}
               className="object-cover w-full h-full"
-              
             />
           </button>
         ))}
@@ -51,7 +54,6 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
           width={500}
           height={500}
           className="object-contain min-h-[400px] md:min-h-[600px]"
-          
         />
 
         {/* Navigation Arrows */}
@@ -63,7 +65,7 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
         </button>
         <button
           onClick={nextImage}
-          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow cursor-pointer" 
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/70 hover:bg-white p-2 rounded-full shadow cursor-pointer"
         >
           <FiChevronRight className="w-5 h-5 text-gray-800" />
         </button>

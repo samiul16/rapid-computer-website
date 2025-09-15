@@ -37,7 +37,6 @@ const CartItem: React.FC<CartItemProps> = ({
           width={80}
           height={80}
           className="rounded-md"
-          
         />
         <p className="text-sm font-medium text-gray-800">{title}</p>
       </div>
@@ -189,7 +188,7 @@ export default function CartSection() {
 
   const handleClearCart = () => setItems([]);
   const handleContinueShopping = () => alert("Redirecting to shop...");
-  const [shipping, setShipping] = useState("express");
+  const [shipping] = useState("express");
 
   return (
     <section className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10 justify-between py-16">

@@ -19,7 +19,7 @@ const InfoRow = ({ label, value }: { label: string; value: string }) => (
 );
 
 // ✅ Reusable Image Block
-const ImageBlock = ({ src, alt }: { src: string; alt?: string }) => (
+const ImageBlock = ({ alt }: { src: string; alt?: string }) => (
   <div className="w-full h-72 overflow-hidden rounded-lg">
     <Image
       width={600}
@@ -28,7 +28,6 @@ const ImageBlock = ({ src, alt }: { src: string; alt?: string }) => (
       src="/global/laptop.png"
       alt={alt || "Product image"}
       className="w-full h-full object-cover"
-      
     />
   </div>
 );
@@ -44,7 +43,6 @@ const DescriptionCardTab = () => {
 
       {/* Video Description */}
       <VideoPlayer url="https://youtu.be/CBxgZxjdJyk?si=uc8QDC4BXIY09qWp" />
-
 
       {/* Specifications */}
       <SectionTitle title="Specifications" />
