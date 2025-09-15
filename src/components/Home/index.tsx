@@ -43,7 +43,7 @@ const HomeComponent = () => {
   // const [selectedCountry, setSelectedCountry] = useState("Arabic");
 
   return (
-    <div className="relative">
+    <div className="relative overflow-x-hidden">
       <Header />
       <BrandsIcons />
       {/* <TopModal /> */}
