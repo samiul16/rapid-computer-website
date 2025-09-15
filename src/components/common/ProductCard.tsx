@@ -1,8 +1,9 @@
 "use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation"; // Changed from "next/router"
 import { AiFillStar } from "react-icons/ai";
 import { FiEye, FiHeart } from "react-icons/fi";
-// import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 
 const ProductCard: React.FC<{
   title: string;
@@ -19,27 +20,32 @@ const ProductCard: React.FC<{
   rating = 0,
   imageUrl = "/global/game.png",
 }) => {
-  // const router = useRouter();
+  const router = useRouter();
+  const [mounted, setMounted] = useState(false);
 
-  // const handleClick = () => {
-  //   router.push("/product-details");
-  // };
+  // Ensure component is mounted before using router
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const handleClick = () => {
+    if (mounted) {
+      router.push("/product-details");
+    }
+  };
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.stopPropagation();
-    // Add to cart logic here
     console.log("Added to cart:", title);
   };
 
   const handleWishlist = (e: React.MouseEvent) => {
     e.stopPropagation();
-    // Add to wishlist logic here
     console.log("Added to wishlist:", title);
   };
 
   const handleQuickView = (e: React.MouseEvent) => {
     e.stopPropagation();
-    // Quick view logic here
     console.log("Quick view:", title);
   };
 
@@ -95,7 +101,7 @@ const ProductCard: React.FC<{
       </div>
 
       {/* Product Information */}
-      <div className="p-4 space-y-3">
+      <div className="p-4 space-y-3 cursor-pointer" onClick={handleClick}>
         {/* Product Title */}
         <h3 className="text-gray-800 font-semibold text-base line-clamp-2 min-h-[48px] leading-6">
           {title}
