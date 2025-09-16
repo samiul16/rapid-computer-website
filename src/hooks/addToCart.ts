@@ -1,7 +1,7 @@
 // hooks/useAddToCart.ts
 import { useRef } from "react";
 import { useAppDispatch } from "@/redux/hooks/hooks";
-import { addToCartItem } from "@/helpers/restApiRequest";
+// import { addToCartItem } from "@/helpers/restApiRequest";
 import toastAlert from "@/utils/toastConfig";
 import { addToCart, setGuestUserId } from "@/redux/cart/cartSlice";
 
@@ -29,22 +29,30 @@ export function useAddToCart() {
     setQuantity: React.Dispatch<React.SetStateAction<number>>
   ) {
     try {
-      const response = await addToCartItem({ item_id: id, quantity });
-      if (response?.data) {
-        const guestUserId = response?.data?.cart?.guest_id || "";
-        dispatch(setGuestUserId(guestUserId));
-        dispatch(
-          addToCart({
-            items: product,
-            quantity,
-            cartId: response?.data?.cart?.id,
-            guestId: guestUserId,
-          })
-        );
+      // const response = await addToCartItem({ item_id: id, quantity });
+      // if (response?.data) {
+      const response = {
+        data: {
+          cart: {
+            guest_id: "",
+            id: 1,
+          },
+        },
+      };
+      const guestUserId = response?.data?.cart?.guest_id || "";
+      dispatch(setGuestUserId(guestUserId));
+      dispatch(
+        addToCart({
+          items: product,
+          quantity,
+          cartId: response?.data?.cart?.id,
+          guestId: guestUserId,
+        })
+      );
 
-        skipNextSync.current = true;
-        setQuantity(1);
-      }
+      skipNextSync.current = true;
+      setQuantity(1);
+      // }
     } catch (err) {
       const { response } = err as {
         response?: { data?: { message?: string } };

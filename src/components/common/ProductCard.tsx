@@ -4,6 +4,9 @@ import { useRouter } from "next/navigation"; // Changed from "next/router"
 import { AiFillStar } from "react-icons/ai";
 import { FiEye, FiHeart } from "react-icons/fi";
 import { useState, useEffect } from "react";
+import { useAddToCart } from "@/hooks/addToCart";
+import { setOpenCartModal } from "@/redux/cart/cartSlice";
+import { useAppDispatch } from "@/redux/hooks/hooks";
 
 const ProductCard: React.FC<{
   title: string;
@@ -23,6 +26,9 @@ const ProductCard: React.FC<{
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
 
+  const { addToCartGlobal } = useAddToCart();
+  const dispatch = useAppDispatch();
+
   // Ensure component is mounted before using router
   useEffect(() => {
     setMounted(true);
@@ -35,8 +41,24 @@ const ProductCard: React.FC<{
   };
 
   const handleAddToCart = (e: React.MouseEvent) => {
-    e.stopPropagation();
     console.log("Added to cart:", title);
+    e.stopPropagation();
+    addToCartGlobal(
+      {
+        id: 2,
+        name: title,
+        arabic_name: title,
+        price: price,
+        final_price: price,
+        offer_price: "",
+        image_url: imageUrl,
+        currency: "AED",
+      },
+      2,
+      1,
+      () => {}
+    );
+    dispatch(setOpenCartModal(true));
   };
 
   const handleWishlist = (e: React.MouseEvent) => {
@@ -90,7 +112,7 @@ const ProductCard: React.FC<{
         </div>
 
         {/* Add to Cart Button - Bottom (slides up on hover) */}
-        <div className="absolute bottom-0 left-0 right-0 z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+        <div className="absolute bottom-0 left-0 right-0 z-20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 cursor-pointer">
           <button
             onClick={handleAddToCart}
             className="w-full bg-[#26ADDF] hover:bg-[#229acc] text-white py-3 font-semibold transition-colors duration-200"

@@ -53,6 +53,8 @@ const Navbar = ({ from = "" }) => {
   const isHomeRoute = pathname === "/";
 
   const { cartData, cartOpen } = useAppSelector((state) => state.cart);
+
+  console.log("cartOpen ", cartOpen);
   const { user } = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch();
   // Getting user from Redux store
@@ -185,6 +187,11 @@ const Navbar = ({ from = "" }) => {
 
   const locale = useLocale();
 
+  const cartHandleClick = () => {
+    console.log("cartHandleClick");
+    dispatch(setOpenCartModal(true));
+  };
+
   return (
     <nav
       style={{
@@ -235,7 +242,7 @@ const Navbar = ({ from = "" }) => {
               }}
               className={`hover:text-brand uppercase transition-colors relative ${
                 pathname === item.link
-                  ? "text-brand border border-brand rounded px-2 py-1"
+                  ? "text-gray-800  rounded px-2 py-1"
                   : isScrolled
                   ? "text-gray-800"
                   : "text-gray-800"
@@ -284,7 +291,7 @@ const Navbar = ({ from = "" }) => {
           {mounted && (
             <div
               className="relative flex flex-col items-center cursor-pointer"
-              onClick={() => dispatch(setOpenCartModal(true))}
+              onClick={() => cartHandleClick()}
               role="button"
               tabIndex={0}
             >
@@ -298,6 +305,7 @@ const Navbar = ({ from = "" }) => {
               >
                 {cartData?.length ?? 0}
               </span>
+              aaaaaaaaaaaaaaaa
               <ShoppingCart
                 className={`w-4 h-4 ${
                   isScrolled ? "text-gray-800" : "text-gray-800"
@@ -369,7 +377,7 @@ const Navbar = ({ from = "" }) => {
           {mounted && (
             <div
               className="relative flex flex-col items-center cursor-pointer"
-              onClick={() => dispatch(setOpenCartModal(true))}
+              onClick={() => cartHandleClick()}
               role="button"
               tabIndex={0}
             >

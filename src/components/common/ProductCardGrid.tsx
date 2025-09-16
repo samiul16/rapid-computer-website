@@ -6,6 +6,7 @@ import { GiCheckMark } from "react-icons/gi";
 import { HiOutlineSparkles } from "react-icons/hi";
 import { PrimaryBtn } from "./PrimaryBtn";
 import { useRouter } from "next/navigation";
+import { useAddToCart } from "@/hooks/addToCart";
 
 interface Product {
   id: number;
@@ -34,6 +35,8 @@ const ProductCardGrid: React.FC<ProductCardGridProps> = ({
   const [isWishlisted, setIsWishlisted] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
 
+  const { addToCartGlobal } = useAddToCart();
+
   const handleClick = () => {
     router.push(`/product-details/${product.id}`);
   };
@@ -50,7 +53,23 @@ const ProductCardGrid: React.FC<ProductCardGridProps> = ({
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.stopPropagation();
+    console.log("Added to cart:", product.title);
     // Add to cart logic
+    addToCartGlobal(
+      {
+        id: 2,
+        name: product.title,
+        arabic_name: product.title,
+        price: product.price,
+        final_price: product.price,
+        offer_price: "",
+        image_url: product.image,
+        currency: "AED",
+      },
+      2,
+      1,
+      () => {}
+    );
   };
 
   return layout === "list" ? (
@@ -249,10 +268,10 @@ const ProductCardGrid: React.FC<ProductCardGridProps> = ({
         </div>
 
         {/* Quick Add to Cart */}
-        <div className="absolute bottom-0 left-0 right-0 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+        <div className="absolute bottom-0 left-0 right-0 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 cursor-pointer">
           <button
             onClick={handleAddToCart}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 font-semibold transition-colors duration-200 flex items-center justify-center gap-2"
+            className="w-full bg-[#20B8FB] hover:bg-[#20B8FB] text-white py-3 font-semibold transition-colors duration-200 flex items-center justify-center gap-2 cursor-pointer"
           >
             <FaShoppingCart size={16} />
             Quick Add
