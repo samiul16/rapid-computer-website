@@ -99,7 +99,7 @@ const FlashSaleBanner: React.FC<FlashSaleBannerProps> = ({
   }, []);
 
   return (
-    <main className="relative w-full max-w-7xl h-[500px] mx-auto px-4 my-20 bg-black/70 rounded-3xl backdrop-blur-[10px] overflow-hidden">
+    <main className="relative w-full max-w-7xl h-[500px] mx-auto px-4 my-20 bg-[#181842] rounded-3xl backdrop-blur-[10px] overflow-hidden">
       {/* Background Glow */}
       <div className="absolute right-0 w-[504px] h-full bg-zinc-300/70 rounded-full blur-[100px] opacity-30" />
 
