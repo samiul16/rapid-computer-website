@@ -6,6 +6,7 @@ import Laptop from "@/public/global/bg02.png";
 import { FaCalendar } from "react-icons/fa";
 import { PrimaryBtn } from "../common/PrimaryBtn";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const blogs = [
   {
@@ -56,6 +57,7 @@ const blogs = [
 ];
 
 const BlogPageComponents = () => {
+  const router = useRouter();
   return (
     <div className="flex flex-col max-w-7xl mx-auto px-4">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -65,7 +67,8 @@ const BlogPageComponents = () => {
             {blogs.map((blog) => (
               <div
                 key={blog.id}
-                className="bg-sky-400/5 rounded-2xl shadow-md backdrop-blur-md overflow-hidden hover:bg-sky-200 transition-all duration-300"
+                className="bg-sky-400/5 rounded-2xl shadow-md backdrop-blur-md overflow-hidden hover:bg-sky-200 transition-all duration-300 cursor-pointer"
+                onClick={() => router.push(`/blogs/${blog.id}`)}
               >
                 <Image
                   src={Laptop}
@@ -88,7 +91,7 @@ const BlogPageComponents = () => {
                   <h3 className="text-xl font-bold">{blog.title}</h3>
                   <p className="text-base text-black">{blog.description}</p>
                   <Link
-                    href="#"
+                    href={`/blogs/${blog.id}`}
                     className="text-blue-950 font-bold underline text-base hover:text-sky-500 transition-all duration-300"
                   >
                     Read More
@@ -105,11 +108,15 @@ const BlogPageComponents = () => {
           {/* Right: Sidebar */}
           <aside className="w-full bg-sky-400/5 rounded-2xl border border-black/20 hover:bg-sky-200 transition-all duration-300">
             <div className="text-xl font-bold text-neutral-900 mb-4 border-b border-black/20 py-4">
-              <span className="px-4">Recent Blogs</span>
+              <span className="px-4">Latest Blogs</span>
             </div>
             <div className="flex flex-col gap-6 p-4">
               {blogs.slice(0, 3).map((blog, i) => (
-                <div key={i} className="flex gap-4">
+                <div
+                  key={i}
+                  className="flex gap-4 cursor-pointer"
+                  onClick={() => router.push(`/blogs/${blog.id}`)}
+                >
                   <Image
                     src={Laptop}
                     alt="thumbnail"
@@ -125,6 +132,7 @@ const BlogPageComponents = () => {
               ))}
             </div>
           </aside>
+
           {/* categories */}
           <aside className="w-full bg-sky-400/5 rounded-2xl border border-black/20 hover:bg-sky-200 transition-all duration-300">
             <div className="text-xl font-bold text-neutral-900 mb-4 border-b border-black/20 py-4">
@@ -136,6 +144,7 @@ const BlogPageComponents = () => {
                   <div
                     key={i}
                     className="flex justify-between items-center py-2 text-base hover:bg-sky-200 transition-all duration-300"
+                    // onClick={() => router.push(`/blogs/${blog.id}`)}
                   >
                     <span className="text-neutral-900 font-extrabold">
                       {category}

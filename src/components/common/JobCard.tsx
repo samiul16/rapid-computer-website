@@ -30,29 +30,29 @@ const JobCard: React.FC<JobCardProps> = ({
         <div className="relative w-24 h-24 md:w-14 md:h-14 rounded-[80px] bg-[#26ADDF] overflow-hidden">
           <Image src={image} alt={title} fill className="object-cover p-3"  />
         </div>
-        <div className="text-center text-neutral-900 text-xl md:text-xl font-semibold font-['Barlow']">
+        <div className="text-center text-neutral-900 text-xl md:text-xl font-semibold">
           {title}
         </div>
       </div>
 
       {/* Middle Description */}
       <div className="flex-1 w-full flex flex-col justify-start items-start gap-4 md:gap-6">
-        <div className="text-neutral-900 text-base md:text-base font-normal font-['Barlow'] leading-normal line-clamp-2">
+        <div className="text-neutral-900 text-base md:text-base font-normal leading-normal line-clamp-2">
           {description}
         </div>
         <div className="flex flex-wrap gap-3">
           <div className="px-4 py-2 rounded-full outline outline-1 outline-offset-[-1px] outline-neutral-200 flex justify-center items-center">
-            <span className="text-neutral-800 text-sm md:text-base font-medium font-['Barlow']">
+            <span className="text-neutral-800 text-sm md:text-base font-medium">
               Job Type: {jobType}
             </span>
           </div>
           <div className="px-4 py-2 rounded-full outline outline-1 outline-offset-[-1px] outline-neutral-200 flex justify-center items-center">
-            <span className="text-neutral-800 text-sm md:text-base font-medium font-['Barlow']">
+            <span className="text-neutral-800 text-sm md:text-base font-medium">
               Experience: {experience}
             </span>
           </div>
           <div className="px-4 py-2 rounded-full outline outline-1 outline-offset-[-1px] outline-neutral-200 flex justify-center items-center">
-            <span className="text-neutral-800 text-sm md:text-base font-medium font-['Barlow']">
+            <span className="text-neutral-800 text-sm md:text-base font-medium">
               Deadline: {deadline}
             </span>
           </div>
@@ -61,7 +61,7 @@ const JobCard: React.FC<JobCardProps> = ({
 
       {/* Apply Button */}
       <div className="flex-shrink-0 w-full md:w-auto mt-4 md:mt-0">
-        <PrimaryBtn size="lg" className="uppercase font-bold w-full md:w-auto">
+        <PrimaryBtn size="md" className="uppercase font-bold w-full md:w-auto">
           Apply now
         </PrimaryBtn>
       </div>

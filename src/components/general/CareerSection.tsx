@@ -55,10 +55,10 @@ const CareerSection = () => {
       <section className="max-w-7xl mx-auto py-16 grid md:grid-cols-2 gap-10 items-center">
         {/* Benefits List */}
         <div className="bg-sky-400/5 rounded-3xl shadow-xl p-8 backdrop-blur-[10px] relative xs:translate-y-1/2 md:translate-x-2/10 z-20">
-          <h2 className="text-xl font-semibold font-['Barlow'] mb-6">
+          <h2 className="text-xl font-semibold mb-6">
             Benefits of working with Rapid
           </h2>
-          <ul className="grid sm:grid-cols-2 gap-4 text-base font-['Barlow']">
+          <ul className="grid sm:grid-cols-2 gap-4 text-base">
             {benefits.map((benefit, i) => (
               <li key={i} className="flex items-center gap-2">
                 <span className="w-4 h-4 rounded-full border border-[#26ADDF]" />
@@ -82,7 +82,7 @@ const CareerSection = () => {
 
       {/* Current Positions */}
       <section className="max-w-7xl mx-auto py-16">
-        <h2 className="text-3xl font-semibold font-['Barlow'] mb-8">
+        <h2 className="text-3xl font-semibold mb-8">
           Current Open Positions
         </h2>
 

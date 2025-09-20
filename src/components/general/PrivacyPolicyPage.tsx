@@ -4,13 +4,13 @@ const PrivacyPolicyPage = () => {
   return (
     <main className="max-w-7xl mx-auto px-4 flex-1">
       <section className="mb-12">
-        <h1 className="text-3xl font-semibold font-['Barlow'] text-neutral-900">
+        <h1 className="text-3xl font-semibold text-neutral-900">
           Privacy Policy
         </h1>
-        <p className="text-sm text-neutral-600 font-['Barlow'] mt-2">
+        <p className="text-sm text-neutral-600 mt-2">
           By Jonh | 9 April 2020 | 8 mins read | 29k Views
         </p>
-        <p className="mt-4 text-base text-neutral-800 font-['Barlow'] leading-relaxed">
+        <p className="mt-4 text-base text-neutral-800 leading-relaxed">
           Please read these Terms of Service (“Terms”, “Terms of Service”)
           carefully before using the{" "}
           <a
@@ -33,10 +33,10 @@ const PrivacyPolicyPage = () => {
         "Changes",
       ].map((title, i) => (
         <section key={i} className="mb-10">
-          <h2 className="text-2xl font-semibold text-neutral-900 font-['Barlow'] mb-3">
+          <h2 className="text-2xl font-semibold text-neutral-900 mb-3">
             {title}
           </h2>
-          <p className="text-base text-slate-800 font-['Barlow'] leading-relaxed text-justify">
+          <p className="text-base text-slate-800 leading-relaxed text-justify">
             Our Service may contain links to third-party web sites or services
             that are not owned or controlled by Evara. Evara has no control
             over, and assumes no responsibility for, the content, privacy

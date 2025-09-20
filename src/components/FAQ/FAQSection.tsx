@@ -68,7 +68,7 @@ const FAQSection = () => {
     <div className="w-full max-w-7xl mx-auto px-4 py-12">
       {faqs.map((faqCategory, catIndex) => (
         <div key={catIndex} className="mb-12">
-          <h2 className="text-neutral-800 text-2xl font-semibold font-['Barlow'] mb-6">
+          <h2 className="text-neutral-800 text-2xl font-semibold mb-6">
             {faqCategory.category}
           </h2>
           <div className="flex flex-col gap-4">
@@ -81,7 +81,7 @@ const FAQSection = () => {
                     className="w-full flex justify-between items-center text-left cursor-pointer"
                   >
                     <span
-                      className={`text-xl font-['Barlow'] transition-colors ${
+                      className={`text-xl transition-colors ${
                         isOpen
                           ? "text-sky-400 font-medium"
                           : "text-zinc-700 font-normal"
@@ -106,7 +106,7 @@ const FAQSection = () => {
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <p className="mt-3 text-neutral-800 text-base font-['Barlow'] leading-relaxed">
+                        <p className="mt-3 text-neutral-800 text-base leading-relaxed">
                           {faq.answer}
                         </p>
                       </motion.div>

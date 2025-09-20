@@ -6,13 +6,13 @@ const TermsOfUseSection = () => {
       {/* Main Content */}
       <main className="flex-1">
         <section className="mb-12">
-          <h1 className="text-2xl font-semibold font-['Barlow'] text-neutral-900">
+          <h1 className="text-2xl font-semibold text-neutral-900">
             Terms of Use
           </h1>
-          <p className="text-sm text-neutral-600 font-['Barlow'] mt-2">
+          <p className="text-sm text-neutral-600 mt-2">
             By Jonh | 9 April 2020 | 8 mins read | 29k Views
           </p>
-          <p className="mt-4 text-sm text-neutral-900 font-['Barlow'] leading-relaxed">
+          <p className="mt-4 text-sm text-neutral-900 leading-relaxed">
             Please read these Terms of Service (“Terms”, “Terms of Service”)
             carefully before using the{" "}
             <a
@@ -38,10 +38,10 @@ const TermsOfUseSection = () => {
           "Contact Us",
         ].map((title, i) => (
           <section key={i} className="mb-10">
-            <h2 className="text-lg font-semibold text-neutral-900 font-['Barlow']">
+            <h2 className="text-lg font-semibold text-neutral-900">
               {title}
             </h2>
-            <p className="mt-2 text-sm text-neutral-700 font-['Barlow'] leading-relaxed">
+            <p className="mt-2 text-sm text-neutral-700 leading-relaxed">
               Our Service may contain links to third-party web sites or services
               that are not owned or controlled by Evara. Evara has no control
               over, and assumes no responsibility for, the content, privacy
