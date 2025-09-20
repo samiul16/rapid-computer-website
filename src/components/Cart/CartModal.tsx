@@ -160,11 +160,11 @@ const CartModal = ({ isOpen, onClose }: CartModalProps) => {
   };
 
   return (
-    <div className="fixed right-0 top-0 bottom-0 z-50 max-w-sm w-full bg-white shadow-lg flex flex-col border-l border-gray-200">
+    <div className="fixed right-0 top-0 z-50 h-screen max-w-sm w-full bg-white shadow-lg flex flex-col border-l border-gray-200">
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b">
         <div className="flex items-center">
-          <ShoppingCart className="h-6 w-6 mr-2 text-brand" />
+          <ShoppingCart className="h-6 w-6 mr-2 text-sky-500" />
           <h2 className="font-semibold text-18 text-border-dark">
             {t("Cart.YourCart")}
           </h2>
@@ -277,7 +277,7 @@ const CartModal = ({ isOpen, onClose }: CartModalProps) => {
           </button>
           <button
             onClick={handleRedirect}
-            className="w-full bg-brand hover:bg-bgLight text-white py-3 px-4 rounded-lg font-medium transition-colors cursor-pointer"
+            className="w-full bg-sky-500 hover:bg-bgLight text-white py-3 px-4 rounded-lg font-medium transition-colors cursor-pointer"
           >
             {t("Cart.Proceed")}
           </button>
