@@ -65,7 +65,7 @@ const BlogPageComponents = () => {
             {blogs.map((blog) => (
               <div
                 key={blog.id}
-                className="bg-sky-400/5 rounded-2xl shadow-md backdrop-blur-md overflow-hidden"
+                className="bg-sky-400/5 rounded-2xl shadow-md backdrop-blur-md overflow-hidden hover:bg-sky-200 transition-all duration-300"
               >
                 <Image
                   src={Laptop}
@@ -89,7 +89,7 @@ const BlogPageComponents = () => {
                   <p className="text-base text-black">{blog.description}</p>
                   <Link
                     href="#"
-                    className="text-blue-950 font-bold underline text-base"
+                    className="text-blue-950 font-bold underline text-base hover:text-sky-500 transition-all duration-300"
                   >
                     Read More
                   </Link>
@@ -98,12 +98,12 @@ const BlogPageComponents = () => {
             ))}
           </div>{" "}
           {/* Load More */}
-          <PrimaryBtn className="mt-8 self-start">Load More</PrimaryBtn>
+          <PrimaryBtn className="mt-8 self-start mb-4">Load More</PrimaryBtn>
         </div>
 
         <div className="flex flex-col gap-8">
           {/* Right: Sidebar */}
-          <aside className="w-full bg-sky-400/5 rounded-2xl border border-black/20 ">
+          <aside className="w-full bg-sky-400/5 rounded-2xl border border-black/20 hover:bg-sky-200 transition-all duration-300">
             <div className="text-xl font-bold text-neutral-900 mb-4 border-b border-black/20 py-4">
               <span className="px-4">Recent Blogs</span>
             </div>
@@ -126,7 +126,7 @@ const BlogPageComponents = () => {
             </div>
           </aside>
           {/* categories */}
-          <aside className="w-full bg-sky-400/5 rounded-2xl border border-black/20">
+          <aside className="w-full bg-sky-400/5 rounded-2xl border border-black/20 hover:bg-sky-200 transition-all duration-300">
             <div className="text-xl font-bold text-neutral-900 mb-4 border-b border-black/20 py-4">
               <span className="px-4">Blog Categories</span>
             </div>
@@ -135,7 +135,7 @@ const BlogPageComponents = () => {
                 (category, i) => (
                   <div
                     key={i}
-                    className="flex justify-between items-center py-2 text-base"
+                    className="flex justify-between items-center py-2 text-base hover:bg-sky-200 transition-all duration-300"
                   >
                     <span className="text-neutral-900 font-extrabold">
                       {category}
