@@ -206,7 +206,7 @@ export function ProductCategoryCard({
         </div>
 
         {/* Categories - Scrollable content area */}
-        <div className="flex flex-col gap-2 flex-1 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-sky-500 scrollbar-track-sky-100">
+        <div className="flex flex-col gap-2 flex-1 overflow-y-auto pr-2 no-scrollbar">
           {categories.map((cat, i) => {
             const isExpanded = expandedItems.includes(i);
             return (
