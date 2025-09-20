@@ -2,13 +2,13 @@
 
 import React, { useState } from "react";
 
-const PaymentMethods = () => {
+const AccountsMethods = () => {
   const methods = ["Cash on Delivery", "Bank Transfer", "Online Payment"];
   const [selectedMethod, setSelectedMethod] = useState("Cash on Delivery");
 
   return (
-    <div className="min-w-64 w-full p-6 bg-[#20B8FB0D] rounded-xl outline outline-1 outline-black/20 flex flex-col gap-6">
-      <div className="text-neutral-900 font-bold text-lg">Payment Methods</div>
+    <div className="min-w-64 w-full p-6 bg-[#20B8FB0D] rounded-xl outline outline-1 outline-black/20 flex flex-col gap-6 hover:bg-sky-100 transition-all duration-300">
+      <div className="text-neutral-900 font-bold text-lg">Accounts Methods</div>
       <div className="flex flex-col gap-4">
         {methods.map((method) => (
           <label
@@ -44,4 +44,4 @@ const PaymentMethods = () => {
   );
 };
 
-export default PaymentMethods;
+export default AccountsMethods;
