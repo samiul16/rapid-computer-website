@@ -135,7 +135,7 @@ export default function Footer() {
           links={[
             { label: "About Us" },
             { label: "Our Blog", href: "/blogs" },
-            { label: "Careers" },
+            { label: "Careers", href: "/career" },
             { label: "Store Location" },
             { label: "Testimonial" },
           ]}
