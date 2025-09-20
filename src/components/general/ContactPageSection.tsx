@@ -13,7 +13,7 @@ interface InfoCardProps {
 
 // ---------------------- Contact Form ----------------------
 const ContactForm = () => (
-  <div className="w-full md:col-span-2 p-6 bg-sky-400/5 rounded-2xl shadow-md backdrop-blur-sm flex flex-col gap-4">
+  <div className="w-full md:col-span-2 p-6 bg-sky-400/5 rounded-2xl shadow-lg backdrop-blur-sm flex flex-col gap-4">
     {["Name", "Email", "Mobile Number", "Country"].map((field) => (
       <div key={field} className="flex flex-col gap-2">
         <label className="text-zinc-600 text-lg font-medium font-barlow">
@@ -22,17 +22,19 @@ const ContactForm = () => (
         <input
           type="text"
           placeholder={field}
-          className="h-14 px-4 bg-white rounded-full focus:outline outline-sky-500 text-zinc-500 text-base font-barlow"
+          className="h-14 px-4 bg-white rounded-full focus:outline outline-sky-400 text-zinc-500 text-base font-barlow"
         />
       </div>
     ))}
-    <PrimaryBtn className="mt-4 font-bold py-3 w-[30%]">Submit Now</PrimaryBtn>
+    <PrimaryBtn className="mt-4 font-bold py-3 self-start w-fit">
+      Submit Now
+    </PrimaryBtn>
   </div>
 );
 
 // ---------------------- Contact Info Cards ----------------------
 const InfoCard = ({ icon, title, content }: InfoCardProps) => (
-  <div className="w-full p-4 bg-sky-400/5 rounded-full border border-sky-400/20 shadow-md flex items-center gap-4">
+  <div className="w-full p-4 bg-sky-400/5 rounded-full border border-sky-400/20 shadow-md flex items-center gap-4 hover:bg-sky-200 transition-all duration-300">
     <div className="w-12 h-12 flex items-center justify-center bg-sky-500 text-white rounded-full">
       {icon}
     </div>
