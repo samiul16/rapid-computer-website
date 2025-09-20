@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import PaymentMethods from "../payment/PaymentMethods";
+import PaymentMethods from "../payments/AccountsMethods";
 import OrderSummary from "../common/OrderSummary";
 import { useRouter } from "next/navigation";
 

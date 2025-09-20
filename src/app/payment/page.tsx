@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import SidebarMenu from "@/components/payment/SidebarMenu";
-import PaymentMethods from "@/components/payment/PaymentMethods";
+import SidebarMenu from "@/components/payments/SidebarMenu";
+import PaymentMethods from "@/components/payments/AccountsMethods";
 import Breadcrumb from "@/components/common/Breadcrumb";
-import PaymentForm from "@/components/payment/PaymentForm";
+import PaymentForm from "@/components/payments/AccountsForm";
 
 // Import or create these components for different views
 const ProfileForm = () => (
