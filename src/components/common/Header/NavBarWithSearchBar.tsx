@@ -276,7 +276,7 @@ const Navbar = ({ from = "" }) => {
         backgroundColor: "rgba(255, 255, 255, 0.1)", // Always blurry background
         backdropFilter: "blur(10px)",
         WebkitBackdropFilter: "blur(10px)",
-        height: "80px",
+        height: "60px",
       }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? "shadow-lg border-b border-gray-200 bg-white/90" : ""
@@ -284,7 +284,7 @@ const Navbar = ({ from = "" }) => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center h-full">
         {/* Logo */}
-        <div className="h-12 w-12 flex-shrink-0">
+        <div className="w-fit mt-2 flex-shrink-0">
           <Link
             href="/"
             className="w-full h-full relative inline-block"
@@ -293,8 +293,8 @@ const Navbar = ({ from = "" }) => {
             <Image
               src="/assets/rapid-logo-2.png"
               alt="Logo"
-              width={48}
-              height={48}
+              width={100}
+              height={100}
               priority
               quality={80}
               className="object-contain"
@@ -313,7 +313,7 @@ const Navbar = ({ from = "" }) => {
               }}
               style={{
                 fontFamily: "'Poppins', sans-serif",
-                fontSize: "16px",
+                fontSize: "14px",
                 fontWeight: "400",
                 lineHeight: "24px",
               }}
@@ -553,7 +553,7 @@ const Navbar = ({ from = "" }) => {
         <div className="hidden md:flex items-center gap-4">
           {/* Desktop Search */}
           <div className="relative" ref={dropdownRef}>
-            <div className="flex ">
+            <div className="flex">
               {!isExpanded && (
                 <button
                   type="button"

@@ -30,7 +30,7 @@ const InfoCard: React.FC<InfoCardProps> = ({
         </div>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ duration: 0.3 }}
+          transition={{ duration: 0.2, ease: [0.4, 0.0, 0.2, 1] }}
           className="w-6 h-6 flex items-center justify-center"
         >
           <FaAngleDown className="text-neutral-900" />
@@ -44,7 +44,11 @@ const InfoCard: React.FC<InfoCardProps> = ({
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
+            transition={{
+              duration: 0.2,
+              ease: [0.4, 0.0, 0.2, 1],
+              opacity: { duration: 0.15 },
+            }}
             className="px-6 pb-6 text-zinc-700 text-base leading-relaxed"
           >
             {description}
@@ -79,7 +83,7 @@ const AboutUsSection: React.FC = () => {
   ];
 
   return (
-    <section className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row justify-start items-start gap-10 px-4 py-12">
+    <section className="w-full max-w-7xl mx-auto flex flex-col lg:flex-row justify-start items-center gap-10 px-4 py-12">
       {/* Left Content */}
       <div className="flex-1 flex flex-col justify-start items-start gap-6">
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[56px] tracking-[3.36px] text-neutral-900">

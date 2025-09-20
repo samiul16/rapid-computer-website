@@ -133,7 +133,7 @@ export default function Footer() {
         <FooterLinkGroup
           title="Company Info"
           links={[
-            { label: "About Us" },
+            { label: "About Us", href: "/about-us" },
             { label: "Our Blog", href: "/blogs" },
             { label: "Careers", href: "/career" },
             { label: "Store Location" },
