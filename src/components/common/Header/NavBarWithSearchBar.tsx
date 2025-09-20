@@ -303,7 +303,7 @@ const Navbar = ({ from = "" }) => {
         </div>
 
         {/* Desktop Navigation - Centered */}
-        <div className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
+        <div className="hidden md:flex items-center gap-8">
           {navData.slice(0, 7).map((item, idx) => (
             <Link
               key={item.id}
@@ -348,7 +348,7 @@ const Navbar = ({ from = "" }) => {
                     : "none",
                 }}
                 className={`flex items-center transition-all rounded-md ${
-                  isMobileSearchExpanded ? "w-[280px]" : "w-10"
+                  isMobileSearchExpanded ? "w-[200px]" : "w-10"
                 }`}
               >
                 <button
@@ -541,7 +541,7 @@ const Navbar = ({ from = "" }) => {
           <button
             onClick={toggleSidebar}
             aria-label="Toggle menu"
-            className={`md:hidden transition-colors ${
+            className={`md:hidden transition-colors cursor-pointer ${
               isScrolled ? "text-orange-600" : "text-white" // Always white in hero section
             }`}
           >
@@ -579,7 +579,7 @@ const Navbar = ({ from = "" }) => {
                 }}
                 className={`flex items-center transition-all duration-200 ${
                   isExpanded
-                    ? "w-80 px-3 py-2 rounded-full border border-[#ecbf4c] transition-all shadow-sm hover:shadow-md ring-2 ring-[#ecbf4c] shadow-lg"
+                    ? "w-60 px-3 py-2 rounded-full border border-[#ecbf4c] transition-all hover:shadow-md ring-2 ring-[#ecbf4c] shadow-lg ease-in-out duration-400"
                     : "w-0 overflow-hidden"
                 } `}
                 onClick={(e) => e.stopPropagation()}
@@ -782,7 +782,7 @@ const Navbar = ({ from = "" }) => {
       <div
         style={{
           fontFamily: "'Poppins', sans-serif",
-          backgroundColor: "rgba(255, 255, 255, 0.95)",
+          backgroundColor: "#fff",
           backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)",
         }}
@@ -790,11 +790,11 @@ const Navbar = ({ from = "" }) => {
           isSidebarOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="p-4">
+        <div className="p-4 bg-white">
           <button
             onClick={toggleSidebar}
             aria-label="Close menu"
-            className="text-orange-600 mb-8"
+            className="text-orange-600 mb-8 cursor-pointer"
           >
             <X size={20} />
           </button>
