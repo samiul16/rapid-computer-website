@@ -134,7 +134,7 @@ export default function Footer() {
           title="Company Info"
           links={[
             { label: "About Us" },
-            { label: "Our Blog" },
+            { label: "Our Blog", href: "/blogs" },
             { label: "Careers" },
             { label: "Store Location" },
             { label: "Testimonial" },
@@ -148,7 +148,7 @@ export default function Footer() {
             { label: "FAQ" },
             { label: "Terms Of Service" },
             { label: "Privacy Policy" },
-            { label: "Contact Us" },
+            { label: "Contact Us", href: "/contact-us" },
             { label: "Gift Card" },
           ]}
         />
