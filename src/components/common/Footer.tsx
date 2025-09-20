@@ -147,7 +147,7 @@ export default function Footer() {
           links={[
             { label: "FAQ", href: "/faq" },
             { label: "Terms Of Service", href: "/terms-of-use" },
-            { label: "Privacy Policy" },
+            { label: "Privacy Policy", href: "/privacy-policy" },
             { label: "Contact Us", href: "/contact-us" },
             { label: "Gift Card" },
           ]}
