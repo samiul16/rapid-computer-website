@@ -20,7 +20,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
   const total = subtotal + shippingFee;
 
   return (
-    <div className="bg-[#20B8FB0D] p-6 rounded-2xl shadow space-y-4 outline outline-1 outline-black/20 max-h-96">
+    <div className="bg-[#20B8FB0D] p-6 rounded-2xl shadow space-y-4 outline outline-1 outline-gray-300 max-h-96 hover:bg-sky-100 transition-all duration-300">
       {/* Title */}
       <h3 className="font-bold text-lg">Order Summary</h3>
 
@@ -47,7 +47,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
           placeholder="Coupon Code"
           value={coupon}
           onChange={(e) => setCoupon(e.target.value)}
-          className="flex-1 border rounded-full px-4 h-10 focus:outline-sky-400"
+          className="flex-1 border rounded-full px-4 h-10 focus:outline-sky-400 border-gray-300"
         />
         <button
           onClick={() => onApplyCoupon && onApplyCoupon(coupon)}
