@@ -31,7 +31,7 @@ export default function BrandsIcons() {
       {brands.map((brand, index) => (
         <div
           key={brand.id}
-          className="w-20 md:w-28 h-20 md:h-28 flex mx-auto items-center justify-center bg-white rounded-full shadow-[0px_0px_8px_0px_rgba(0,0,0,0.15)] p-4 transition-transform duration-300"
+          className="w-20 md:w-28 h-20 md:h-28 flex mx-auto items-center justify-center bg-white rounded-full shadow-[0px_0px_8px_0px_rgba(0,0,0,0.15)] p-4 duration-300 cursor-pointer hover:scale-115 transition-all"
           data-aos="fade-up"
           data-aos-delay={index * 100}
           data-aos-anchor-placement="bottom-bottom"
