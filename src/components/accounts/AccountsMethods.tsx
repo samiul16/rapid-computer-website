@@ -79,7 +79,7 @@ const PaymentMethods: React.FC<PaymentMethodsProps> = ({
       {/* Display selected method with enhanced animation */}
       {localSelectedMethod && (
         <div className="mt-2 p-3 bg-[#26ADDF]/10 rounded-lg border-l-4 animate-slide-in border-gray-300 hover:border-[#26ADDF]">
-          <p className="text-sm text-[#26ADDF] font-medium font-['Poppins']">
+          <p className="text-sm text-[#26ADDF] font-medium">
             ✓ Selected: {localSelectedMethod}
           </p>
         </div>

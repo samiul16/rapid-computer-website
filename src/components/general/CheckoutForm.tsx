@@ -264,7 +264,7 @@ const CheckoutPage = () => {
         {/* Left: Form */}
         <div className="w-full flex flex-col md:col-span-2 gap-8">
           {/* Title */}
-          <h2 className="text-neutral-900 text-lg font-bold font-['Barlow']">
+          <h2 className="text-neutral-900 text-lg font-bold">
             Personal Information
           </h2>
 
@@ -272,7 +272,7 @@ const CheckoutPage = () => {
           <div className="p-6 bg-sky-400/5 rounded-2xl shadow-[2px_4px_10px_rgba(0,0,0,0.1)] backdrop-blur-[2px] flex flex-col gap-8">
             {/* Name */}
             <div className="flex flex-col gap-3">
-              <label className="text-zinc-600 text-lg font-medium font-['Barlow']">
+              <label className="text-zinc-600 text-lg font-medium">
                 Name
               </label>
               <input
@@ -283,7 +283,7 @@ const CheckoutPage = () => {
 
             {/* Email */}
             <div className="flex flex-col gap-3">
-              <label className="text-zinc-600 text-lg font-medium font-['Barlow']">
+              <label className="text-zinc-600 text-lg font-medium">
                 Email
               </label>
               <input
@@ -294,7 +294,7 @@ const CheckoutPage = () => {
 
             {/* Mobile */}
             <div className="flex flex-col gap-3">
-              <label className="text-zinc-600 text-lg font-medium font-['Barlow']">
+              <label className="text-zinc-600 text-lg font-medium">
                 Mobile Number
               </label>
               <input
@@ -306,7 +306,7 @@ const CheckoutPage = () => {
             {/* City, State, ZIP */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="flex flex-col gap-3">
-                <label className="text-zinc-600 text-lg font-medium font-['Barlow']">
+                <label className="text-zinc-600 text-lg font-medium">
                   City
                 </label>
                 <input
@@ -315,7 +315,7 @@ const CheckoutPage = () => {
                 />
               </div>
               <div className="flex flex-col gap-3">
-                <label className="text-zinc-600 text-lg font-medium font-['Barlow']">
+                <label className="text-zinc-600 text-lg font-medium">
                   State
                 </label>
                 <input
@@ -324,7 +324,7 @@ const CheckoutPage = () => {
                 />
               </div>
               <div className="flex flex-col gap-3">
-                <label className="text-zinc-600 text-lg font-medium font-['Barlow']">
+                <label className="text-zinc-600 text-lg font-medium">
                   ZIP
                 </label>
                 <input
@@ -336,7 +336,7 @@ const CheckoutPage = () => {
 
             {/* Description */}
             <div className="flex flex-col gap-3">
-              <label className="text-zinc-600 text-lg font-medium font-['Barlow']">
+              <label className="text-zinc-600 text-lg font-medium">
                 Description
               </label>
               <textarea
@@ -347,7 +347,7 @@ const CheckoutPage = () => {
 
             {/* Shipping */}
             <div className="flex flex-col gap-6">
-              <h3 className="text-neutral-900 text-lg font-bold font-['Barlow']">
+              <h3 className="text-neutral-900 text-lg font-bold">
                 Shipping Details
               </h3>
 
@@ -377,15 +377,15 @@ const CheckoutPage = () => {
                     </div>
 
                     <div>
-                      <p className="text-zinc-600 text-lg font-medium font-['Barlow']">
+                      <p className="text-zinc-600 text-lg font-medium">
                         Free Shipping
                       </p>
-                      <p className="text-zinc-600 text-sm font-medium font-['Barlow']">
+                      <p className="text-zinc-600 text-sm font-medium">
                         7-20 Days
                       </p>
                     </div>
                   </div>
-                  <span className="text-zinc-600 text-lg font-medium font-['Barlow']">
+                  <span className="text-zinc-600 text-lg font-medium">
                     AED 0
                   </span>
                 </label>
@@ -415,15 +415,15 @@ const CheckoutPage = () => {
                     </div>
 
                     <div>
-                      <p className="text-zinc-600 text-lg font-medium font-['Barlow']">
+                      <p className="text-zinc-600 text-lg font-medium">
                         Express Shipping
                       </p>
-                      <p className="text-zinc-600 text-sm font-medium font-['Barlow']">
+                      <p className="text-zinc-600 text-sm font-medium">
                         1-3 Days
                       </p>
                     </div>
                   </div>
-                  <span className="text-zinc-600 text-lg font-medium font-['Barlow']">
+                  <span className="text-zinc-600 text-lg font-medium">
                     AED 50
                   </span>
                 </label>
