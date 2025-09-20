@@ -146,7 +146,7 @@ export default function Footer() {
           title="Customer Care"
           links={[
             { label: "FAQ", href: "/faq" },
-            { label: "Terms Of Service" },
+            { label: "Terms Of Service", href: "/terms-of-use" },
             { label: "Privacy Policy" },
             { label: "Contact Us", href: "/contact-us" },
             { label: "Gift Card" },
