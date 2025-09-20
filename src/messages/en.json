@@ -316,7 +316,8 @@
   "profile": {
     "myOrders": "My Order List",
     "help": "Help",
-    "logout": "Logout"
+    "logout": "Logout",
+    "accounts": "Accounts"
   },
   "noitems": {
     "noItems": "No items found",

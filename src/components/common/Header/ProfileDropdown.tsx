@@ -13,6 +13,7 @@ import { getDefaultAvatarText } from "@/utils/appHelpers";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks/hooks";
 import { requestForLogout } from "@/helpers/restApiRequest";
 import { useLocale, useTranslations } from "next-intl";
+import { UserIcon } from "lucide-react";
 
 const ProfileDropdown: React.FC = () => {
   const router = useRouter();
@@ -97,13 +98,22 @@ const ProfileDropdown: React.FC = () => {
             </div>
 
             {user?.userId ? (
-              <Link
-                href="/tracking"
-                className="flex items-center px-4 py-2 text-sm text-border-dark"
-              >
-                <HelpCircle className="mr-3 h-4 w-4 text-brand" />
-                {t("myOrders")}
-              </Link>
+              <>
+                <Link
+                  href="/tracking"
+                  className="flex items-center px-4 py-2 text-sm text-border-dark"
+                >
+                  <HelpCircle className="mr-3 h-4 w-4 text-brand" />
+                  {t("myOrders")}
+                </Link>
+                <Link
+                  href="/accounts"
+                  className="flex items-center px-4 py-2 text-sm text-border-dark"
+                >
+                  <UserIcon className="mr-3 h-4 w-4 text-brand" />
+                  {t("accounts")}
+                </Link>
+              </>
             ) : (
               <Link
                 href="/help"
