@@ -145,7 +145,7 @@ export default function Footer() {
         <FooterLinkGroup
           title="Customer Care"
           links={[
-            { label: "FAQ" },
+            { label: "FAQ", href: "/faq" },
             { label: "Terms Of Service" },
             { label: "Privacy Policy" },
             { label: "Contact Us", href: "/contact-us" },
