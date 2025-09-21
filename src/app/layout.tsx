@@ -22,13 +22,13 @@ export const metadata = {
     icon: [
       {
         media: "(prefers-color-scheme: light)",
-        url: "rapid-logo-2.webp",
-        href: "/rapid-logo-2.webp",
+        url: "/assets/logo-2.png",
+        href: "/assets/logo-2.png",
       },
       {
         media: "(prefers-color-scheme: dark)",
-        url: "/rapid-logo-2.webp",
-        href: "/rapid-logo-2.webp",
+        url: "/assets/logo-1.png",
+        href: "/assets/logo-1.png",
       },
     ],
   },

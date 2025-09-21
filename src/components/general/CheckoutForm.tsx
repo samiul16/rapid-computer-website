@@ -260,7 +260,7 @@ const CheckoutPage = () => {
       {/* Header */}
 
       {/* Main Content */}
-      <section className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
+      <section className="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
         {/* Left: Form */}
         <div className="w-full flex flex-col md:col-span-2 gap-8">
           {/* Title */}
@@ -272,9 +272,7 @@ const CheckoutPage = () => {
           <div className="p-6 bg-sky-400/5 rounded-2xl shadow-[2px_4px_10px_rgba(0,0,0,0.1)] backdrop-blur-[2px] flex flex-col gap-8">
             {/* Name */}
             <div className="flex flex-col gap-3">
-              <label className="text-zinc-600 text-lg font-medium">
-                Name
-              </label>
+              <label className="text-zinc-600 text-lg font-medium">Name</label>
               <input
                 type="text"
                 className="h-14 px-4 bg-white rounded-full border border-neutral-200 focus:outline-sky-500"
@@ -283,9 +281,7 @@ const CheckoutPage = () => {
 
             {/* Email */}
             <div className="flex flex-col gap-3">
-              <label className="text-zinc-600 text-lg font-medium">
-                Email
-              </label>
+              <label className="text-zinc-600 text-lg font-medium">Email</label>
               <input
                 type="email"
                 className="h-14 px-4 bg-white rounded-full border border-neutral-200 focus:outline-sky-500"
@@ -324,9 +320,7 @@ const CheckoutPage = () => {
                 />
               </div>
               <div className="flex flex-col gap-3">
-                <label className="text-zinc-600 text-lg font-medium">
-                  ZIP
-                </label>
+                <label className="text-zinc-600 text-lg font-medium">ZIP</label>
                 <input
                   type="text"
                   className="h-14 px-4 bg-white rounded-full border border-neutral-200 focus:outline-sky-500"
@@ -433,7 +427,7 @@ const CheckoutPage = () => {
         </div>
 
         {/* Right: Order Summary */}
-        <aside className="space-y-14">
+        <aside className="space-y-14 mt-16">
           <OrderSummary
             subtotal={2500}
             shippingFee={shipping === "express" ? 50 : 0}

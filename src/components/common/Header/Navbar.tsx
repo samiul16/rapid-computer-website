@@ -207,7 +207,7 @@ const Navbar = ({ from = "" }) => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center h-full">
         {/* Logo */}
-        <div className="w-fit mt-2 flex-shrink-0 bg-gray-800 p-2 rounded-xl">
+        <div className="w-fit mt-2 flex-shrink-0 bg-sky-400 py-2 px-3 rounded-full">
           <Link
             href="/"
             className="w-full h-full relative inline-block"

@@ -579,7 +579,7 @@ const Navbar = ({ from = "" }) => {
                 }}
                 className={`flex items-center transition-all duration-200 ${
                   isExpanded
-                    ? "w-60 px-3 py-2 rounded-full border border-[#4ca4ec] transition-all hover:shadow-md ring-2 ring-[#4c94ec] shadow-lg ease-in-out duration-400"
+                    ? "w-60 h-10 px-3 py-2 rounded-full border border-[#4ca4ec] transition-all hover:shadow-md ring-2 ring-[#4c94ec] shadow-lg ease-in-out duration-400"
                     : "w-0 overflow-hidden"
                 } `}
                 onClick={(e) => e.stopPropagation()}
