@@ -1,6 +1,6 @@
 {
   "TabTitles": {
-    "title": "Excellency Catering Restaurant Sweets | Sweet Food Delivery"
+    "title": "Rapid Computer"
   },
 
   "Topbar": {
@@ -163,7 +163,7 @@
     "title": "Menu"
   },
   "companybrand": {
-    "brandName": "Excellency Catering Restaurant Sweets"
+    "brandName": "Rapid Computer"
   },
   "gallery": {
     "title": "Gallery",
@@ -239,7 +239,7 @@
   },
   "register": {
     "welcome": "Welcome",
-    "subtitle": "Excellency",
+    "subtitle": "to Rapid Computer",
     "secondarySubtitle": "to",
     "register": "Register",
     "createAccount": "Create your account",

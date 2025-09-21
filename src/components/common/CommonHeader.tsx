@@ -23,7 +23,7 @@ const CommonHeader = ({
   const breadCrumbSubTitle = subtitle || "";
 
   // ✅ Local fallback images only
-  let fallbackImage = "/assets/fallback.jpeg";
+  let fallbackImage = "/desktop.jpg";
   if (pathname === "/about-us") {
     fallbackImage = "/assets/about.jpeg";
   } else if (pathname === "/all-products") {

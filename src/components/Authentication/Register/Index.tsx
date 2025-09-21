@@ -193,7 +193,7 @@ const RegisterComponent = () => {
               disabled={disableBtn}
               className={`${
                 disableBtn
-                  ? "cursor-not-allowed bg-orange-300"
+                  ? "cursor-not-allowed bg-sky-500"
                   : "cursor-pointer bg-brand"
               } w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white  transition-all duration-200`}
             >
