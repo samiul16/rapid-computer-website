@@ -12,7 +12,7 @@ const AppSpinner = ({ clsname }: AppSpinnerProps) => {
       className={`${clsname} flex justify-center items-center text-dark fw-bold my-5 bg-transparent`}
     >
       <Image
-        src="/assets/logo-1.png"
+        src="/rapid-logo-2.webp"
         alt="loader"
         width={80}
         height={80}

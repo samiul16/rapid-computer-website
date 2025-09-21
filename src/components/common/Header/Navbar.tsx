@@ -207,17 +207,17 @@ const Navbar = ({ from = "" }) => {
     >
       <div className="container mx-auto px-4 flex justify-between items-center h-full">
         {/* Logo */}
-        <div className="h-12 w-12 flex-shrink-0">
+        <div className="w-fit mt-2 flex-shrink-0 bg-gray-800 p-2 rounded-xl">
           <Link
             href="/"
             className="w-full h-full relative inline-block"
             ref={logoRef}
           >
             <Image
-              src="/assets/logo-1.png"
+              src="/assets/rapid-logo-2.png"
               alt="Logo"
-              width={48}
-              height={48}
+              width={100}
+              height={100}
               priority
               quality={80}
               className="object-contain"
