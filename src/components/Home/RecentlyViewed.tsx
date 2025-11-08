@@ -93,7 +93,7 @@ const products: Product[] = [
 
 const RecentlyViewed: React.FC = () => {
   return (
-    <main className="w-full max-w-7xl mx-auto py-16 px-4 relative">
+    <main className="w-full max-w-[1600px] mx-auto py-16 px-4 relative">
       {/* Header */}
       <section className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-5">
         <SectionHeader title="Recently Viewed" />

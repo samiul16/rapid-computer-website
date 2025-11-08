@@ -479,22 +479,20 @@ export function ProductCategoryCard({
     );
   };
 
-  // const hasExpandedItems = expandedItems.length > 0;
-
   return (
     <div
-      className={`relative w-72 h-[420px] ${className}`}
+      className={`relative w-full max-w-[1600px] mx-auto h-[500px] px-4 sm:px-6 lg:px-8 ${className}`}
       data-aos="fade-up"
       data-aos-delay={300 + index * 80}
       data-aos-duration="800"
     >
       {/* Image Container */}
-      <div className="w-40 h-40 absolute left-[60px] top-[-6px] overflow-hidden z-10">
+      <div className="w-32 h-32 absolute left-1/2 -translate-x-1/2 top-[-6px] overflow-hidden z-10">
         <div
-          className="w-40 h-40 relative overflow-hidden"
+          className="w-32 h-32 relative overflow-hidden"
           style={{
             borderRadius: "100000px",
-            border: "5px solid #FAFDFF",
+            border: "4px solid #FAFDFF",
             boxShadow: "2px 2px 12px 0 rgba(32, 184, 251, 0.10)",
           }}
         >
@@ -502,8 +500,8 @@ export function ProductCategoryCard({
             className="w-full h-full object-cover"
             src={imageSrc}
             alt={title}
-            width={160}
-            height={160}
+            width={128}
+            height={128}
             style={{
               borderRadius: "100000px",
             }}
@@ -519,7 +517,7 @@ export function ProductCategoryCard({
 
         {discountText && (
           <div className="absolute left-0 bottom-[10%] w-full flex justify-center">
-            <span className="text-black text-xl font-bold px-3 py-1 rounded !font-barlow">
+            <span className="text-black text-base font-bold px-2 py-0.5 rounded !font-barlow">
               {discountText}
             </span>
           </div>
@@ -527,57 +525,61 @@ export function ProductCategoryCard({
       </div>
 
       {/* Card Background - Fixed height with flex layout */}
-      <div className="w-72 bg-white rounded-2xl shadow-[2px_4px_10px_rgba(0,0,0,0.15)] transition-all duration-300 pt-[120px] pb-6 px-5 mt-[94px] h-[380px] flex flex-col">
+      <div className="w-full bg-white rounded-2xl shadow-[2px_4px_10px_rgba(0,0,0,0.15)] transition-all duration-300 pt-[100px] pb-4 px-3 mt-[88px] h-[360px] flex flex-col">
         {/* Title */}
-        <div className="text-center text-gray-700 text-lg font-bold font-barlow mb-6 -mt-12">
+        <div className="text-center text-gray-700 text-sm font-bold font-barlow mb-4 -mt-8">
           {title}
         </div>
 
         {/* Categories - Scrollable content area */}
-        <div className="flex flex-col gap-2 flex-1 overflow-y-auto pr-2 no-scrollbar">
+        <div className="flex flex-col gap-1 flex-1 overflow-y-auto pr-1 no-scrollbar">
           {categories.map((cat, i) => {
             const isExpanded = expandedItems.includes(i);
             return (
               <div key={i} className="flex flex-col">
                 <div
-                  className="flex justify-between items-center cursor-pointer hover:bg-gray-50 p-1 rounded transition-colors duration-200"
+                  className="flex justify-between items-center cursor-pointer hover:bg-gray-50 py-0.5 px-1 rounded transition-colors duration-200"
                   onClick={() => toggleItem(i)}
                 >
-                  <div className="flex items-center gap-2">
-                    <div className="w-2.5 h-5 relative transition-transform duration-200">
-                      {isExpanded ? <FaAngleDown /> : <FaAngleRight />}
+                  <div className="flex items-center gap-1">
+                    <div className="w-2 h-3.5 relative transition-transform duration-200">
+                      {isExpanded ? (
+                        <FaAngleDown className="text-xs" />
+                      ) : (
+                        <FaAngleRight className="text-xs" />
+                      )}
                     </div>
-                    <div className="text-gray-700 text-base font-normal font-barlow">
+                    <div className="text-gray-700 text-md font-normal font-barlow">
                       {cat.name}
                     </div>
                   </div>
-                  <div className="text-gray-700 text-base font-normal font-barlow">
+                  <div className="text-gray-700 text-md font-normal font-barlow">
                     ({cat.count})
                   </div>
                 </div>
                 {isExpanded && (
-                  <div className="ml-6 mt-1 mb-2 p-2 bg-sky-50 rounded-lg shadow-sm border border-sky-100 transition-all duration-300 transform">
-                    <div className="grid grid-cols-1 gap-2">
+                  <div className="ml-4 mt-0.5 mb-1 p-1 bg-sky-50 rounded-lg shadow-sm border border-sky-100 transition-all duration-300 transform">
+                    <div className="grid grid-cols-1 gap-1">
                       {cat.products.map((product) => (
                         <Link
                           key={product.id}
                           href={`/product-details/${product.id}`}
-                          className="flex items-center gap-3 p-2 bg-white rounded-lg hover:bg-sky-100 transition-colors duration-200 cursor-pointer border border-sky-200"
+                          className="flex items-center gap-1.5 p-1 bg-white rounded-lg hover:bg-sky-100 transition-colors duration-200 cursor-pointer border border-sky-200"
                         >
-                          <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
+                          <div className="w-7 h-7 rounded-lg overflow-hidden flex-shrink-0">
                             <Image
                               src={product.image}
                               alt={product.name}
-                              width={40}
-                              height={40}
+                              width={28}
+                              height={28}
                               className="w-full h-full object-cover"
                             />
                           </div>
                           <div className="flex-1 min-w-0">
-                            <div className="text-sm font-medium text-gray-800 font-barlow truncate">
+                            <div className="text-[11px] font-medium text-gray-800 font-barlow truncate leading-tight">
                               {product.name}
                             </div>
-                            <div className="text-xs text-sky-600 font-bold font-barlow">
+                            <div className="text-[10px] text-sky-600 font-bold font-barlow leading-tight">
                               {product.price}
                             </div>
                           </div>
@@ -592,10 +594,10 @@ export function ProductCategoryCard({
         </div>
 
         {/* View All - Fixed at bottom */}
-        <div className="text-center mt-4 flex-shrink-0">
+        <div className="text-center mt-2.5 flex-shrink-0">
           <Link
             href="/products"
-            className="text-sky-400 text-base font-bold underline cursor-pointer font-barlow hover:text-sky-600 transition-colors duration-300"
+            className="text-sky-400 text-xs font-bold underline cursor-pointer font-barlow hover:text-sky-600 transition-colors duration-300"
           >
             View All
           </Link>
@@ -616,18 +618,20 @@ export default function CategorySection() {
   }, []);
 
   return (
-    <section className="bg-[#f2f2f25b] py-16">
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10 justify-center">
-        {categoriesData.map((cat, i) => (
-          <ProductCategoryCard
-            key={i}
-            title={cat.title}
-            imageSrc={cat.imageSrc}
-            discountText={cat.discountText}
-            categories={cat.categories}
-            index={i}
-          />
-        ))}
+    <section className="bg-[#f2f2f25b] py-10">
+      <div className="max-w-[1600px] mx-auto px-3 sm:px-4 lg:px-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 justify-items-center">
+          {categoriesData.map((cat, i) => (
+            <ProductCategoryCard
+              key={i}
+              title={cat.title}
+              imageSrc={cat.imageSrc}
+              discountText={cat.discountText}
+              categories={cat.categories}
+              index={i}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

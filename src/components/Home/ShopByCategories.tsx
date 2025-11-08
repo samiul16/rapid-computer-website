@@ -101,19 +101,21 @@ const CategorySection = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Title at top left */}
-      <div className="mb-8">
-        <h2 className="text-3xl font-bold text-gray-900">Shop by Category</h2>
-        <p className="text-gray-600 mt-2">
+      <div className="mb-6 lg:mb-8">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+          Shop by Category
+        </h2>
+        <p className="text-sm sm:text-base text-gray-600 mt-2">
           Discover products by your favorite categories
         </p>
       </div>
 
-      <section className="flex flex-col lg:flex-row gap-8 items-start">
+      <section className="flex flex-col lg:flex-row gap-4 lg:gap-6 xl:gap-8 items-start">
         {/* Left Panel - Categories */}
-        <div className="w-full lg:w-80 flex-shrink-0">
-          <div className="bg-gradient-to-br from-[#041A65] via-[#0834CB] to-[#1e3a8a] rounded-3xl shadow-2xl p-6 overflow-hidden relative h-[600px] flex flex-col">
+        <div className="w-full lg:w-72 xl:w-80 flex-shrink-0">
+          <div className="bg-gradient-to-br from-[#041A65] via-[#0834CB] to-[#1e3a8a] rounded-3xl shadow-2xl p-4 sm:p-6 overflow-hidden relative h-[500px] sm:h-[600px] flex flex-col">
             {/* Background Pattern */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-20" />
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-16 translate-x-16" />
@@ -121,50 +123,52 @@ const CategorySection = () => {
 
             <div className="relative z-10 flex flex-col h-full">
               {/* Header */}
-              <div className="flex items-center gap-3 mb-6 flex-shrink-0">
+              <div className="flex items-center gap-3 mb-4 sm:mb-6 flex-shrink-0">
                 <div className="p-2 bg-white/20 rounded-full">
-                  <Tag className="w-5 h-5 text-white" />
+                  <Tag className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-white text-xl font-bold">
+                  <h3 className="text-white text-lg sm:text-xl font-bold">
                     Menu Categories
                   </h3>
-                  <p className="text-blue-200 text-sm">Explore our cuisines</p>
+                  <p className="text-blue-200 text-xs sm:text-sm">
+                    Explore our cuisines
+                  </p>
                 </div>
               </div>
 
               {/* Categories - Scrollable */}
               <div
-                className="flex-1 overflow-y-auto pr-2 mb-6"
+                className="flex-1 overflow-y-auto pr-1 sm:pr-2 mb-4 sm:mb-6"
                 style={{
                   scrollbarWidth: "thin",
                   scrollbarColor: "rgba(255,255,255,0.3) transparent",
                 }}
               >
-                <div className="space-y-3">
+                <div className="space-y-2 sm:space-y-3">
                   {/* All Items Button */}
                   <button
                     onClick={() => setSelectedGroupId(null)}
-                    className={`w-full text-left p-4 rounded-xl transition-all duration-300 group cursor-pointer ${
+                    className={`w-full text-left p-3 sm:p-4 rounded-xl transition-all duration-300 group cursor-pointer ${
                       selectedGroupId === null
                         ? "bg-white/20 backdrop-blur-sm border border-white/30"
                         : "hover:bg-white/10 border border-transparent"
                     }`}
                   >
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <span className="text-white font-medium">
+                      <div className="flex items-center gap-2 sm:gap-3">
+                        <span className="text-white text-sm sm:text-base font-medium">
                           All Items
                         </span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="text-blue-200 text-sm">
+                        <span className="text-blue-200 text-xs sm:text-sm">
                           {locale === "ar"
                             ? toArabicNumerals(foodsData?.items.length || 0)
                             : foodsData?.items.length || 0}
                         </span>
                         <ChevronRight
-                          className={`w-4 h-4 text-blue-200 transition-transform duration-300 ${
+                          className={`w-3 h-3 sm:w-4 sm:h-4 text-blue-200 transition-transform duration-300 ${
                             selectedGroupId === null
                               ? "rotate-90"
                               : "group-hover:translate-x-1"
@@ -184,16 +188,16 @@ const CategorySection = () => {
                       <button
                         key={group.id}
                         onClick={() => handleCategoryClick(group.id)}
-                        className={`w-full text-left p-4 rounded-xl transition-all duration-300 group cursor-pointer ${
+                        className={`w-full text-left p-3 sm:p-4 rounded-xl transition-all duration-300 group cursor-pointer ${
                           selectedGroupId === group.id
                             ? "bg-white/20 backdrop-blur-sm border border-white/30"
                             : "hover:bg-white/10 border border-transparent"
                         }`}
                       >
                         <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-3">
+                          <div className="flex items-center gap-2 sm:gap-3">
                             {group.image_url && (
-                              <div className="w-8 h-8 rounded-full overflow-hidden bg-white/20">
+                              <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full overflow-hidden bg-white/20 flex-shrink-0">
                                 <Image
                                   src={group.image_url}
                                   alt={getDisplayName(
@@ -206,24 +210,18 @@ const CategorySection = () => {
                                 />
                               </div>
                             )}
-                            <span className="text-white font-medium">
+                            <span className="text-white text-sm sm:text-base font-medium truncate">
                               {getDisplayName(group.name, group.arabic_name)}
                             </span>
-                            {/* {itemsInGroup > 10 && (
-                              <div className="flex items-center gap-1 bg-yellow-400 text-yellow-900 px-2 py-1 rounded-full text-xs font-bold">
-                                <TrendingUp size={10} />
-                                Popular
-                              </div>
-                            )} */}
                           </div>
-                          <div className="flex items-center gap-2">
-                            <span className="text-blue-200 text-sm">
+                          <div className="flex items-center gap-2 flex-shrink-0">
+                            <span className="text-blue-200 text-xs sm:text-sm">
                               {locale === "ar"
                                 ? toArabicNumerals(itemsInGroup)
                                 : itemsInGroup}
                             </span>
                             <ChevronRight
-                              className={`w-4 h-4 text-blue-200 transition-transform duration-300 ${
+                              className={`w-3 h-3 sm:w-4 sm:h-4 text-blue-200 transition-transform duration-300 ${
                                 selectedGroupId === group.id
                                   ? "rotate-90"
                                   : "group-hover:translate-x-1"
@@ -239,11 +237,11 @@ const CategorySection = () => {
 
               {/* View All Link */}
               <Link href="/products" className="block w-full flex-shrink-0">
-                <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl p-4 text-center cursor-pointer hover:bg-white/30 transition-all duration-300">
-                  <span className="text-white font-bold text-lg">
+                <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl p-3 sm:p-4 text-center cursor-pointer hover:bg-white/30 transition-all duration-300">
+                  <span className="text-white font-bold text-base sm:text-lg">
                     VIEW ALL CATEGORIES
                   </span>
-                  <div className="text-blue-200 text-sm mt-1">
+                  <div className="text-blue-200 text-xs sm:text-sm mt-1">
                     Browse complete menu
                   </div>
                 </div>
@@ -253,10 +251,10 @@ const CategorySection = () => {
         </div>
 
         {/* Right Panel - Products */}
-        <div className="flex-1">
-          <div className="bg-white rounded-3xl shadow-lg border border-gray-100 p-6 h-[600px] flex flex-col">
-            <div className="mb-6 flex-shrink-0">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+        <div className="flex-1 w-full min-w-0">
+          <div className="bg-white rounded-3xl shadow-lg border border-gray-100 p-4 sm:p-6 h-[500px] sm:h-[600px] flex flex-col">
+            <div className="mb-4 sm:mb-6 flex-shrink-0">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
                 {selectedGroup
                   ? getDisplayName(
                       selectedGroup.name,
@@ -264,7 +262,7 @@ const CategorySection = () => {
                     )
                   : "Featured Items"}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-sm sm:text-base text-gray-600">
                 {locale === "ar"
                   ? `${toArabicNumerals(
                       filteredItems.length
@@ -275,14 +273,13 @@ const CategorySection = () => {
 
             {/* Products Grid - Scrollable with fixed height */}
             <div
-              className="flex-1 overflow-y-auto pr-2"
+              className="flex-1 overflow-y-auto pr-1 sm:pr-2"
               style={{
                 scrollbarWidth: "thin",
                 scrollbarColor: "#d1d5db transparent",
-                maxHeight: "calc(600px - 160px)",
               }}
             >
-              <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 pb-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-3 sm:gap-4 pb-4">
                 {filteredItems.map((item) => {
                   const discount = getDiscountPercentage(item);
 
@@ -292,9 +289,9 @@ const CategorySection = () => {
                       onClick={() => handleProductClick(item.id)}
                       className="group bg-gray-50 hover:bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 hover:border-blue-200 transition-all duration-300 cursor-pointer overflow-hidden relative"
                     >
-                      <div className="p-4 flex gap-3">
+                      <div className="p-3 sm:p-4 flex gap-3">
                         {/* Product Image */}
-                        <div className="relative w-20 h-20 flex-shrink-0">
+                        <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
                           <div className="w-full h-full rounded-xl overflow-hidden bg-gray-100 relative">
                             <Image
                               src={item.image_url || "/global/game.png"}
@@ -316,17 +313,17 @@ const CategorySection = () => {
                         {/* Product Details */}
                         <div className="flex-1 flex flex-col justify-between min-w-0">
                           <div>
-                            <h4 className="text-gray-900 font-semibold text-sm line-clamp-2 mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                            <h4 className="text-gray-900 font-semibold text-xs sm:text-sm line-clamp-2 mb-1 sm:mb-2 group-hover:text-blue-600 transition-colors duration-300">
                               {getDisplayName(item.name, item.arabic_name)}
                             </h4>
 
                             {/* Rating */}
-                            <div className="flex items-center gap-2 mb-2">
-                              <div className="flex gap-1">
+                            <div className="flex items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
+                              <div className="flex gap-0.5 sm:gap-1">
                                 {[...Array(5)].map((_, starIdx) => (
                                   <AiFillStar
                                     key={starIdx}
-                                    className={`w-3 h-3 ${
+                                    className={`w-2.5 h-2.5 sm:w-3 sm:h-3 ${
                                       starIdx < item.average_rating
                                         ? "text-amber-400"
                                         : "text-gray-300"
@@ -348,8 +345,8 @@ const CategorySection = () => {
 
                           {/* Price */}
                           <div className="flex items-center justify-between">
-                            <div className="text-blue-600 text-sm font-bold">
-                              <div className="flex items-center gap-2">
+                            <div className="text-blue-600 text-xs sm:text-sm font-bold">
+                              <div className="flex items-center gap-1 sm:gap-2 flex-wrap">
                                 {hasOffer(item) ? (
                                   <>
                                     <span className="text-red-600">
@@ -370,8 +367,8 @@ const CategorySection = () => {
                                 )}
                               </div>
                             </div>
-                            <div className="text-blue-600 group-hover:translate-x-1 transition-transform duration-200">
-                              <ChevronRight className="w-4 h-4" />
+                            <div className="text-blue-600 group-hover:translate-x-1 transition-transform duration-200 flex-shrink-0">
+                              <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
                             </div>
                           </div>
                         </div>
@@ -387,10 +384,10 @@ const CategorySection = () => {
               {/* Empty state */}
               {filteredItems.length === 0 && (
                 <div className="text-center py-12 h-full flex items-center justify-center flex-col">
-                  <div className="text-gray-400 text-lg mb-2">
+                  <div className="text-gray-400 text-base sm:text-lg mb-2">
                     {t("ShopByCategory.noProducts") || "No items found"}
                   </div>
-                  <p className="text-gray-500">
+                  <p className="text-sm sm:text-base text-gray-500">
                     {t("ShopByCategory.tryDifferentCategory") ||
                       "Try selecting a different category"}
                   </p>
@@ -400,21 +397,22 @@ const CategorySection = () => {
 
             {/* Bottom action */}
             {filteredItems.length > 0 && (
-              <div className="pt-4 mt-4 border-t border-gray-200 flex-shrink-0">
+              <div className="pt-3 sm:pt-4 mt-3 sm:mt-4 border-t border-gray-200 flex-shrink-0">
                 <Link
                   href={`/products${
                     selectedGroupId ? `?group=${selectedGroupId}` : ""
                   }`}
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors duration-300"
+                  className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 text-white rounded-xl text-sm sm:text-base font-semibold hover:bg-blue-700 transition-colors duration-300"
                 >
                   View All
                   {selectedGroup
-                    ? getDisplayName(
+                    ? " " +
+                      getDisplayName(
                         selectedGroup.name,
                         selectedGroup.arabic_name
                       )
                     : " Items"}
-                  <ChevronRight className="w-4 h-4" />
+                  <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
                 </Link>
               </div>
             )}

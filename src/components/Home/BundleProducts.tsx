@@ -42,6 +42,14 @@ const BundleProducts: React.FC = () => {
       rating: 5,
       imageUrl: "/products/Mobile-2.png",
     },
+    {
+      title: "Gaming Keyboard",
+      price: 180,
+      oldPrice: 220,
+      discount: 18,
+      rating: 5,
+      imageUrl: "/products/Mobile-2.png",
+    },
   ];
 
   useEffect(() => {
@@ -75,7 +83,7 @@ const BundleProducts: React.FC = () => {
   };
 
   return (
-    <section className="w-full max-w-7xl mx-auto py-20 px-4">
+    <section className="w-full max-w-[1600px] mx-auto py-20 px-4">
       {/* Header */}
       <div data-aos="fade-up" data-aos-delay="100">
         <div className="text-3xl font-bold text-gray-800 mb-8">

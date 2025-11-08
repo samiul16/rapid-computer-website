@@ -105,7 +105,7 @@ const PromotedSection = () => {
   const visibleProducts = products.slice(startIndex, startIndex + itemsPerView);
 
   return (
-    <main className="w-full max-w-7xl mx-auto px-4 py-20">
+    <main className="w-full max-w-[1600px] mx-auto px-4 py-20">
       {/* Heading */}
       <div
         data-aos="fade-up"

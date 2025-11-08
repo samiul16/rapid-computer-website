@@ -211,7 +211,7 @@ const FlashSaleGrid: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full max-w-7xl mx-auto px-4 py-20">
+    <section className="relative w-full max-w-[1600px] mx-auto px-4 py-20">
       {/* Header */}
       <div
         className="flex justify-between items-end mb-8 px-4"
