@@ -1,5 +1,5 @@
 "use client";
-/* eslint-disable @typescript-eslint/ban-ts-comment */
+
 /* eslint-disable */
 // @ts-nocheck
 
@@ -72,7 +72,7 @@ const Hero = () => {
           <span className="text-brand">{t("Hero.second")}</span>
         </p> */}
         <h1
-          className="text-5xl md:text-7xl font-serif max-w-5xl mb-6"
+          className="text-5xl md:text-7xl max-w-5xl mb-6"
           data-aos="fade-up"
         >
           {t("Hero.headline")}
@@ -85,9 +85,6 @@ const Hero = () => {
             <PrimaryBtn
               className="font-extrabold shadow-white/60 shadow-md hover:shadow-white/80"
               size="lg"
-              style={{
-                fontFamily: "'Poppins', sans-serif",
-              }}
               onClick={() => {}}
             >
               Shop Now

@@ -73,18 +73,18 @@ const ProfileDropdown: React.FC = () => {
     >
       <button
         onClick={toggleDropdown}
-        className="flex items-center justify-center rounded-full overflow-hidden"
+        className="flex items-center cursor-pointer justify-center rounded-full overflow-hidden hover:opacity-80 transition-all duration-200"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
         <ImageComponent
           alt="user profile"
-          className="w-9 h-9 p-0.5 rounded-full border-1 border-[#ecbf4c] bg-white"
+          className="w-9 h-9 p-0.5 rounded-full border-1 border-[#ecbf4c] bg-white hover:border-sky-500 transition-colors duration-200"
           src={photo}
           defaultImageClasses="w-9 h-9"
           defaultImageName={defaultUsername}
         />
-        <ChevronDown className="w-4 h-4 text-brand ms-1" />
+        <ChevronDown className="w-4 h-4 text-white group-hover:text-gray-800 hover:text-sky-500 ms-1 transition-colors duration-200" />
       </button>
 
       {hasMounted && isOpen && (

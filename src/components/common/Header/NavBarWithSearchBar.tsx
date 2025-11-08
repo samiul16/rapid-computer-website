@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable */
 // @ts-nocheck
 
@@ -100,6 +99,7 @@ const Navbar = ({ from = "" }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isNavbarHovered, setIsNavbarHovered] = useState(false);
 
   // Voice search states
   const [isListening, setIsListening] = useState(false);
@@ -269,35 +269,69 @@ const Navbar = ({ from = "" }) => {
   const handleAuthRedirect = () => router.push("/login");
   const locale = useLocale();
 
+  // Determine navbar background and text colors - keep home page same, change other pages
+  const getNavbarStyles = () => {
+    if (isHomeRoute) {
+      // Home page: keep original styling exactly as it was
+      return {
+        navBg: isScrolled ? "bg-black/20 backdrop-blur-md" : "bg-transparent",
+        textColor: "text-white",
+        groupHoverColor: "group-hover:text-sky-500",
+        hoverColor: "hover:text-sky-500",
+        activeColor: "text-sky-500 font-semibold",
+      };
+    } else {
+      // Other pages: dark text like in the image, no group hover effects
+      return {
+        navBg: isScrolled
+          ? "bg-white/95 backdrop-blur-md shadow-lg"
+          : "bg-white/90 backdrop-blur-sm",
+        textColor: "text-black",
+        groupHoverColor: "", // No group hover - icons stay black initially
+        hoverColor: "hover:text-sky-500",
+        activeColor: "text-black font-semibold",
+      };
+    }
+  };
+
+  const styles = getNavbarStyles();
+
+  // Determine which logo to show
+  const getLogoSrc = () => {
+    if (isHomeRoute) {
+      // Home page: show skyRapid.png on hover, original logo otherwise
+      return isNavbarHovered ? "/skyRapid.png" : "/whiteRapid.png";
+    } else {
+      // Other pages: always show skyRapid.png
+      return "/skyRapid.png";
+    }
+  };
+
   return (
     <nav
-      style={{
-        fontFamily: "'Poppins', sans-serif",
-        backgroundColor: "rgba(255, 255, 255, 0.1)", // Always blurry background
-        backdropFilter: "blur(10px)",
-        WebkitBackdropFilter: "blur(10px)",
-        height: "60px",
-      }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "shadow-lg border-b border-gray-200 bg-white/90" : ""
-      }`}
+      className={`fixed top-0 left-0 right-0 transition-all duration-300 py-3 ${
+        styles.navBg
+      } ${isHomeRoute ? "hover:bg-white group" : ""}`}
+      style={{ zIndex: 9998 }}
+      onMouseEnter={() => setIsNavbarHovered(true)}
+      onMouseLeave={() => setIsNavbarHovered(false)}
     >
-      <div className="container mx-auto px-4 flex justify-between items-center h-full">
+      <div className="max-w-8xl mx-auto px-4 lg:px-14 flex justify-between items-center h-full">
         {/* Logo */}
-        <div className="w-fit mt-2 flex-shrink-0">
+        <div className="w-fit flex-shrink-0">
           <Link
             href="/"
-            className="w-full h-full relative inline-block"
+            className="w-auto h-10 relative inline-block"
             ref={logoRef}
           >
             <Image
-              src="/assets/rapid-logo-2.png"
+              src={getLogoSrc()}
               alt="Logo"
-              width={100}
-              height={100}
+              width={120}
+              height={50}
               priority
               quality={80}
-              className="object-contain"
+              className="object-contain h-10 w-auto transition-all duration-300"
             />
           </Link>
         </div>
@@ -311,19 +345,11 @@ const Navbar = ({ from = "" }) => {
               ref={(el) => {
                 navItemsRef.current[idx] = el;
               }}
-              style={{
-                fontFamily: "'Poppins', sans-serif",
-                fontSize: "14px",
-                fontWeight: "400",
-                lineHeight: "24px",
-              }}
-              className={`hover:text-brand uppercase transition-colors relative ${
-                pathname === item.link
-                  ? "text-brand border border-brand rounded px-2 py-1"
-                  : isScrolled
-                  ? "text-gray-800"
-                  : "text-white" // Always white in hero section
-              }`}
+              className={`${
+                pathname === item.link ? styles.activeColor : styles.textColor
+              } ${styles.hoverColor} ${
+                styles.groupHoverColor
+              } font-semibold transition-colors text-lg uppercase`}
             >
               {locale === "ar" ? item.labelAr : item.labelEn}
             </Link>
@@ -347,7 +373,7 @@ const Navbar = ({ from = "" }) => {
                     ? "blur(10px)"
                     : "none",
                 }}
-                className={`flex items-center transition-all rounded-md ${
+                className={`flex items-center transition-all rounded-full ${
                   isMobileSearchExpanded ? "w-[200px]" : "w-10"
                 }`}
               >
@@ -359,12 +385,10 @@ const Navbar = ({ from = "" }) => {
                       ? handleMobileSearchCollapse
                       : handleMobileSearchExpand
                   }
-                  className={`p-2 hover:text-gray-600 ${
-                    isMobileSearchExpanded
-                      ? "text-gray-500"
-                      : isScrolled
-                      ? "text-gray-800"
-                      : "text-white" // Always white in hero section
+                  className={`p-2 ${styles.hoverColor} ${
+                    styles.groupHoverColor
+                  } transition-colors ${
+                    isMobileSearchExpanded ? "text-gray-500" : styles.textColor
                   }`}
                 >
                   {isMobileSearchExpanded ? (
@@ -386,7 +410,7 @@ const Navbar = ({ from = "" }) => {
                         fontSize: "14px",
                         fontWeight: "400",
                       }}
-                      className="flex-1 bg-transparent outline-none text-gray-700 px-2 rounded-2xl"
+                      className="flex-1 bg-transparent outline-none text-gray-700 px-2 rounded-full"
                     />
                     {speechSupported && (
                       <button
@@ -478,11 +502,9 @@ const Navbar = ({ from = "" }) => {
               <Heart
                 className={`w-4 h-4 ${
                   wishlist.length > 0
-                    ? "text-red-600"
-                    : isScrolled
-                    ? "text-gray-800"
-                    : "text-white" // Always white in hero section
-                }`}
+                    ? styles.activeColor.replace("font-semibold", "")
+                    : styles.textColor
+                } ${styles.groupHoverColor} ${styles.hoverColor}`}
               />
               <span
                 style={{
@@ -490,7 +512,7 @@ const Navbar = ({ from = "" }) => {
                   fontSize: "10px",
                   fontWeight: "400",
                 }}
-                className="absolute -top-1 -right-1 w-4 h-4 bg-white text-red-600 rounded-full text-xs flex items-center justify-center"
+                className="absolute -top-1 -right-1 w-4 h-4 bg-white text-sky-600 rounded-full text-xs flex items-center justify-center"
               >
                 {wishlist.length}
               </span>
@@ -511,14 +533,12 @@ const Navbar = ({ from = "" }) => {
                   fontSize: "10px",
                   fontWeight: "400",
                 }}
-                className="absolute -top-1 -right-1 w-4 h-4 bg-white text-brand rounded-full text-xs flex items-center justify-center"
+                className="absolute -top-1 -right-1 w-4 h-4 bg-white text-sky-600 rounded-full text-xs flex items-center justify-center"
               >
                 {cartData?.length ?? 0}
               </span>
               <ShoppingCart
-                className={`w-4 h-4 ${
-                  isScrolled ? "text-gray-800" : "text-white" // Always white in hero section
-                }`}
+                className={`w-4 h-4 ${styles.textColor} ${styles.groupHoverColor} ${styles.hoverColor}`}
               />
             </div>
           )}
@@ -530,9 +550,7 @@ const Navbar = ({ from = "" }) => {
             ) : (
               <User
                 onClick={handleAuthRedirect}
-                className={`w-4 h-4 cursor-pointer ${
-                  isScrolled ? "text-gray-800" : "text-white" // Always white in hero section
-                }`}
+                className={`w-4 h-4 cursor-pointer ${styles.textColor} ${styles.groupHoverColor} ${styles.hoverColor}`}
                 aria-label="Login"
               />
             ))}
@@ -541,9 +559,7 @@ const Navbar = ({ from = "" }) => {
           <button
             onClick={toggleSidebar}
             aria-label="Toggle menu"
-            className={`md:hidden transition-colors cursor-pointer ${
-              isScrolled ? "text-orange-600" : "text-white" // Always white in hero section
-            }`}
+            className={`md:hidden transition-colors cursor-pointer ${styles.textColor} ${styles.groupHoverColor} ${styles.hoverColor}`}
           >
             <Menu size={20} />
           </button>
@@ -558,13 +574,11 @@ const Navbar = ({ from = "" }) => {
                 <button
                   type="button"
                   onClick={() => handleDesktopSearchExpand()}
-                  className="p-2 transition-all shadow-sm border-[#4ca1ec] cursor-pointer"
+                  className="p-2 transition-all border-[#4ca1ec] cursor-pointer"
                   aria-label="Search"
                 >
                   <Search
-                    className={`h-5 w-5 stroke-2 border-[#4c94ec] ${
-                      isScrolled ? "text-gray-800" : "text-white" // Always white in hero section
-                    }`}
+                    className={`h-5 w-5 stroke-2 ${styles.textColor} ${styles.groupHoverColor}`}
                   />
                 </button>
               )}
@@ -715,11 +729,10 @@ const Navbar = ({ from = "" }) => {
               <Heart
                 className={`w-5 h-5 stroke-2 ${
                   wishlist.length > 0
-                    ? "text-red-600 fill-red-600"
-                    : isScrolled
-                    ? "text-gray-800"
-                    : "text-white" // Always white in hero section
-                }`}
+                    ? styles.activeColor.replace("font-semibold", "") +
+                      " fill-sky-500"
+                    : styles.textColor
+                } ${styles.groupHoverColor} ${styles.hoverColor}`}
               />
               <span
                 style={{
@@ -727,7 +740,7 @@ const Navbar = ({ from = "" }) => {
                   fontSize: "10px",
                   fontWeight: "400",
                 }}
-                className="absolute -top-1 -right-1 w-4 h-4 bg-white text-red-600 rounded-full flex items-center justify-center"
+                className="absolute -top-1 -right-1 w-4 h-4 bg-white text-sky-600 rounded-full flex items-center justify-center"
               >
                 {wishlist.length}
               </span>
@@ -755,9 +768,7 @@ const Navbar = ({ from = "" }) => {
                   : cartData?.length ?? 0}
               </span>
               <ShoppingCart
-                className={`w-5 h-5 stroke-2 ${
-                  isScrolled ? "text-gray-800" : "text-white" // Always white in hero section
-                }`}
+                className={`w-5 h-5 stroke-2 ${styles.textColor} ${styles.groupHoverColor} ${styles.hoverColor}`}
               />
             </div>
           )}
@@ -769,9 +780,7 @@ const Navbar = ({ from = "" }) => {
             ) : (
               <User
                 onClick={handleAuthRedirect}
-                className={`w-5 h-5 cursor-pointer stroke-2 ${
-                  isScrolled ? "text-gray-800" : "text-white" // Always white in hero section
-                }`}
+                className={`w-5 h-5 cursor-pointer stroke-2 ${styles.textColor} ${styles.groupHoverColor} ${styles.hoverColor}`}
                 aria-label="Login"
               />
             ))}

@@ -619,7 +619,7 @@ export default function CategorySection() {
 
   return (
     <section className="bg-[#f2f2f25b] py-10">
-      <div className="max-w-[1600px] mx-auto px-3 sm:px-4 lg:px-5">
+      <div className="max-w-8xl mx-auto px-3 sm:px-4 lg:px-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 justify-items-center">
           {categoriesData.map((cat, i) => (
             <ProductCategoryCard
