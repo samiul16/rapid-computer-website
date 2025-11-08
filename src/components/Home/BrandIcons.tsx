@@ -27,7 +27,7 @@ export default function BrandsIcons() {
   }, []);
 
   return (
-    <section className="max-w-[1600px] mx-auto py-12 px-4 grid grid-cols-4 md:grid-cols-8 gap-6 justify-center md:justify-between items-center">
+    <section className="max-w-8xl mx-auto py-12 px-4 grid grid-cols-4 md:grid-cols-8 gap-6 justify-center md:justify-between items-center">
       {brands.map((brand, index) => (
         <div
           key={brand.id}

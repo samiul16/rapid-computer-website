@@ -1,4 +1,4 @@
-import { Noto_Serif } from "next/font/google";
+import { Barlow } from "next/font/google";
 import "../styles/globals.css";
 import GotoWhatspp from "@/components/common/GotoWhatspp";
 import GoToTop from "@/components/common/GoToTop";
@@ -6,16 +6,17 @@ import { Suspense } from "react";
 import NextTopLoader from "nextjs-toploader";
 import Footer from "@/components/common/Footer";
 import GlobalProvider from "@/components/core/GlobalProvider";
+import NavBarWithSearchBar from "@/components/common/Header/NavBarWithSearchBar";
 
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import ToastProvider from "./toastify";
 
-const notoSerif = Noto_Serif({
+const barlow = Barlow({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
-  variable: "--font-noto-serif",
+  variable: "--font-barlow",
 });
 export const metadata = {
   icons: {
@@ -45,7 +46,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <body
-        className={`${notoSerif.className} antialiased`}
+        className={`${barlow.className} antialiased`}
         suppressHydrationWarning
       >
         <NextTopLoader
@@ -57,6 +58,7 @@ export default async function RootLayout({
         <Suspense fallback={null}>
           <NextIntlClientProvider messages={message}>
             <GlobalProvider>
+              <NavBarWithSearchBar />
               {children}
               <GotoWhatspp />
               <GoToTop />
