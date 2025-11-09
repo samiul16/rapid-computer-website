@@ -41,8 +41,8 @@ const InfoCard = ({ type, title, description }) => {
   };
 
   return (
-    <div className="bg-gray-50 p-6 rounded-lg shadow-lg border border-red-200 opacity-80 transform transition duration-300 ease-in-out hover:opacity-100 hover:-translate-y-2 cursor-pointer text-center">
-      <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-red-50 mb-4">
+    <div className="bg-gray-50 p-6 rounded-lg shadow-lg border border-sky-200 opacity-80 transform transition duration-300 ease-in-out hover:opacity-100 hover:-translate-y-2 cursor-pointer text-center">
+      <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-sky-50 mb-4">
         {Icon && <Icon className="w-10 h-10 text-brand" />}
       </div>
       <h3 className="text-16 font-semibold mb-2">{renderTitle(title)}</h3>

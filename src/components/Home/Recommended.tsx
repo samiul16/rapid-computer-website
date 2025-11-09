@@ -94,20 +94,22 @@ const products: Product[] = [
 
 const Recommended: React.FC = () => {
   return (
-    <main className="w-full max-w-[1600px] mx-auto py-16 px-4 relative">
-      {/* Header */}
-      <section className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-5">
-        <SectionHeader title="Recommended For You" />
-        <ButtonLink link="/">View All</ButtonLink>
-      </section>
+    <main className="w-full py-16">
+      <div className="max-w-8xl mx-auto lg:px-14  px-4 relative">
+        {/* Header */}
+        <section className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-5">
+          <SectionHeader title="Recommended For You" />
+          <ButtonLink link="/">View All</ButtonLink>
+        </section>
 
-      <Slider
-        items={products}
-        renderItem={(product) => <ProductCard {...product} />}
-        itemsPerViewSm={1}
-        itemsPerViewMd={2}
-        itemsPerViewLg={4}
-      />
+        <Slider
+          items={products}
+          renderItem={(product) => <ProductCard {...product} />}
+          itemsPerViewSm={1}
+          itemsPerViewMd={2}
+          itemsPerViewLg={4}
+        />
+      </div>
     </main>
   );
 };

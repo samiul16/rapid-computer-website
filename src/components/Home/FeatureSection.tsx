@@ -28,12 +28,9 @@ const features = [
 const FeatureSection: React.FC = () => {
   return (
     <section className="w-full py-16 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="max-w-8xl px-4 lg:px-14 mx-auto grid grid-cols-2 lg:grid-cols-4 gap-10">
         {features.map((item, i) => (
-          <div
-            key={i}
-            className="flex flex-col items-center text-center gap-4"
-          >
+          <div key={i} className="flex flex-col items-center text-center gap-4">
             {/* Icon wrapper */}
             <div className="relative w-20 h-20 flex items-center justify-center">
               {/* Gradient background */}
@@ -46,7 +43,6 @@ const FeatureSection: React.FC = () => {
                   height={35}
                   alt={item.title}
                   className="object-contain"
-                  
                 />
               </div>
             </div>

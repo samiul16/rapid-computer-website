@@ -108,39 +108,41 @@ const categories: Category[] = [
 
 const TopSellingSection: React.FC = () => {
   return (
-    <main className="w-full max-w-[1600px] mx-auto py-16 px-4 relative">
-      {/* Header */}
-      <section className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
-        <SectionHeader2
-          title="Top Selling"
-          subtitle="Discover our top-selling products that customers can’t get enough of!"
+    <main className="w-full py-16">
+      <div className="max-w-8xl mx-auto  px-4 lg:px-14 relative">
+        {/* Header */}
+        <section className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
+          <SectionHeader2
+            title="Top Selling"
+            subtitle="Discover our top-selling products that customers can’t get enough of!"
+          />
+          <ButtonLink link="/">View All</ButtonLink>
+        </section>
+
+        {/* Categories */}
+        <section className="flex flex-wrap gap-3 mb-10">
+          {categories.map((cat, idx) => (
+            <button
+              key={cat.id}
+              className={`px-6 py-2 rounded-full border cursor-pointer ${
+                idx === 0
+                  ? "bg-[#20B8FB] text-white border-[#20B8FB] font-semibold"
+                  : "text-gray-900 border-gray-300"
+              } hover:bg-[#20B8FB] hover:text-white transition`}
+            >
+              {cat.name}
+            </button>
+          ))}
+        </section>
+
+        <Slider
+          items={products}
+          renderItem={(product) => <ProductCard {...product} />}
+          itemsPerViewSm={1}
+          itemsPerViewMd={2}
+          itemsPerViewLg={4}
         />
-        <ButtonLink link="/">View All</ButtonLink>
-      </section>
-
-      {/* Categories */}
-      <section className="flex flex-wrap gap-3 mb-10">
-        {categories.map((cat, idx) => (
-          <button
-            key={cat.id}
-            className={`px-6 py-2 rounded-full border cursor-pointer ${
-              idx === 0
-                ? "bg-[#20B8FB] text-white border-[#20B8FB] font-semibold"
-                : "text-gray-900 border-gray-300"
-            } hover:bg-[#20B8FB] hover:text-white transition`}
-          >
-            {cat.name}
-          </button>
-        ))}
-      </section>
-
-      <Slider
-        items={products}
-        renderItem={(product) => <ProductCard {...product} />}
-        itemsPerViewSm={1}
-        itemsPerViewMd={2}
-        itemsPerViewLg={4}
-      />
+      </div>
     </main>
   );
 };

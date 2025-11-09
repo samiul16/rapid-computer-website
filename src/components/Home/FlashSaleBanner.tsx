@@ -173,11 +173,9 @@ const FlashSaleBanner: React.FC<FlashSaleBannerProps> = ({
             >
               <PrimaryBtn
                 size="lg"
-                className="text-white flex items-center gap-3"
+                className="text-white flex items-center gap-3 bg-sky-500 hover:bg-sky-600"
                 style={{
                   fontFamily: "Barlow, sans-serif",
-                  background:
-                    "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 25%, #06b6d4 50%, #0891b2 75%, #0e7490 100%)",
                   border: "none",
                 }}
               >
