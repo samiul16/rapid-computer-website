@@ -61,14 +61,12 @@ const CategorySection = () => {
     router.push(`/product/${productId}`);
   };
 
-  // Filter items based on selected group
   const filteredItems = selectedGroupId
     ? foodsData?.items.filter(
         (item) => item.purchase_group_id === selectedGroupId
       ) || []
     : foodsData?.items || [];
 
-  // Get selected group name
   const selectedGroup = selectedGroupId
     ? foodsData?.group.find((g) => g.id === selectedGroupId)
     : null;
@@ -116,13 +114,11 @@ const CategorySection = () => {
         {/* Left Panel - Categories */}
         <div className="w-full lg:w-72 xl:w-80 flex-shrink-0">
           <div className="bg-gradient-to-br from-sky-500 via-sky-600 to-blue-600 rounded-3xl shadow-2xl p-4 sm:p-6 overflow-hidden relative h-[500px] sm:h-[600px] flex flex-col">
-            {/* Background Pattern */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-20" />
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-16 translate-x-16" />
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-12 -translate-x-12" />
 
             <div className="relative z-10 flex flex-col h-full">
-              {/* Header */}
               <div className="flex items-center gap-3 mb-4 sm:mb-6 flex-shrink-0">
                 <div className="p-2 bg-white/20 rounded-full">
                   <Tag className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
@@ -137,7 +133,6 @@ const CategorySection = () => {
                 </div>
               </div>
 
-              {/* Categories - Scrollable */}
               <div
                 className="flex-1 overflow-y-auto pr-1 sm:pr-2 mb-4 sm:mb-6"
                 style={{
@@ -146,7 +141,6 @@ const CategorySection = () => {
                 }}
               >
                 <div className="space-y-2 sm:space-y-3">
-                  {/* All Items Button */}
                   <button
                     onClick={() => setSelectedGroupId(null)}
                     className={`w-full text-left p-3 sm:p-4 rounded-xl transition-all duration-300 group cursor-pointer ${
@@ -178,7 +172,6 @@ const CategorySection = () => {
                     </div>
                   </button>
 
-                  {/* API Categories */}
                   {foodsData?.group.map((group) => {
                     const itemsInGroup = foodsData.items.filter(
                       (item) => item.purchase_group_id === group.id
@@ -235,7 +228,6 @@ const CategorySection = () => {
                 </div>
               </div>
 
-              {/* View All Link */}
               <Link href="/products" className="block w-full flex-shrink-0">
                 <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl p-3 sm:p-4 text-center cursor-pointer hover:bg-white/30 transition-all duration-300">
                   <span className="text-white font-bold text-base sm:text-lg">
@@ -271,7 +263,6 @@ const CategorySection = () => {
               </p>
             </div>
 
-            {/* Products Grid - Scrollable with fixed height */}
             <div
               className="flex-1 overflow-y-auto pr-1 sm:pr-2"
               style={{
@@ -279,7 +270,7 @@ const CategorySection = () => {
                 scrollbarColor: "#d1d5db transparent",
               }}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-3 sm:gap-4 pb-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-2 gap-3 sm:gap-4 pb-4">
                 {filteredItems.map((item) => {
                   const discount = getDiscountPercentage(item);
 
@@ -290,7 +281,6 @@ const CategorySection = () => {
                       className="group bg-gray-50 hover:bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 hover:border-blue-200 transition-all duration-300 cursor-pointer overflow-hidden relative"
                     >
                       <div className="p-3 sm:p-4 flex gap-3">
-                        {/* Product Image */}
                         <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
                           <div className="w-full h-full rounded-xl overflow-hidden bg-gray-100 relative">
                             <Image
@@ -299,7 +289,6 @@ const CategorySection = () => {
                               fill
                               className="object-cover transition-transform duration-300 group-hover:scale-105"
                             />
-                            {/* Badges */}
                             <div className="absolute top-1 left-1 flex flex-col gap-1">
                               {hasOffer(item) && (
                                 <span className="bg-red-500 text-white text-xs px-1.5 py-0.5 rounded-full font-bold">
@@ -310,14 +299,12 @@ const CategorySection = () => {
                           </div>
                         </div>
 
-                        {/* Product Details */}
                         <div className="flex-1 flex flex-col justify-between min-w-0">
                           <div>
                             <h4 className="text-gray-900 font-semibold text-xs sm:text-sm line-clamp-2 mb-1 sm:mb-2 group-hover:text-blue-600 transition-colors duration-300">
                               {getDisplayName(item.name, item.arabic_name)}
                             </h4>
 
-                            {/* Rating */}
                             <div className="flex items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
                               <div className="flex gap-0.5 sm:gap-1">
                                 {[...Array(5)].map((_, starIdx) => (
@@ -343,7 +330,6 @@ const CategorySection = () => {
                             </div>
                           </div>
 
-                          {/* Price */}
                           <div className="flex items-center justify-between">
                             <div className="text-blue-600 text-xs sm:text-sm font-bold">
                               <div className="flex items-center gap-1 sm:gap-2 flex-wrap">
@@ -374,14 +360,12 @@ const CategorySection = () => {
                         </div>
                       </div>
 
-                      {/* Card-specific hover overlay */}
                       <div className="absolute inset-0 bg-blue-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl" />
                     </div>
                   );
                 })}
               </div>
 
-              {/* Empty state */}
               {filteredItems.length === 0 && (
                 <div className="text-center py-12 h-full flex items-center justify-center flex-col">
                   <div className="text-gray-400 text-base sm:text-lg mb-2">
@@ -395,14 +379,14 @@ const CategorySection = () => {
               )}
             </div>
 
-            {/* Bottom action */}
+            {/* Centered, rounded-full, w-64 "View All" button */}
             {filteredItems.length > 0 && (
-              <div className="pt-3 sm:pt-4 mt-3 sm:mt-4 border-t border-gray-200 flex-shrink-0">
+              <div className="pt-3 sm:pt-4 mt-3 sm:mt-4 border-t border-gray-200 flex-shrink-0 flex justify-center">
                 <Link
                   href={`/products${
                     selectedGroupId ? `?group=${selectedGroupId}` : ""
                   }`}
-                  className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-br from-sky-500 via-sky-600 to-blue-600 text-white rounded-xl text-sm sm:text-base font-semibold hover:bg-blue-700 transition-colors duration-300"
+                  className="inline-flex items-center justify-center gap-2 w-64 py-3 bg-gradient-to-br from-sky-500 via-sky-600 to-blue-600 text-white rounded-full text-sm sm:text-base font-semibold hover:from-sky-600 hover:via-sky-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   View All
                   {selectedGroup
@@ -412,7 +396,7 @@ const CategorySection = () => {
                         selectedGroup.arabic_name
                       )
                     : " Items"}
-                  <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <ChevronRight className="w-4 h-4" />
                 </Link>
               </div>
             )}

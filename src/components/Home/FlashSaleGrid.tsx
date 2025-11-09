@@ -51,7 +51,7 @@ const Timer: React.FC = () => {
 
   return (
     <div
-      className="inline-flex shadow bg-sky-400 rounded-2xl p-4 gap-6"
+      className="inline-flex shadow bg-sky-500 rounded-2xl p-4 gap-6"
       data-aos="fade-left"
       data-aos-delay="300"
     >
