@@ -18,20 +18,14 @@ interface SocialIconProps {
   hoverBg?: string;
 }
 
-export function SocialIcon({
-  icon,
-  href,
-  bgColor = "#26ADDF",
-  borderColor = "#20B8FB",
-}: SocialIconProps) {
+export function SocialIcon({ icon, href }: SocialIconProps) {
   return (
-    <div className="group w-12 h-12 border hover:bg-[#20B8FB] border-[#20B8FB] p-1.5 rounded-full cursor-pointer duration-500">
+    <div className="group w-12 h-12 border hover:bg-white border-white p-1.5 rounded-full cursor-pointer duration-500">
       <Link
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        style={{ backgroundColor: bgColor, borderColor }}
-        className="w-full h-full flex items-center justify-center rounded-full border group-hover:bg-[#20B8FB] text-[#041A65] group-hover:text-white transition hover:bg-white duration-500"
+        className="w-full h-full flex items-center justify-center rounded-full border border-white bg-white text-sky-500 group-hover:bg-sky-600 group-hover:text-white group-hover:border-sky-600 transition duration-500"
       >
         {icon}
       </Link>
@@ -59,7 +53,7 @@ function FooterLinkGroup({ title, links }: FooterLinkGroupProps) {
             <Link
               key={idx}
               href={link.href}
-              className="hover:text-[#20B8FB] transition text-base"
+              className="hover:text-sky-200 transition text-base"
               style={{ fontFamily: "Barlow, sans-serif" }}
             >
               {link.label}
@@ -81,19 +75,19 @@ function FooterLinkGroup({ title, links }: FooterLinkGroupProps) {
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-blue-950 to-blue-700 text-white pt-10 pb-8 rounded-tl-[50px] rounded-tr-[50px]">
-      <div className="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-6 gap-8 px-4 lg:px-14">
+    <footer className="bg-sky-500 text-white pt-10 pb-8 rounded-tl-[50px] rounded-tr-[50px]">
+      <div className="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-6 gap-8 px-4 lg:px-28">
         {/* Logo & About */}
         <div className="flex flex-col gap-4 md:col-span-2">
           <Image
-            src="/global/Logo.png"
+            src="/whiteRapid.png"
             alt="Rapid Logo"
-            width={262}
+            width={200}
             height={80}
             priority
           />
           <p
-            className="text-base text-white"
+            className="text-base text-white md:w-[80%]"
             style={{ fontFamily: "noto, sans-serif" }}
           >
             Rapid is your go-to destination for quality products at unbeatable
