@@ -51,7 +51,7 @@ const Timer: React.FC = () => {
 
   return (
     <div
-      className="inline-flex shadow bg-sky-400 rounded-2xl p-4 gap-6"
+      className="inline-flex shadow bg-sky-400 rounded-2xl p-2 sm:p-4 gap-3 sm:gap-6"
       data-aos="fade-left"
       data-aos-delay="300"
     >
@@ -59,19 +59,19 @@ const Timer: React.FC = () => {
         <div
           key={item.label}
           className={`flex flex-col items-center text-center relative ${
-            index < timeItems.length - 1 ? "pr-6" : ""
+            index < timeItems.length - 1 ? "pr-3 sm:pr-6" : ""
           }`}
           data-aos="zoom-in"
           data-aos-delay={400 + index * 100}
         >
           <div
-            className="text-3xl font-bold text-white mb-1 transition-all duration-300"
+            className="text-xl sm:text-3xl font-bold text-white mb-1 transition-all duration-300"
             style={{ fontFamily: "Barlow, sans-serif" }}
           >
             {String(item.value).padStart(2, "0")}
           </div>
           <div
-            className="text-sm font-medium text-sky-100"
+            className="text-xs sm:text-sm font-medium text-sky-100"
             style={{ fontFamily: "Barlow, sans-serif" }}
           >
             {item.label}
@@ -79,7 +79,7 @@ const Timer: React.FC = () => {
 
           {/* Right border - only show for items that aren't the last one */}
           {index < timeItems.length - 1 && (
-            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 h-12 w-px bg-sky-100"></div>
+            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 h-8 sm:h-12 w-px bg-sky-100"></div>
           )}
         </div>
       ))}
@@ -215,11 +215,11 @@ const FlashSaleGrid: React.FC = () => {
       <div className="max-w-8xl mx-auto px-4 lg:px-28">
         {/* Header */}
         <div
-          className="flex justify-between items-end mb-8 px-4"
+          className="flex flex-col sm:flex-row justify-between items-center sm:items-end mb-6 sm:mb-8 px-4 gap-4 sm:gap-0"
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          <div className="text-4xl font-bold text-sky-500 text-shadow-md">
+          <div className="text-2xl sm:text-4xl font-bold text-sky-500 text-shadow-md">
             <AnimatedTitle text="Hurry Up Sales" delay={200} />
           </div>
           <Timer />
@@ -246,7 +246,7 @@ const FlashSaleGrid: React.FC = () => {
           {/* Cards */}
           <div
             ref={sliderRef}
-            className="grid grid-flow-col auto-cols-[calc(100%/2)] md:auto-cols-[calc(100%/4)] gap-8 overflow-x-auto scrollbar-none scroll-smooth px-4 py-5 hide-scrollbar"
+            className="grid grid-flow-col auto-cols-[calc(100%/2)] md:auto-cols-[calc(100%/4)] gap-4 sm:gap-8 overflow-x-auto scrollbar-none scroll-smooth px-2 sm:px-4 py-3 sm:py-5 hide-scrollbar"
           >
             {products.map((product, idx) => (
               <div

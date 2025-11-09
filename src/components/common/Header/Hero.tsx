@@ -81,7 +81,7 @@ const Hero = () => {
           <span className="text-brand">{t("Hero.second")}</span>
         </p> */}
         <h1
-          className="text-4xl sm:text-5xl md:text-7xl max-w-xs sm:max-w-5xl mb-4 sm:mb-6 transition-all duration-500 leading-tight sm:leading-normal"
+          className="text-4xl sm:text-5xl md:text-7xl max-w-4xl sm:max-w-5xl mb-4 sm:mb-6 transition-all duration-500 leading-tight sm:leading-normal"
           data-aos="fade-up"
           key={currentSlide}
         >
