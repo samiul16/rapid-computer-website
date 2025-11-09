@@ -22,9 +22,9 @@ const WatchVideoButton = forwardRef<HTMLButtonElement, WatchButtonProps>(
         {/* Blue circle with white play icon */}
         <div className="relative">
           {/* Outer gray ring */}
-          <div className="w-16 h-16 rounded-full border-4 border-white/40 flex items-center justify-center">
+          <div className=" md:w-16 md:h-16 rounded-full border-4 border-white/40 flex items-center justify-center">
             {/* Inner blue circle */}
-            <div className="w-12 h-12 bg-sky-500 rounded-full flex items-center justify-center group-hover:bg-sky-600 transition-colors shadow-lg">
+            <div className="w-10 h-10 md:w-12 md:h-12 bg-sky-500 rounded-full flex items-center justify-center group-hover:bg-sky-600 transition-colors shadow-lg">
               {icon ?? <FaPlay size={16} className="text-white ml-0.5" />}
             </div>
           </div>

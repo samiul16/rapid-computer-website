@@ -81,7 +81,7 @@ const Hero = () => {
           <span className="text-brand">{t("Hero.second")}</span>
         </p> */}
         <h1
-          className="text-5xl md:text-7xl max-w-5xl mb-6 transition-all duration-500"
+          className="text-4xl sm:text-5xl md:text-7xl max-w-4xl sm:max-w-5xl mb-4 sm:mb-6 transition-all duration-500 leading-tight sm:leading-normal"
           data-aos="fade-up"
           key={currentSlide}
         >
@@ -91,9 +91,9 @@ const Hero = () => {
           {t("Hero.subline")} <span>{t("Hero.smile")}</span>
         </p> */}
         <div className="flex items-center justify-center gap-4">
-          <div className="mt-10 md:mt-24 flex gap-5">
+          <div className="mt-6 sm:mt-10 md:mt-24 flex flex-col sm:flex-row gap-3 sm:gap-5 items-center">
             <PrimaryBtn
-              className="font-extrabold shadow hover:shadow-lg min-w-64"
+              className="font-extrabold shadow hover:shadow-lg w-full sm:w-auto sm:min-w-64"
               size="lg"
               onClick={() => {}}
             >

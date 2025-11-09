@@ -2,7 +2,7 @@
 
 const TermsOfUseSection = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 flex flex-col">
+    <div className="w-full max-w-8xl mx-auto px-4 lg:px-28 flex flex-col">
       {/* Main Content */}
       <main className="flex-1">
         <section className="mb-12">
@@ -38,9 +38,7 @@ const TermsOfUseSection = () => {
           "Contact Us",
         ].map((title, i) => (
           <section key={i} className="mb-10">
-            <h2 className="text-lg font-semibold text-neutral-900">
-              {title}
-            </h2>
+            <h2 className="text-lg font-semibold text-neutral-900">{title}</h2>
             <p className="mt-2 text-sm text-neutral-700 leading-relaxed">
               Our Service may contain links to third-party web sites or services
               that are not owned or controlled by Evara. Evara has no control

@@ -280,8 +280,7 @@
 
 "use client";
 
-import React, { useEffect, useMemo, useState } from "react";
-import PaymentMethods from "@/components/accounts/AccountsMethods";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import OrderSummary from "@/components/common/OrderSummary";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -293,9 +292,7 @@ import toastAlert from "@/utils/toastConfig";
 import { getOrdersData, requestForCheckout } from "@/helpers/restApiRequest";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks/hooks";
 import { setDefaultCart } from "@/redux/cart/cartSlice";
-import { useLocale, useTranslations } from "next-intl";
 import { getCurrentLocation } from "@/helpers/getCurrentLocation";
-import { useAddToCart } from "@/hooks/addToCart";
 
 type PaymentMethod = {
   id: number;
@@ -318,8 +315,6 @@ type OrderType = {
 const CheckoutPage = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
-  const t = useTranslations("checkout");
-  const locale = useLocale();
 
   const { user } = useAppSelector((state) => state.user);
   const { checkoutCartItem } = useAppSelector((state) => state.cart);
@@ -338,7 +333,24 @@ const CheckoutPage = () => {
   const [isLoadingOrderTypes, setIsLoadingOrderTypes] = useState(false);
   const [selectedOrderType, setSelectedOrderType] = useState<string>("");
 
-  const { getCartFromStorage, clearCart } = useAddToCart();
+  // Cart management functions
+  const getCartFromStorage = () => {
+    try {
+      const cartData = localStorage.getItem("cart");
+      return cartData ? JSON.parse(cartData) : [];
+    } catch (error) {
+      console.error("Error getting cart from storage:", error);
+      return [];
+    }
+  };
+
+  const clearCart = () => {
+    try {
+      localStorage.removeItem("cart");
+    } catch (error) {
+      console.error("Error clearing cart:", error);
+    }
+  };
 
   const totalAmount = useMemo(() => {
     const items = Array.isArray(checkoutCartItem) ? checkoutCartItem : [];
@@ -388,24 +400,24 @@ const CheckoutPage = () => {
   };
 
   // Fetch user profile
-  const fetchUserProfile = async () => {
+  const fetchUserProfile = useCallback(async () => {
     if (!user?.userId) return;
 
     setIsLoadingProfile(true);
     try {
       const response = await axiosInstance.post("/api/customer/user-profile");
-      const profile = response.data;
+      const profile = response?.data;
 
       if (profile) {
         const fullName =
-          profile.full_name ||
-          `${profile.first_name || ""} ${profile.last_name || ""}`.trim();
+          profile?.full_name ||
+          `${profile?.first_name || ""} ${profile?.last_name || ""}`.trim();
 
         setFormData((prev) => ({
           ...prev,
-          name: fullName,
-          email: profile.email || "",
-          phone: profile.phone || "",
+          name: fullName || "",
+          email: profile?.email || "",
+          phone: profile?.phone || "",
         }));
       }
     } catch (error) {
@@ -414,7 +426,7 @@ const CheckoutPage = () => {
     } finally {
       setIsLoadingProfile(false);
     }
-  };
+  }, [user?.userId]);
 
   // Fetch payment methods
   const fetchPaymentMethods = async () => {
@@ -450,7 +462,7 @@ const CheckoutPage = () => {
   };
 
   // Fetch delivery addresses
-  const fetchAddresses = async () => {
+  const fetchAddresses = useCallback(async () => {
     if (!user?.userId) return;
 
     setIsLoadingAddresses(true);
@@ -458,21 +470,21 @@ const CheckoutPage = () => {
       const response = await axiosInstance.post(
         "/api/customer/delivery-address",
         {
-          customer_id: user.userId.toString(),
+          customer_id: user?.userId?.toString(),
         }
       );
 
-      const addressList = Array.isArray(response.data)
+      const addressList = Array.isArray(response?.data)
         ? response.data
-        : response.data?.addresses || [];
+        : response?.data?.addresses || [];
 
-      const activeAddress = addressList.find((addr: any) => addr.status === 1);
+      const activeAddress = addressList.find((addr: any) => addr?.status === 1);
       if (activeAddress) {
         setFormData((prev) => ({
           ...prev,
-          delivery_address: activeAddress.address,
-          latitude: activeAddress.latitude,
-          longitude: activeAddress.longitude,
+          delivery_address: activeAddress?.address || "",
+          latitude: activeAddress?.latitude || "",
+          longitude: activeAddress?.longitude || "",
         }));
       }
     } catch (error) {
@@ -480,7 +492,7 @@ const CheckoutPage = () => {
     } finally {
       setIsLoadingAddresses(false);
     }
-  };
+  }, [user?.userId]);
 
   useEffect(() => {
     fetchOrderTypes();
@@ -490,7 +502,7 @@ const CheckoutPage = () => {
       fetchPaymentMethods();
       fetchAddresses();
     }
-  }, [user?.userId]);
+  }, [user?.userId, fetchUserProfile, fetchAddresses]);
 
   const handleInputChange = (value: string, name: string) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -578,17 +590,19 @@ const CheckoutPage = () => {
       const calculatedTotal = cartData.reduce(
         (sum: number, item: any) =>
           sum +
-          (item.product.final_price || item.product.price) * item.quantity,
+          (item?.product?.final_price || item?.product?.price || 0) *
+            (item?.quantity || 0),
         0
       );
 
       const cartItems = cartData.map((item: any) => ({
-        item_id: item.product.id,
-        quantity: item.quantity,
-        price: item.product.final_price || item.product.price,
-        final_price: item.product.final_price || item.product.price,
+        item_id: item?.product?.id,
+        quantity: item?.quantity || 0,
+        price: item?.product?.final_price || item?.product?.price || 0,
+        final_price: item?.product?.final_price || item?.product?.price || 0,
         total_amount:
-          (item.product.final_price || item.product.price) * item.quantity,
+          (item?.product?.final_price || item?.product?.price || 0) *
+          (item?.quantity || 0),
       }));
 
       let latitude = "";
@@ -619,7 +633,7 @@ const CheckoutPage = () => {
       }
 
       const dataToSend = {
-        payment_method: formData.payment_method,
+        payment_method: formData.payment_method?.toString() || "",
         delivery_method: formData.delivery_method,
         delivery_address: formData.delivery_address,
         total_amount: calculatedTotal,
@@ -708,7 +722,7 @@ const CheckoutPage = () => {
 
   return (
     <div className="">
-      <section className="max-w-[1600px] mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+      <section className="max-w-8xl mx-auto px-4 lg:px-28 py-10 grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
         {/* Left: Form */}
         <form className="lg:col-span-2 space-y-8" onSubmit={handleSubmit}>
           {/* Order Type Selection */}

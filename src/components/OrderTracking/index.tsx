@@ -224,7 +224,7 @@ const OrderTrackingComponent = () => {
         componentTitle={t("componentTitle")}
       />
 
-      <div className="container mx-auto my-10 p-4">
+      <div className="max-w-8xl mx-auto my-10 p-4 px-4 lg:px-28">
         <div className="bg-white rounded-lg mb-10 min-h-screen shadow-sm border border-gray-200 overflow-hidden">
           <div className="px-6 py-4 border-b border-gray-200">
             <h2 className="text-xl font-semibold text-gray-900">

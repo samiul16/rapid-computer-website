@@ -88,7 +88,7 @@ const WishList = () => {
   return (
     <section dir={lang === "ar" ? "rtl" : "ltr"}>
       <CommonHeader title={t("title")} subtitle={t("subtitle")} />
-      <div className="container mx-auto p-4 min-h-screen" data-aos="fade-up">
+      <div className="max-w-8xl mx-auto p-4 px-4 lg:px-28 min-h-screen" data-aos="fade-up">
         <AppTitleHeader
           title={t("title")}
           subtitle={t("subtitle")}

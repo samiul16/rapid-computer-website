@@ -401,7 +401,7 @@ export default function CartSection() {
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="max-w-7xl mx-auto px-4 py-8"
+      className="max-w-8xl mx-auto px-4 lg:px-28 py-8"
     >
       {/* Header */}
       <motion.div

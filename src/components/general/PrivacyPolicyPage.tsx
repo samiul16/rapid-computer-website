@@ -2,7 +2,7 @@
 
 const PrivacyPolicyPage = () => {
   return (
-    <main className="max-w-7xl mx-auto px-4 flex-1">
+    <main className="max-w-8xl mx-auto px-4 lg:px-28 flex-1">
       <section className="mb-12">
         <h1 className="text-3xl font-semibold text-neutral-900">
           Privacy Policy
