@@ -22,7 +22,6 @@ const DownloadApp: React.FC = () => {
           height={500}
           alt="phone"
           className="w-full h-full object-contain"
-          
         />
       </div>
 

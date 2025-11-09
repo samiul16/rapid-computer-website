@@ -59,93 +59,95 @@ export default function ShopByBrandsSection() {
   }, []);
 
   return (
-    <main className="flex flex-col md:flex-row gap-10 w-full max-w-7xl  mx-auto py-16 px-4 relative bg-gray-100 rounded-3xl">
-      {/* Left Info */}
-      <section
-        className="w-64 flex flex-col justify-center mb-6 md:mb-0"
-        data-aos="fade-right"
-        data-aos-delay="100"
-      >
-        <h2 className="text-black text-4xl font-bold mb-4">
-          <AnimatedTitle text="Shop by Brands" delay={200} />
-        </h2>
-        <p
-          className="text-black text-md font-normal py-5"
-          style={{ fontFamily: "Barlow, sans-serif" }}
-          data-aos="fade-up"
-          data-aos-delay="500"
+    <main className=" w-full py-16 px-6">
+      <div className="flex flex-col md:flex-row gap-10 max-w-8xl  mx-auto  px-4 lg:px-14 relative bg-white rounded-3xl">
+        {/* Left Info */}
+        <section
+          className="w-64 flex flex-col justify-center mb-6 md:mb-0"
+          data-aos="fade-right"
+          data-aos-delay="100"
         >
-          Shop By your favorite Brands
-        </p>
-
-        <div data-aos="fade-up" data-aos-delay="700">
-          <PrimaryBtn
-            size="lg"
-            className="font-bold"
+          <h2 className="text-black text-4xl font-bold mb-4">
+            <AnimatedTitle text="Shop by Brands" delay={200} />
+          </h2>
+          <p
+            className="text-black text-md font-normal py-5"
             style={{ fontFamily: "Barlow, sans-serif" }}
+            data-aos="fade-up"
+            data-aos-delay="500"
           >
-            View More
-          </PrimaryBtn>
-        </div>
-      </section>
+            Shop By your favorite Brands
+          </p>
 
-      {/* Slider */}
-      <section
-        className="overflow-hidden relative flex-1"
-        data-aos="fade-left"
-        data-aos-delay="300"
-      >
-        <div className="overflow-hidden relative flex-1 py-10">
+          <div data-aos="fade-up" data-aos-delay="700">
+            <PrimaryBtn
+              size="lg"
+              className="font-bold"
+              style={{ fontFamily: "Barlow, sans-serif" }}
+            >
+              View More
+            </PrimaryBtn>
+          </div>
+        </section>
+
+        {/* Slider */}
+        <section
+          className="overflow-hidden relative flex-1"
+          data-aos="fade-left"
+          data-aos-delay="300"
+        >
+          <div className="overflow-hidden relative flex-1 py-10">
+            <div
+              className="flex transition-transform duration-500"
+              style={{
+                transform: `translateX(-${currentIndex * 100}%)`,
+              }}
+            >
+              {Array.from({ length: totalSlides }).map((_, slideIndex) => (
+                <div
+                  key={slideIndex}
+                  className="grid gap-5 grid-cols-2 md:grid-cols-3 grid-rows-3 md:grid-rows-2 flex-none w-full"
+                >
+                  {brandCards
+                    .slice(
+                      slideIndex * cardsPerSlide,
+                      slideIndex * cardsPerSlide + cardsPerSlide
+                    )
+                    .map((card, cardIndex) => (
+                      <div
+                        key={card.id}
+                        data-aos="fade-up"
+                        data-aos-delay={800 + cardIndex * 100}
+                      >
+                        <BrandCard {...card} />
+                      </div>
+                    ))}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation Dots */}
           <div
-            className="flex transition-transform duration-500"
-            style={{
-              transform: `translateX(-${currentIndex * 100}%)`,
-            }}
+            className="absolute bottom-0 left-0 w-full flex justify-center gap-2 mt-4"
+            data-aos="fade-up"
+            data-aos-delay="1200"
           >
-            {Array.from({ length: totalSlides }).map((_, slideIndex) => (
-              <div
-                key={slideIndex}
-                className="grid gap-5 grid-cols-2 md:grid-cols-3 grid-rows-3 md:grid-rows-2 flex-none w-full"
-              >
-                {brandCards
-                  .slice(
-                    slideIndex * cardsPerSlide,
-                    slideIndex * cardsPerSlide + cardsPerSlide
-                  )
-                  .map((card, cardIndex) => (
-                    <div
-                      key={card.id}
-                      data-aos="fade-up"
-                      data-aos-delay={800 + cardIndex * 100}
-                    >
-                      <BrandCard {...card} />
-                    </div>
-                  ))}
-              </div>
+            {Array.from({ length: totalSlides }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentIndex(i)}
+                className={cn(
+                  "w-4 h-4 rounded-full transition-all cursor-pointer duration-300 hover:scale-110",
+                  i === currentIndex
+                    ? "bg-[#20B8FB] w-8"
+                    : "bg-[#ABD5E7] hover:bg-[#20B8FB]"
+                )}
+              />
             ))}
           </div>
-        </div>
-
-        {/* Navigation Dots */}
-        <div
-          className="absolute bottom-0 left-0 w-full flex justify-center gap-2 mt-4"
-          data-aos="fade-up"
-          data-aos-delay="1200"
-        >
-          {Array.from({ length: totalSlides }).map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrentIndex(i)}
-              className={cn(
-                "w-4 h-4 rounded-full transition-all cursor-pointer duration-300 hover:scale-110",
-                i === currentIndex
-                  ? "bg-[#20B8FB] w-8"
-                  : "bg-[#ABD5E7] hover:bg-[#20B8FB]"
-              )}
-            />
-          ))}
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
   );
 }

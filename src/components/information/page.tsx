@@ -11,10 +11,10 @@ export default function Information() {
   // data is local components json file for contact information but can be dynamically fetched from an API using redux toolkit query
   return (
     <section
-      className="py-16 sm:px-6 lg:px-8 bg-gray-50"
+      className="py-16 sm:px-6 lg:px-8 bg-white"
       dir={lang === "ar" ? "rtl" : "ltr"}
     >
-      <div className="max-w-7xl mx-auto ">
+      <div className="max-w-8xl mx-auto px-4 lg:px-14">
         <AppTitleHeader
           title={lang === "ar" ? "معلومات" : "Our"}
           subtitle={lang === "ar" ? "الاتصال" : "Contact"}

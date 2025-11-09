@@ -8,7 +8,7 @@ import Header from "../common/Header";
 // import ReserveATable from "./ReserveATable";
 // import Reviews from "../Reviews/page";
 // import Brand from "../Brand/page";
-import Information from "../information/page";
+// import Information from "../information/page";
 // import TopModal from "../OpeningModal/page";
 // import TopSelling from "./TopSelling";
 // import MostPopular from "./Popular";
@@ -84,7 +84,7 @@ const HomeComponent = () => {
 
       {/* <Brand /> */}
 
-      <Information />
+      {/* <Information /> */}
     </div>
   );
 };

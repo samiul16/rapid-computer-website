@@ -81,8 +81,8 @@ function FooterLinkGroup({ title, links }: FooterLinkGroupProps) {
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-blue-950 to-blue-700 text-white pt-10 pb-8 px-8 md:px-28 rounded-tl-[50px] rounded-tr-[50px]">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-6 gap-8">
+    <footer className="bg-gradient-to-br from-blue-950 to-blue-700 text-white pt-10 pb-8 rounded-tl-[50px] rounded-tr-[50px]">
+      <div className="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-6 gap-8 px-4 lg:px-14">
         {/* Logo & About */}
         <div className="flex flex-col gap-4 md:col-span-2">
           <Image
@@ -106,16 +106,6 @@ export default function Footer() {
             <SocialIcon icon={<FaLinkedinIn />} href="https://linkedin.com" />
           </div>
         </div>
-
-        {/* Contact */}
-        <FooterLinkGroup
-          title="Contact"
-          links={[
-            { label: "Al Rashidiya 1 - Ajman - United Arab Emirates" },
-            { label: "+1 (800) 123-4567" },
-            { label: "support@rapid.com" },
-          ]}
-        />
 
         {/* Help & Support */}
         <FooterLinkGroup
@@ -152,10 +142,40 @@ export default function Footer() {
             { label: "Gift Card" },
           ]}
         />
+
+        {/* Contact */}
+        <div className="flex flex-col gap-4">
+          <h4
+            className="text-xl font-bold"
+            style={{ fontFamily: "Barlow, sans-serif" }}
+          >
+            Contact
+          </h4>
+          <div className="flex flex-col gap-6">
+            <span
+              className="text-base"
+              style={{ fontFamily: "Barlow, sans-serif" }}
+            >
+              Al Rashidiya 1 - Ajman - United Arab Emirates
+            </span>
+            <span
+              className="text-base"
+              style={{ fontFamily: "Barlow, sans-serif" }}
+            >
+              +1 (800) 123-4567
+            </span>
+            <span
+              className="text-base"
+              style={{ fontFamily: "Barlow, sans-serif" }}
+            >
+              support@rapid.com
+            </span>
+          </div>
+        </div>
       </div>
 
       {/* Bottom Section */}
-      <div className="max-w-7xl mx-auto mt-8 border-t border-white pt-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div className="max-w-8xl mx-auto mt-8 border-t border-white pt-4 flex flex-col md:flex-row justify-between items-center gap-4 px-4 lg:px-14">
         <span style={{ fontFamily: "Barlow, sans-serif" }}>
           © {new Date().getFullYear()} Rapid. All Rights Reserved.
         </span>
@@ -166,14 +186,14 @@ export default function Footer() {
           Download Our App
         </span>
         <div className="flex gap-2">
-          {[1, 2, 3, 4].map((_, i) => (
+          {[1, 2, 3, 4].map((num) => (
             <Image
-              key={i}
-              src="/global/pay.png"
-              alt="App Store"
-              width={62}
-              height={32}
-              className="rounded"
+              key={num}
+              src={`/global/${num}.png`}
+              alt={`Payment Method ${num}`}
+              width={50}
+              height={35}
+              className="rounded cursor-pointer"
             />
           ))}
         </div>
