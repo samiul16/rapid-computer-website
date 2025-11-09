@@ -193,7 +193,7 @@ export default function ProductsPage() {
 
   return (
     <main className=" bg-[#FAFDFF]">
-      <div className="max-w-8xl mx-auto my-20 px-4 lg:px-28">
+      <div className="max-w-8xl mx-auto my-20 px-4 lg:px-2">
         <Breadcrumb
           items={[
             { label: "Home", href: "/" },

@@ -315,6 +315,7 @@
   },
   "profile": {
     "myOrders": "My Order List",
+    "myCart": "My Cart",
     "help": "Help",
     "logout": "Logout",
     "accounts": "Accounts"

@@ -15,7 +15,7 @@ const AccountsPage = () => {
         ]}
       />
 
-      <div className="max-w-7xl mx-auto mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6 p-6 font-sans">
+      <div className="max-w-8xl mx-auto px-4 lg:px-28 mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6 p-6 font-sans">
         <div className="flex flex-col gap-6">
           <SidebarMenu />
           <AccountsMethods />

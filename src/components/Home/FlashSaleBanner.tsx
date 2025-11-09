@@ -1,5 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { PrimaryBtn } from "../common/PrimaryBtn";
 import { FaArrowRight } from "react-icons/fa";
 import AOS from "aos";
@@ -25,6 +26,7 @@ const FlashSaleBanner: React.FC<FlashSaleBannerProps> = ({
   imageUrl = "/global/alt.png",
   initialTimer = { days: 5, hours: 23, minutes: 59, seconds: 35 },
 }) => {
+  const router = useRouter();
   const [timer, setTimer] = useState(initialTimer);
   const [imageVisible, setImageVisible] = useState(true);
   const [, setArrowPosition] = useState(0);
@@ -97,6 +99,11 @@ const FlashSaleBanner: React.FC<FlashSaleBannerProps> = ({
 
     return () => clearInterval(arrowInterval);
   }, []);
+
+  // Handle shop now button click
+  const handleShopNowClick = () => {
+    router.push("/products");
+  };
 
   return (
     <main className="relative w-full px-4 lg:px-28">
@@ -173,7 +180,8 @@ const FlashSaleBanner: React.FC<FlashSaleBannerProps> = ({
             >
               <PrimaryBtn
                 size="lg"
-                className="text-white flex items-center gap-3 bg-sky-500 hover:bg-sky-600"
+                onClick={handleShopNowClick}
+                className="text-white flex items-center gap-3 bg-sky-500 hover:bg-sky-600 cursor-pointer"
                 style={{
                   fontFamily: "Barlow, sans-serif",
                   border: "none",

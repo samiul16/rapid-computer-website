@@ -113,6 +113,13 @@ const ProfileDropdown: React.FC = () => {
                   <HelpCircle className="mr-3 h-4 w-4 text-brand" />
                   {t("myOrders")}
                 </Link>
+                <Link
+                  href="/cart"
+                  className="flex items-center px-4 py-2 text-sm text-border-dark"
+                >
+                  <HelpCircle className="mr-3 h-4 w-4 text-brand" />
+                  {t("myCart")}
+                </Link>
               </>
             ) : (
               <Link

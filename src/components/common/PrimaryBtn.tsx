@@ -18,7 +18,7 @@ const PrimaryBtn = forwardRef<HTMLButtonElement, ButtonProps>(
           {
             "px-3 py-1 text-sm": size === "sm",
             "px-4 py-2 text-base": size === "md",
-            "px-6 py-2 text-2xl": size === "lg",
+            "px-6 py-3 text-2xl": size === "lg",
           },
           className
         )}

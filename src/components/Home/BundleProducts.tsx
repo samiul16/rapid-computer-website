@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import ProductCard from "../common/ProductCard";
 // import SectionHeader from "../common/SectionHeader";
 import { PrimaryBtn } from "../common/PrimaryBtn";
@@ -17,6 +18,8 @@ interface ProductCardProps {
 }
 
 const BundleProducts: React.FC = () => {
+  const router = useRouter();
+
   const products: ProductCardProps[] = [
     {
       title: "HAVIT HV-G92 Gamepad",
@@ -52,6 +55,11 @@ const BundleProducts: React.FC = () => {
       once: true,
     });
   }, []);
+
+  // Handle shop now button click
+  const handleShopNowClick = () => {
+    router.push("/products");
+  };
 
   // Animated title component
   const AnimatedTitle = ({ text, delay = 0 }) => {
@@ -109,6 +117,8 @@ const BundleProducts: React.FC = () => {
               <div data-aos="fade-up" data-aos-delay="700">
                 <PrimaryBtn
                   size="lg"
+                  onClick={handleShopNowClick}
+                  className="cursor-pointer"
                   style={{ fontFamily: "Barlow, sans-serif" }}
                 >
                   Shop Now
