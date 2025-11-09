@@ -26,7 +26,7 @@ const ContactForm = () => (
         />
       </div>
     ))}
-    <PrimaryBtn className="mt-4 font-bold py-3 self-start w-fit">
+    <PrimaryBtn className="mt-4 font-bold py-3 px-6 self-start w-fit">
       Submit Now
     </PrimaryBtn>
   </div>
@@ -75,13 +75,14 @@ const ContactInfoCards = () => (
 // ---------------------- Page ----------------------
 const ContactPageSection = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 flex flex-col">
-      <main className="grid grid-cols-1 md:grid-cols-3 gap-5 my-10 items-center">
-        <ContactForm />
-        <ContactInfoCards />
-      </main>
+    <div className="max-w-8xl mx-auto px-4 lg:px-28">
+      <div className=" flex flex-col">
+        <main className="grid grid-cols-1 md:grid-cols-3 gap-5 my-10 items-center">
+          <ContactForm />
+          <ContactInfoCards />
+        </main>
 
-      {/* <section className="px-28 my-10">
+        {/* <section className="px-28 my-10">
         <Image
           src="https://placehold.co/1200x500"
           width={1200}
@@ -90,16 +91,17 @@ const ContactPageSection = () => {
           className="rounded-3xl w-full"
         />
       </section> */}
-      <section className=" my-10 shadow-xl overflow-hidden rounded-3xl">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1157622.503320046!2d54.568041327437584!3d25.0745656650172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e1!3m2!1sen!2sbd!4v1757139579930!5m2!1sen!2sbd"
-          width="100%"
-          height="500"
-          loading="lazy"
-          allowFullScreen
-          className="rounded-3xl w-full"
-        ></iframe>
-      </section>
+        <section className=" my-10 shadow-xl overflow-hidden rounded-3xl">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1157622.503320046!2d54.568041327437584!3d25.0745656650172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e1!3m2!1sen!2sbd!4v1757139579930!5m2!1sen!2sbd"
+            width="100%"
+            height="500"
+            loading="lazy"
+            allowFullScreen
+            className="rounded-3xl w-full"
+          ></iframe>
+        </section>
+      </div>
     </div>
   );
 };
