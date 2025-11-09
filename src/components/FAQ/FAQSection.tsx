@@ -65,7 +65,7 @@ const FAQSection = () => {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-12">
+    <div className="w-full max-w-8xl mx-auto px-4 py-12">
       {faqs.map((faqCategory, catIndex) => (
         <div key={catIndex} className="mb-12">
           <h2 className="text-neutral-800 text-2xl font-semibold mb-6">
