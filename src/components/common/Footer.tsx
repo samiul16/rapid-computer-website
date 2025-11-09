@@ -74,12 +74,12 @@ function FooterLinkGroup({ title, links }: FooterLinkGroupProps) {
 }
 
 export default function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+  // const scrollToTop = () => {
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: "smooth",
+  //   });
+  // };
 
   return (
     <footer className="bg-sky-500 text-white pt-10 pb-8 rounded-tl-[50px] rounded-tr-[50px] relative">
@@ -193,7 +193,7 @@ export default function Footer() {
               src={`/global/${num}.png`}
               alt={`Payment Method ${num}`}
               width={50}
-              height={35}
+              height={30}
               className="rounded cursor-pointer"
             />
           ))}
@@ -201,7 +201,7 @@ export default function Footer() {
       </div>
 
       {/* Scroll to Top Button - Footer Bottom Left */}
-      <button
+      {/* <button
         onClick={scrollToTop}
         className="absolute bottom-8 left-8 w-12 h-12 bg-sky-600 hover:bg-sky-700 rounded-full flex items-center justify-center transition-colors shadow-lg cursor-pointer z-10"
         aria-label="Scroll to top"
@@ -219,7 +219,7 @@ export default function Footer() {
             d="M5 10l7-7m0 0l7 7m-7-7v18"
           />
         </svg>
-      </button>
+      </button> */}
     </footer>
   );
 }
