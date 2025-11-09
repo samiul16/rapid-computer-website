@@ -74,8 +74,15 @@ function FooterLinkGroup({ title, links }: FooterLinkGroupProps) {
 }
 
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <footer className="bg-sky-500 text-white pt-10 pb-8 rounded-tl-[50px] rounded-tr-[50px]">
+    <footer className="bg-sky-500 text-white pt-10 pb-8 rounded-tl-[50px] rounded-tr-[50px] relative">
       <div className="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-6 gap-8 px-4 lg:px-28">
         {/* Logo & About */}
         <div className="flex flex-col gap-4 md:col-span-2">
@@ -192,6 +199,27 @@ export default function Footer() {
           ))}
         </div>
       </div>
+
+      {/* Scroll to Top Button - Footer Bottom Left */}
+      <button
+        onClick={scrollToTop}
+        className="absolute bottom-8 left-8 w-12 h-12 bg-sky-600 hover:bg-sky-700 rounded-full flex items-center justify-center transition-colors shadow-lg cursor-pointer z-10"
+        aria-label="Scroll to top"
+      >
+        <svg
+          className="w-5 h-5 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M5 10l7-7m0 0l7 7m-7-7v18"
+          />
+        </svg>
+      </button>
     </footer>
   );
 }
