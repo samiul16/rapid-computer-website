@@ -55,6 +55,10 @@ function FooterLinkGroup({ title, links }: FooterLinkGroupProps) {
               href={link.href}
               className="hover:text-sky-200 transition text-base"
               style={{ fontFamily: "Barlow, sans-serif" }}
+              target={link.href.startsWith("http") ? "_blank" : undefined}
+              rel={
+                link.href.startsWith("http") ? "noopener noreferrer" : undefined
+              }
             >
               {link.label}
             </Link>
@@ -112,11 +116,11 @@ export default function Footer() {
         <FooterLinkGroup
           title="Help & Support"
           links={[
-            { label: "Shipping Info" },
-            { label: "Returns" },
-            { label: "How to Order" },
-            { label: "How to Track" },
-            { label: "How to Confirm" },
+            { label: "Shipping Info", href: "/help-support" },
+            { label: "Returns", href: "/help-support" },
+            { label: "How to Order", href: "/help-support" },
+            { label: "How to Track", href: "/help-support" },
+            { label: "How to Confirm", href: "/help-support" },
           ]}
         />
 
@@ -127,7 +131,10 @@ export default function Footer() {
             { label: "About Us", href: "/about-us" },
             { label: "Our Blog", href: "/blogs" },
             { label: "Careers", href: "/career" },
-            { label: "Store Location" },
+            {
+              label: "Store Location",
+              href: "https://maps.google.com/?q=Al+Rashidiya+1+Ajman+United+Arab+Emirates",
+            },
             { label: "Testimonial" },
           ]}
         />
@@ -140,7 +147,7 @@ export default function Footer() {
             { label: "Terms Of Service", href: "/terms-of-use" },
             { label: "Privacy Policy", href: "/privacy-policy" },
             { label: "Contact Us", href: "/contact-us" },
-            { label: "Gift Card" },
+            { label: "Gift Card", href: "/gift-card" },
           ]}
         />
 
