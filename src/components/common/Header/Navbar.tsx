@@ -305,7 +305,6 @@ const Navbar = ({ from = "" }) => {
               >
                 {cartData?.length ?? 0}
               </span>
-              aaaaaaaaaaaaaaaa
               <ShoppingCart
                 className={`w-4 h-4 ${
                   isScrolled ? "text-gray-800" : "text-gray-800"

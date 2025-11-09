@@ -47,13 +47,13 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
       </div>
 
       {/* Main Image */}
-      <div className="relative flex-1 order-1 md:order-2 flex justify-center items-center rounded-lg">
+      <div className="relative flex-1 order-1 md:order-2 flex justify-center items-center shadow-lg  rounded-[32px]">
         <Image
           src={images[selectedIndex]}
           alt="Selected product"
           width={500}
-          height={500}
-          className="object-contain min-h-[400px] md:min-h-[600px]"
+          height={400}
+          className="object-contain min-h-[400px] md:min-h-[400px]"
         />
 
         {/* Navigation Arrows */}
