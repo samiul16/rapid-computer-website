@@ -151,7 +151,7 @@ const BundleProducts: React.FC = () => {
           data-aos-delay="1000"
         >
           <button
-            className="w-full max-w-5xl bg-sky-500 hover:bg-sky-600 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-3 text-lg shadow-lg cursor-pointer"
+            className="w-full max-w-4xl bg-sky-500 hover:bg-sky-600 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-3 text-lg shadow-lg cursor-pointer"
             style={{ fontFamily: "Barlow, sans-serif" }}
             onClick={() => console.log("Added all to cart")}
           >
