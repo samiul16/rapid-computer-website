@@ -101,7 +101,7 @@ const CategorySection = () => {
   }
 
   return (
-    <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-30 py-8">
       {/* Title at top left */}
       <div className="mb-6 lg:mb-8">
         <h2 className="text-4xl sm:text-4xl font-bold text-sky-500 text-shadow-md">

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const PromoteProductCard = ({ img, title, price, discount }) => {
   return (
-    <div className="relative lg:w-80 w-72 h-84 bg-[#20B8FB0D] rounded-2xl shadow-lg p-4 mb-5 flex flex-col items-center text-center">
+    <div className="relative w-full h-84 bg-[#20B8FB0D] rounded-2xl shadow-lg p-4 mb-5 flex flex-col items-center text-center">
       {/* Promo Tag */}
       {/* {discount && (
         <div className="absolute top-3 left-3 flex items-center gap-1 bg-[#26ADDF] text-white text-xs font-semibold px-2 py-1 rounded-lg shadow">

@@ -22,26 +22,26 @@ const brandCards = [
   { id: 12, name: "Sony", src: "/global/Sony.png" },
 ];
 
-// Animated Title Component
-const AnimatedTitle = ({ text, delay = 0 }) => {
-  const words = text.split(" ");
+// // Animated Title Component
+// const AnimatedTitle = ({ text, delay = 0 }) => {
+//   const words = text.split(" ");
 
-  return (
-    <div className="flex flex-wrap gap-2">
-      {words.map((word, index) => (
-        <span
-          key={index}
-          className="inline-block"
-          data-aos="fade-up"
-          data-aos-delay={delay + index * 150}
-          style={{ fontFamily: "Barlow, sans-serif" }}
-        >
-          {word}
-        </span>
-      ))}
-    </div>
-  );
-};
+//   return (
+//     <div className="flex flex-wrap gap-2">
+//       {words.map((word, index) => (
+//         <span
+//           key={index}
+//           className="inline-block"
+//           data-aos="fade-up"
+//           data-aos-delay={delay + index * 150}
+//           style={{ fontFamily: "Barlow, sans-serif" }}
+//         >
+//           {word}
+//         </span>
+//       ))}
+//     </div>
+//   );
+// };
 
 export default function ShopByBrandsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -60,15 +60,18 @@ export default function ShopByBrandsSection() {
 
   return (
     <main className=" w-full py-16 px-6">
-      <div className="flex flex-col md:flex-row gap-10 max-w-8xl  mx-auto  px-4 lg:px-14 relative bg-white rounded-3xl">
+      <div className="flex flex-col md:flex-row gap-10 max-w-8xl  mx-auto  px-4 lg:px-28 relative bg-white rounded-3xl">
         {/* Left Info */}
         <section
           className="w-64 flex flex-col justify-center mb-6 md:mb-0"
           data-aos="fade-right"
           data-aos-delay="100"
         >
-          <h2 className="text-black text-4xl font-bold mb-4">
+          {/* <h2 className="text-black text-4xl font-bold mb-4">
             <AnimatedTitle text="Shop by Brands" delay={200} />
+          </h2> */}
+          <h2 className="text-4xl sm:text-4xl font-bold text-sky-500 text-shadow-md">
+            Shop by Brands
           </h2>
           <p
             className="text-black text-md font-normal py-5"

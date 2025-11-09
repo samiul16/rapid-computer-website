@@ -212,7 +212,7 @@ const FlashSaleGrid: React.FC = () => {
 
   return (
     <section className="relative w-full  py-20">
-      <div className="max-w-8xl mx-auto px-4 lg:px-14">
+      <div className="max-w-8xl mx-auto px-4 lg:px-28">
         {/* Header */}
         <div
           className="flex justify-between items-end mb-8 px-4"
@@ -246,7 +246,7 @@ const FlashSaleGrid: React.FC = () => {
           {/* Cards */}
           <div
             ref={sliderRef}
-            className="grid grid-flow-col auto-cols-[calc(100%/2)] md:auto-cols-[calc(100%/4)] gap-6 overflow-x-auto scrollbar-none scroll-smooth px-4 py-5 hide-scrollbar"
+            className="grid grid-flow-col auto-cols-[calc(100%/2)] md:auto-cols-[calc(100%/4)] gap-8 overflow-x-auto scrollbar-none scroll-smooth px-4 py-5 hide-scrollbar"
           >
             {products.map((product, idx) => (
               <div

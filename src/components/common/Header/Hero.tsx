@@ -93,7 +93,7 @@ const Hero = () => {
         <div className="flex items-center justify-center gap-4">
           <div className="mt-10 md:mt-24 flex gap-5">
             <PrimaryBtn
-              className="font-extrabold shadow hover:shadow-lg"
+              className="font-extrabold shadow hover:shadow-lg min-w-64"
               size="lg"
               onClick={() => {}}
             >
@@ -110,14 +110,6 @@ const Hero = () => {
             <span className="uppercase">{t("Hero.watch")}</span>
           </button> */}
         </div>
-      </div>
-
-      {/* Left Side Icon - Scroll to Top */}
-      <div className="absolute bottom-8 left-8 z-30">
-        <button className="w-12 h-12 bg-sky-500 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors shadow-lg cursor-pointer">
-          {/* You can replace this with your custom icon/image */}
-          <ArrowDown className="w-5 h-5 text-white rotate-180" />
-        </button>
       </div>
 
       {/* Pagination Dots */}
@@ -138,7 +130,7 @@ const Hero = () => {
       </div>
 
       {/* Right Side Icon - Chat/Message */}
-      <div className="absolute bottom-8 right-8 z-30">
+      {/* <div className="absolute bottom-8 right-8 z-30">
         <button className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors shadow-lg cursor-pointer">
           <Image
             src="/msg.svg"
@@ -148,7 +140,7 @@ const Hero = () => {
             className="w-7 h-7"
           />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

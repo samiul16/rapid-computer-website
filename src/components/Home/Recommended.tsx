@@ -4,7 +4,7 @@ import React from "react";
 import ButtonLink from "../common/ButtonLink";
 import ProductCard from "../common/ProductCard";
 import { Slider } from "../common/Slider";
-import SectionHeader from "../common/SectionHeader";
+// import SectionHeader from "../common/SectionHeader";
 
 type Product = {
   id: number;
@@ -95,11 +95,14 @@ const products: Product[] = [
 const Recommended: React.FC = () => {
   return (
     <main className="w-full py-16">
-      <div className="max-w-8xl mx-auto lg:px-14  px-4 relative">
+      <div className="max-w-8xl mx-auto lg:px-28  px-4 relative">
         {/* Header */}
         <section className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-5">
-          <SectionHeader title="Recommended For You" />
-          <ButtonLink link="/">View All</ButtonLink>
+          {/* <SectionHeader title="Recommended For You" /> */}
+          <h2 className="text-4xl sm:text-4xl font-bold text-sky-500 text-shadow-md">
+            Recommended For You
+          </h2>
+          ;<ButtonLink link="/">View All</ButtonLink>
         </section>
 
         <Slider

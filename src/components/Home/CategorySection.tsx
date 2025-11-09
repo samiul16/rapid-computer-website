@@ -481,7 +481,7 @@ export function ProductCategoryCard({
 
   return (
     <div
-      className={`relative w-full max-w-[1600px] mx-auto h-[500px] px-4 sm:px-6 lg:px-8 ${className}`}
+      className={`relative w-full max-w-[1600px] mx-auto h-[500px] px-4 ${className}`}
       data-aos="fade-up"
       data-aos-delay={300 + index * 80}
       data-aos-duration="800"
@@ -619,8 +619,8 @@ export default function CategorySection() {
 
   return (
     <section className="bg-white py-10">
-      <div className="max-w-8xl mx-auto px-3 sm:px-4 lg:px-5">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 justify-items-center">
+      <div className="max-w-8xl mx-auto px-3 sm:px-4 lg:px-28">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 justify-items-center">
           {categoriesData.map((cat, i) => (
             <ProductCategoryCard
               key={i}

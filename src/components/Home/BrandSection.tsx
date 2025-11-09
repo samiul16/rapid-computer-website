@@ -22,7 +22,7 @@ const promoData = [
 export default function BrandSection() {
   return (
     <section className=" py-20">
-      <div className="max-w-8xl mx-auto px-4 lg:px-14 grid grid-cols-1 md:grid-cols-2 gap-10 justify-between ">
+      <div className="max-w-8xl mx-auto px-4 lg:px-28 grid grid-cols-1 md:grid-cols-2 gap-10 justify-between ">
         {promoData.map((promo, idx) => (
           <BrandTopProduct key={idx} {...promo} />
         ))}

@@ -8,12 +8,10 @@ type SectionHeaderProps = {
 const SectionHeader2 = ({ title, subtitle }: SectionHeaderProps) => {
   return (
     <div>
-      <h2 className="text-3xl md:text-4xl font-bold text-black tracking-wide">
+      <h2 className="text-4xl sm:text-4xl font-bold text-sky-500 text-shadow-md">
         {title}
       </h2>
-      {subtitle && (
-        <p className="text-lg text-gray-600 mt-2">{subtitle}</p>
-      )}
+      {subtitle && <p className="text-lg text-gray-600 mt-2">{subtitle}</p>}
     </div>
   );
 };

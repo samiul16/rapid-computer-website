@@ -72,7 +72,7 @@ const ProductCard: React.FC<{
   };
 
   return (
-    <div className="lg:w-84 w-72 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer">
+    <div className="w-full bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer">
       {/* Image Container with Overlays */}
       <div className="relative h-56 bg-gray-50 overflow-hidden">
         {/* Product Image */}

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import SectionHeader from "../common/SectionHeader";
+// import SectionHeader from "../common/SectionHeader";
 import ButtonLink from "../common/ButtonLink";
 import { PrimaryBtn } from "../common/PrimaryBtn";
 
@@ -28,10 +28,13 @@ const NewArrivalSection: React.FC = () => {
 
   return (
     <main className="w-full py-12 md:py-20">
-      <div className="max-w-8xl mx-auto px-4 lg:px-14  flex flex-col gap-8">
+      <div className="max-w-8xl mx-auto px-4 lg:px-28  flex flex-col gap-8">
         {/* Header */}
         <div className="flex justify-between items-center">
-          <SectionHeader title="New Arrivals" />
+          {/* <SectionHeader title="New Arrivals" /> */}
+          <h2 className="text-4xl sm:text-4xl font-bold text-sky-500 text-shadow-md">
+            New Arrivals
+          </h2>
           <ButtonLink link="/">View All</ButtonLink>
         </div>
 
