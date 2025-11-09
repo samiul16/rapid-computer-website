@@ -193,14 +193,16 @@ export default function ProductsPage() {
 
   return (
     <main className=" bg-[#FAFDFF]">
-      <section className="max-w-[1600px] mx-auto my-20 px-4">
+      <div className="max-w-8xl mx-auto my-20 px-4 lg:px-28">
         <Breadcrumb
           items={[
             { label: "Home", href: "/" },
             { label: "Products", href: "/products", active: true },
           ]}
         />
+      </div>
 
+      <section className="max-w-8xl mx-auto my-20 px-4 lg:px-28">
         {/* Layout */}
         <div className="flex flex-col lg:flex-row gap-6 mt-6">
           {/* Sidebar */}

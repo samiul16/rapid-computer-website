@@ -59,7 +59,7 @@ import ProductInfoTab from "@/components/general/ProductInfoTab";
 
 export default function ProductDetailsPage() {
   return (
-    <div className="max-w-[1600px] mx-auto px-4 my-20">
+    <div className="max-w-8xl mx-auto px-4 lg:px-28 my-20">
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
@@ -84,7 +84,7 @@ export default function ProductDetailsPage() {
       />
       <ComparisonTable products={products} /> */}
 
-      <section className="max-w-[1600px] mx-auto px-4">
+      <section className="max-w-8xl mx-auto px-4 lg:px-28">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="md:col-span-2">
             <ProductTitle title="Wholesale Android11 15.6inch Touch Display POS Device for Retail Store Cash Register POS Machine" />
