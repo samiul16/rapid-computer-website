@@ -281,13 +281,13 @@ const Navbar = ({ from = "" }) => {
         activeColor: "text-sky-500 font-semibold",
       };
     } else {
-      // Other pages: dark text like in the image, no group hover effects
+      // Other pages: dark text like in the image, same blur logic as home page
       return {
         navBg: isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg"
+          ? "bg-black/20 backdrop-blur-md shadow-lg"
           : "bg-white/90 backdrop-blur-sm",
         textColor: "text-black",
-        groupHoverColor: "", // No group hover - icons stay black initially
+        groupHoverColor: "group-hover:text-sky-500", // Same group hover as home page
         hoverColor: "hover:text-sky-500",
         activeColor: "text-black font-semibold",
       };
@@ -309,9 +309,7 @@ const Navbar = ({ from = "" }) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 transition-all duration-300 py-3 ${
-        styles.navBg
-      } ${isHomeRoute ? "hover:bg-white group" : ""}`}
+      className={`fixed top-0 left-0 right-0 transition-all duration-300 py-3 ${styles.navBg} hover:bg-white group`}
       style={{ zIndex: 9998 }}
       onMouseEnter={() => setIsNavbarHovered(true)}
       onMouseLeave={() => setIsNavbarHovered(false)}

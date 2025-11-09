@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ArrowDown } from "react-feather";
 import { useLocale, useTranslations } from "next-intl";
 import AOS from "aos";
@@ -15,19 +15,27 @@ import "swiper/css/navigation";
 import { FaPlay } from "react-icons/fa6";
 import { PrimaryBtn } from "../PrimaryBtn";
 import { WatchVideoButton } from "../WatchVideoButton";
+import Image from "next/image";
 // banner images currently static, can be replaced with dynamic images later
 // import { useGetBannerQuery } from "@/redux/apiSlice/apiSlice";
 // baneer images can be fetched from an API is made dynamic
 // for performance issue is closed for now
 const backgroundImages = [
-  "/assets/hero-2.png",
-  "/assets/hero-2.png",
-  "/assets/hero-2.png",
+  "/assets/hero-1.jpg",
+  "/assets/hero-2.jpg",
+  "/assets/hero-3.jpg",
+];
+
+const heroTexts = [
+  "Work Smarter & Faster – With the New MacBook Pro",
+  "Level Up Your Game: Discover Our Premium Gaming Monitor!",
+  "Enhance Your Sound: Discover Our Premium Headphones.",
 ];
 
 const Hero = () => {
   const t = useTranslations();
   const locale = useLocale();
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     AOS.init({ offset: 120, duration: 5000, easing: "ease-out" });
@@ -47,6 +55,7 @@ const Hero = () => {
           speed={2000}
           className="w-full h-full"
           style={{ height: "100%" }}
+          onSlideChange={(swiper) => setCurrentSlide(swiper.realIndex)}
         >
           {backgroundImages.map((image, index) => (
             <SwiperSlide key={`${image}-${index}`}>
@@ -72,10 +81,11 @@ const Hero = () => {
           <span className="text-brand">{t("Hero.second")}</span>
         </p> */}
         <h1
-          className="text-5xl md:text-7xl max-w-5xl mb-6"
+          className="text-5xl md:text-7xl max-w-5xl mb-6 transition-all duration-500"
           data-aos="fade-up"
+          key={currentSlide}
         >
-          {t("Hero.headline")}
+          {heroTexts[currentSlide]}
         </h1>
         {/* <p className="text-xl mb-8" data-aos="fade-up">
           {t("Hero.subline")} <span>{t("Hero.smile")}</span>
@@ -83,7 +93,7 @@ const Hero = () => {
         <div className="flex items-center justify-center gap-4">
           <div className="mt-10 md:mt-24 flex gap-5">
             <PrimaryBtn
-              className="font-extrabold shadow-white/60 shadow-md hover:shadow-white/80"
+              className="font-extrabold shadow hover:shadow-lg"
               size="lg"
               onClick={() => {}}
             >
@@ -100,6 +110,44 @@ const Hero = () => {
             <span className="uppercase">{t("Hero.watch")}</span>
           </button> */}
         </div>
+      </div>
+
+      {/* Left Side Icon - Scroll to Top */}
+      <div className="absolute bottom-8 left-8 z-30">
+        <button className="w-12 h-12 bg-sky-500 rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors shadow-lg cursor-pointer">
+          {/* You can replace this with your custom icon/image */}
+          <ArrowDown className="w-5 h-5 text-white rotate-180" />
+        </button>
+      </div>
+
+      {/* Pagination Dots */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex items-center space-x-3">
+        {backgroundImages.map((_, index) => (
+          <button
+            key={index}
+            className={`transition-all duration-300 ${
+              index === currentSlide
+                ? "w-8 h-3 bg-sky-500 rounded-full"
+                : "w-3 h-3 bg-white/60 hover:bg-white/80 rounded-full"
+            }`}
+            onClick={() => {
+              // You can add swiper navigation here if needed
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Right Side Icon - Chat/Message */}
+      <div className="absolute bottom-8 right-8 z-30">
+        <button className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors shadow-lg cursor-pointer">
+          <Image
+            src="/msg.svg"
+            alt="Chat Icon"
+            width={20}
+            height={20}
+            className="w-7 h-7"
+          />
+        </button>
       </div>
     </div>
   );
