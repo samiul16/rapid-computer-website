@@ -46,7 +46,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <body
-        className={`${barlow.className} antialiased`}
+        className={`${barlow.className} antialiased overflow-x-hidden!`}
         suppressHydrationWarning
       >
         <NextTopLoader
