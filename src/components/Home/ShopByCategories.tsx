@@ -101,11 +101,11 @@ const CategorySection = () => {
   }
 
   return (
-    <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-14 py-8">
       {/* Title at top left */}
       <div className="mb-6 lg:mb-8">
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
-          Shop by Category
+          Shop by Categories
         </h2>
         <p className="text-sm sm:text-base text-gray-600 mt-2">
           Discover products by your favorite categories
@@ -115,23 +115,23 @@ const CategorySection = () => {
       <section className="flex flex-col lg:flex-row gap-4 lg:gap-6 xl:gap-8 items-start">
         {/* Left Panel - Categories */}
         <div className="w-full lg:w-72 xl:w-80 flex-shrink-0">
-          <div className="bg-gradient-to-br from-[#041A65] via-[#0834CB] to-[#1e3a8a] rounded-3xl shadow-2xl p-4 sm:p-6 overflow-hidden relative h-[500px] sm:h-[600px] flex flex-col">
+          <div className="bg-sky-50 rounded-3xl shadow p-4 sm:p-6 overflow-hidden relative h-[500px] sm:h-[600px] flex flex-col">
             {/* Background Pattern */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-20" />
-            <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -translate-y-16 translate-x-16" />
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/5 rounded-full translate-y-12 -translate-x-12" />
+            <div className="absolute inset-0 bg-gradient-to-br from-sky-200/10 to-transparent opacity-20" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-sky-200/5 rounded-full -translate-y-16 translate-x-16" />
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-sky-200/5 rounded-full translate-y-12 -translate-x-12" />
 
             <div className="relative z-10 flex flex-col h-full">
               {/* Header */}
               <div className="flex items-center gap-3 mb-4 sm:mb-6 flex-shrink-0">
-                <div className="p-2 bg-white/20 rounded-full">
-                  <Tag className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                <div className="p-2 bg-sky-200 rounded-full">
+                  <Tag className="w-4 h-4 sm:w-5 sm:h-5 text-sky-600" />
                 </div>
                 <div>
-                  <h3 className="text-white text-lg sm:text-xl font-bold">
+                  <h3 className="text-sky-600 text-lg sm:text-xl font-bold">
                     Menu Categories
                   </h3>
-                  <p className="text-blue-200 text-xs sm:text-sm">
+                  <p className="text-sky-600 text-xs sm:text-sm">
                     Explore our cuisines
                   </p>
                 </div>
@@ -142,7 +142,7 @@ const CategorySection = () => {
                 className="flex-1 overflow-y-auto pr-1 sm:pr-2 mb-4 sm:mb-6"
                 style={{
                   scrollbarWidth: "thin",
-                  scrollbarColor: "rgba(255,255,255,0.3) transparent",
+                  scrollbarColor: "rgba(14, 165, 233, 0.3) transparent",
                 }}
               >
                 <div className="space-y-2 sm:space-y-3">
@@ -151,24 +151,24 @@ const CategorySection = () => {
                     onClick={() => setSelectedGroupId(null)}
                     className={`w-full text-left p-3 sm:p-4 rounded-xl transition-all duration-300 group cursor-pointer ${
                       selectedGroupId === null
-                        ? "bg-white/20 backdrop-blur-sm border border-white/30"
-                        : "hover:bg-white/10 border border-transparent"
+                        ? "bg-sky-400/20 backdrop-blur-sm border border-sky-300/30"
+                        : "hover:bg-sky-400/10 border border-transparent"
                     }`}
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2 sm:gap-3">
-                        <span className="text-white text-sm sm:text-base font-medium">
+                        <span className="text-sky-600 text-sm sm:text-base font-medium">
                           All Items
                         </span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="text-blue-200 text-xs sm:text-sm">
+                        <span className="text-sky-500 text-xs sm:text-sm">
                           {locale === "ar"
                             ? toArabicNumerals(foodsData?.items.length || 0)
                             : foodsData?.items.length || 0}
                         </span>
                         <ChevronRight
-                          className={`w-3 h-3 sm:w-4 sm:h-4 text-blue-200 transition-transform duration-300 ${
+                          className={`w-3 h-3 sm:w-4 sm:h-4 text-sky-500 transition-transform duration-300 ${
                             selectedGroupId === null
                               ? "rotate-90"
                               : "group-hover:translate-x-1"
@@ -190,14 +190,14 @@ const CategorySection = () => {
                         onClick={() => handleCategoryClick(group.id)}
                         className={`w-full text-left p-3 sm:p-4 rounded-xl transition-all duration-300 group cursor-pointer ${
                           selectedGroupId === group.id
-                            ? "bg-white/20 backdrop-blur-sm border border-white/30"
-                            : "hover:bg-white/10 border border-transparent"
+                            ? "bg-sky-400/20 backdrop-blur-sm border border-sky-300/30"
+                            : "hover:bg-sky-400/10 border border-transparent"
                         }`}
                       >
                         <div className="flex items-center justify-between">
                           <div className="flex items-center gap-2 sm:gap-3">
                             {group.image_url && (
-                              <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full overflow-hidden bg-white/20 flex-shrink-0">
+                              <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full overflow-hidden bg-sky-400/20 flex-shrink-0">
                                 <Image
                                   src={group.image_url}
                                   alt={getDisplayName(
@@ -210,18 +210,18 @@ const CategorySection = () => {
                                 />
                               </div>
                             )}
-                            <span className="text-white text-sm sm:text-base font-medium truncate">
+                            <span className="text-sky-600 text-sm sm:text-base font-medium truncate">
                               {getDisplayName(group.name, group.arabic_name)}
                             </span>
                           </div>
                           <div className="flex items-center gap-2 flex-shrink-0">
-                            <span className="text-blue-200 text-xs sm:text-sm">
+                            <span className="text-sky-500 text-xs sm:text-sm">
                               {locale === "ar"
                                 ? toArabicNumerals(itemsInGroup)
                                 : itemsInGroup}
                             </span>
                             <ChevronRight
-                              className={`w-3 h-3 sm:w-4 sm:h-4 text-blue-200 transition-transform duration-300 ${
+                              className={`w-3 h-3 sm:w-4 sm:h-4 text-sky-500 transition-transform duration-300 ${
                                 selectedGroupId === group.id
                                   ? "rotate-90"
                                   : "group-hover:translate-x-1"
@@ -238,10 +238,10 @@ const CategorySection = () => {
               {/* View All Link */}
               <Link href="/products" className="block w-full flex-shrink-0">
                 <div className="bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl p-3 sm:p-4 text-center cursor-pointer hover:bg-white/30 transition-all duration-300">
-                  <span className="text-white font-bold text-base sm:text-lg">
+                  <span className="text-black font-bold text-base sm:text-lg">
                     VIEW ALL CATEGORIES
                   </span>
-                  <div className="text-blue-200 text-xs sm:text-sm mt-1">
+                  <div className="text-sky-500 text-xs sm:text-sm mt-1">
                     Browse complete menu
                   </div>
                 </div>
@@ -252,7 +252,7 @@ const CategorySection = () => {
 
         {/* Right Panel - Products */}
         <div className="flex-1 w-full min-w-0">
-          <div className="bg-white rounded-3xl shadow-lg border border-gray-100 p-4 sm:p-6 h-[500px] sm:h-[600px] flex flex-col">
+          <div className="bg-white rounded-3xl shadow border border-gray-100 p-4 sm:p-6 h-[500px] sm:h-[600px] flex flex-col">
             <div className="mb-4 sm:mb-6 flex-shrink-0">
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
                 {selectedGroup
@@ -287,7 +287,7 @@ const CategorySection = () => {
                     <div
                       key={item.id}
                       onClick={() => handleProductClick(item.id)}
-                      className="group bg-gray-50 hover:bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 hover:border-blue-200 transition-all duration-300 cursor-pointer overflow-hidden relative"
+                      className="group bg-gray-50 hover:bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 hover:border-sky-200 transition-all duration-300 cursor-pointer overflow-hidden relative"
                     >
                       <div className="p-3 sm:p-4 flex gap-3">
                         {/* Product Image */}
@@ -313,7 +313,7 @@ const CategorySection = () => {
                         {/* Product Details */}
                         <div className="flex-1 flex flex-col justify-between min-w-0">
                           <div>
-                            <h4 className="text-gray-900 font-semibold text-xs sm:text-sm line-clamp-2 mb-1 sm:mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                            <h4 className="text-gray-900 font-semibold text-xs sm:text-sm line-clamp-2 mb-1 sm:mb-2 group-hover:text-sky-600 transition-colors duration-300">
                               {getDisplayName(item.name, item.arabic_name)}
                             </h4>
 
@@ -345,7 +345,7 @@ const CategorySection = () => {
 
                           {/* Price */}
                           <div className="flex items-center justify-between">
-                            <div className="text-blue-600 text-xs sm:text-sm font-bold">
+                            <div className="text-sky-600 text-xs sm:text-sm font-bold">
                               <div className="flex items-center gap-1 sm:gap-2 flex-wrap">
                                 {hasOffer(item) ? (
                                   <>
@@ -367,7 +367,7 @@ const CategorySection = () => {
                                 )}
                               </div>
                             </div>
-                            <div className="text-blue-600 group-hover:translate-x-1 transition-transform duration-200 flex-shrink-0">
+                            <div className="text-sky-600 group-hover:translate-x-1 transition-transform duration-200 flex-shrink-0">
                               <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
                             </div>
                           </div>
@@ -375,7 +375,7 @@ const CategorySection = () => {
                       </div>
 
                       {/* Card-specific hover overlay */}
-                      <div className="absolute inset-0 bg-blue-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl" />
+                      <div className="absolute inset-0 bg-sky-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-2xl" />
                     </div>
                   );
                 })}
@@ -402,7 +402,7 @@ const CategorySection = () => {
                   href={`/products${
                     selectedGroupId ? `?group=${selectedGroupId}` : ""
                   }`}
-                  className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-blue-600 text-white rounded-xl text-sm sm:text-base font-semibold hover:bg-blue-700 transition-colors duration-300"
+                  className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-sky-600 text-white rounded-xl text-sm sm:text-base font-semibold hover:bg-sky-700 transition-colors duration-300"
                 >
                   View All
                   {selectedGroup

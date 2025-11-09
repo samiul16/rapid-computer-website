@@ -51,7 +51,7 @@ const Timer: React.FC = () => {
 
   return (
     <div
-      className="inline-flex bg-gray-800 rounded-2xl p-4 gap-6"
+      className="inline-flex shadow bg-sky-400 rounded-2xl p-4 gap-6"
       data-aos="fade-left"
       data-aos-delay="300"
     >
@@ -71,7 +71,7 @@ const Timer: React.FC = () => {
             {String(item.value).padStart(2, "0")}
           </div>
           <div
-            className="text-sm font-medium text-gray-400"
+            className="text-sm font-medium text-sky-100"
             style={{ fontFamily: "Barlow, sans-serif" }}
           >
             {item.label}
@@ -79,7 +79,7 @@ const Timer: React.FC = () => {
 
           {/* Right border - only show for items that aren't the last one */}
           {index < timeItems.length - 1 && (
-            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 h-12 w-px bg-gray-600"></div>
+            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 h-12 w-px bg-sky-100"></div>
           )}
         </div>
       ))}
@@ -211,56 +211,66 @@ const FlashSaleGrid: React.FC = () => {
   };
 
   return (
-    <section className="relative w-full max-w-[1600px] mx-auto px-4 py-20">
-      {/* Header */}
-      <div
-        className="flex justify-between items-end mb-8 px-4"
-        data-aos="fade-up"
-        data-aos-delay="100"
-      >
-        <div className="text-3xl font-bold text-gray-800">
-          <AnimatedTitle text="Hurry Up Sales" delay={200} />
-        </div>
-        <Timer />
-      </div>
-
-      {/* Product Grid */}
-      <div className="relative w-full" data-aos="fade-up" data-aos-delay="500">
-        {/* Left Button */}
-        {scrollIndex > 0 && (
-          <button
-            onClick={() => scrollTo(-1)}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:text-[#26ADDF] p-2 rounded-full shadow cursor-pointer transition-all duration-300 hover:scale-110"
-            data-aos="fade-right"
-            data-aos-delay="600"
-          >
-            <FaArrowLeftLong />
-          </button>
-        )}
-
-        {/* Cards */}
+    <section className="relative w-full  py-20">
+      <div className="max-w-8xl mx-auto px-4 lg:px-14">
+        {/* Header */}
         <div
-          ref={sliderRef}
-          className="grid grid-flow-col auto-cols-[calc(100%/2)] md:auto-cols-[calc(100%/4)] gap-6 overflow-x-auto scrollbar-none scroll-smooth px-4 py-5 hide-scrollbar"
+          className="flex justify-between items-end mb-8 px-4"
+          data-aos="fade-up"
+          data-aos-delay="100"
         >
-          {products.map((product, idx) => (
-            <div key={idx} data-aos="fade-up" data-aos-delay={700 + idx * 100}>
-              <ProductCard {...product} />
-            </div>
-          ))}
+          <div className="text-3xl font-bold text-gray-800">
+            <AnimatedTitle text="Hurry Up Sales" delay={200} />
+          </div>
+          <Timer />
         </div>
 
-        {/* Right Button */}
-        {scrollIndex < maxIndex && (
-          <button
-            onClick={() => scrollTo(1)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:text-[#26ADDF] p-2 rounded-full shadow cursor-pointer transition-all duration-300 hover:scale-110"
-            data-aos="fade-left"
-            data-aos-delay="600"
+        {/* Product Grid */}
+        <div
+          className="relative w-full"
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
+          {/* Left Button */}
+          {scrollIndex > 0 && (
+            <button
+              onClick={() => scrollTo(-1)}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:text-[#26ADDF] p-2 rounded-full shadow cursor-pointer transition-all duration-300 hover:scale-110"
+              data-aos="fade-right"
+              data-aos-delay="600"
+            >
+              <FaArrowLeftLong />
+            </button>
+          )}
+
+          {/* Cards */}
+          <div
+            ref={sliderRef}
+            className="grid grid-flow-col auto-cols-[calc(100%/2)] md:auto-cols-[calc(100%/4)] gap-6 overflow-x-auto scrollbar-none scroll-smooth px-4 py-5 hide-scrollbar"
           >
-            <FaArrowRightLong />
-          </button>
-        )}
+            {products.map((product, idx) => (
+              <div
+                key={idx}
+                data-aos="fade-up"
+                data-aos-delay={700 + idx * 100}
+              >
+                <ProductCard {...product} />
+              </div>
+            ))}
+          </div>
+
+          {/* Right Button */}
+          {scrollIndex < maxIndex && (
+            <button
+              onClick={() => scrollTo(1)}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white hover:text-[#26ADDF] p-2 rounded-full shadow cursor-pointer transition-all duration-300 hover:scale-110"
+              data-aos="fade-left"
+              data-aos-delay="600"
+            >
+              <FaArrowRightLong />
+            </button>
+          )}
+        </div>
       </div>
     </section>
   );
