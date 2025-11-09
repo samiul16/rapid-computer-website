@@ -9,21 +9,30 @@ interface WatchButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const WatchVideoButton = forwardRef<HTMLButtonElement, WatchButtonProps>(
-  ({ className, icon, children = "Watch Now", ...props }, ref) => {
+  ({ className, icon, children = "Watch Video", ...props }, ref) => {
     return (
       <button
         ref={ref}
-        className={cn("flex items-center gap-4 cursor-pointer", className)}
+        className={cn(
+          "flex items-center gap-4 cursor-pointer group",
+          className
+        )}
         {...props}
       >
-        {/* Icon with separate background and border */}
-        <span className="flex items-center justify-center p-3 rounded-full border-8 border-[#E9F8FF] font-bold text-white bg-[#20B8FB] hover:bg-[#20B8FB]/90 transition-all shadow-md cursor-pointer">
-          {icon ?? <FaPlay size={16} />}
-        </span>
+        {/* Blue circle with white play icon */}
+        <div className="relative">
+          {/* Outer gray ring */}
+          <div className="w-16 h-16 rounded-full border-4 border-white/40 flex items-center justify-center">
+            {/* Inner blue circle */}
+            <div className="w-12 h-12 bg-sky-500 rounded-full flex items-center justify-center group-hover:bg-sky-600 transition-colors shadow-lg">
+              {icon ?? <FaPlay size={16} className="text-white ml-0.5" />}
+            </div>
+          </div>
+        </div>
 
-        {/* Text separate */}
+        {/* Watch Video text */}
         <span
-          className="text-2xl text-white font-extrabold"
+          className="text-2xl text-white font-bold tracking-wide"
           style={{
             fontFamily: "'Poppins', sans-serif",
           }}
