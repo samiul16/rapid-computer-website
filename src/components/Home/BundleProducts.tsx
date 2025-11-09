@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import ProductCard from "../common/ProductCard";
 // import SectionHeader from "../common/SectionHeader";
 import { PrimaryBtn } from "../common/PrimaryBtn";
-import CustomButton from "../common/CustomButton";
+// import CustomButton from "../common/CustomButton";
 import { FaShoppingCart } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -33,14 +33,6 @@ const BundleProducts: React.FC = () => {
       discount: 20,
       rating: 4,
       imageUrl: "/products/Mobile.png",
-    },
-    {
-      title: "Gaming Keyboard",
-      price: 180,
-      oldPrice: 220,
-      discount: 18,
-      rating: 5,
-      imageUrl: "/products/Mobile-2.png",
     },
     {
       title: "Gaming Keyboard",
@@ -92,19 +84,21 @@ const BundleProducts: React.FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-8 items-start mt-10">
+        {/* Main Grid Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-3 mt-10">
           {/* Left Side CTA Card */}
           <div
-            className="w-full md:w-80 h-[400px] rounded-xl flex flex-col justify-center items-center text-center px-6 bg-sky-700 bg-[url('/global/blueBg.jpg')] bg-cover bg-center relative"
+            // className="lg:col-span-1 h-[400px] rounded-2xl flex flex-col justify-center items-center text-center px-6 bg-sky-700 bg-[url('/global/blueBg.jpg')] bg-cover bg-center relative"
+            className="lg:col-span-1 h-[400px] rounded-2xl flex flex-col justify-center items-center text-center px-6 bg-sky-600 relative"
             data-aos="fade-right"
             data-aos-delay="300"
           >
             {/* Overlay for better text readability */}
-            <div className="absolute inset-0 bg-black/30 rounded-xl"></div>
+            {/* <div className="absolute inset-0 bg-black/30 rounded-2xl"></div> */}
 
             <div className="relative z-10">
               <h3
-                className="text-white text-2xl font-bold mb-6"
+                className="text-white text-xl lg:text-2xl font-bold mb-6 leading-tight"
                 style={{ fontFamily: "Barlow, sans-serif" }}
                 data-aos="fade-up"
                 data-aos-delay="500"
@@ -123,38 +117,37 @@ const BundleProducts: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex flex-col flex-1">
-            {/* Product Cards */}
-            <div
-              className="flex gap-6 overflow-x-auto md:overflow-visible scrollbar-none flex-1"
-              data-aos="fade-left"
-              data-aos-delay="400"
-            >
+          {/* Products Grid */}
+          <div className="lg:col-span-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-3">
               {products.map((product, idx) => (
                 <div
                   key={idx}
                   data-aos="fade-up"
                   data-aos-delay={600 + idx * 150}
+                  className="flex justify-center"
                 >
                   <ProductCard {...product} />
                 </div>
               ))}
             </div>
-
-            {/* Add All To Cart Button - Always Visible */}
-            <div
-              className="mt-8 flex justify-center"
-              data-aos="fade-up"
-              data-aos-delay="1000"
-            >
-              <CustomButton
-                text="Add All To Cart"
-                icon={<FaShoppingCart />}
-                className="w-full max-w-md px-8 py-4 text-lg font-semibold transition-all duration-300 hover:scale-105"
-                onClick={() => console.log("Added all to cart")}
-              />
-            </div>
           </div>
+        </div>
+
+        {/* Add All To Cart Button - Full Width Below */}
+        <div
+          className="mt-6 flex justify-end"
+          data-aos="fade-up"
+          data-aos-delay="1000"
+        >
+          <button
+            className="w-full max-w-5xl bg-sky-500 hover:bg-sky-600 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-3 text-lg shadow-lg cursor-pointer"
+            style={{ fontFamily: "Barlow, sans-serif" }}
+            onClick={() => console.log("Added all to cart")}
+          >
+            <FaShoppingCart className="text-xl" />
+            Add All To Cart
+          </button>
         </div>
       </div>
     </section>
