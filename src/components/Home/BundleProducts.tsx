@@ -76,10 +76,10 @@ const BundleProducts: React.FC = () => {
 
   return (
     <section className="w-full py-20 ">
-      <div className="max-w-8xl mx-auto px-4 lg:px-14">
+      <div className="max-w-8xl mx-auto px-4 lg:px-28">
         {/* Header */}
         <div data-aos="fade-up" data-aos-delay="100">
-          <div className="text-3xl font-bold text-gray-800 mb-8">
+          <div className="text-4xl sm:text-4xl font-bold text-sky-500 text-shadow-md mb-8">
             <AnimatedTitle text="Bundle Products" delay={200} />
           </div>
         </div>

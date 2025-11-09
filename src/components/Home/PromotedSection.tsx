@@ -118,12 +118,12 @@ const PromotedSection = () => {
 
   return (
     <main className="w-full  py-20">
-      <div className="max-w-8xl mx-auto px-4 lg:px-14">
+      <div className="max-w-8xl mx-auto px-4 lg:px-28">
         {/* Heading */}
         <div
           data-aos="fade-up"
           data-aos-delay="100"
-          className="text-3xl font-bold text-gray-800 mb-8"
+          className="text-4xl sm:text-4xl font-bold text-sky-500 text-shadow-md mb-8"
         >
           <AnimatedTitle text="Promoted" delay={200} />
         </div>
@@ -167,7 +167,7 @@ const PromotedSection = () => {
             data-aos="fade-left"
             data-aos-delay="400"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8">
               {visibleProducts.map((p, idx) => (
                 <div
                   key={idx}

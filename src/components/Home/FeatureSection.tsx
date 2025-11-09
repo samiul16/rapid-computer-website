@@ -27,8 +27,8 @@ const features = [
 
 const FeatureSection: React.FC = () => {
   return (
-    <section className="w-full py-16 px-6">
-      <div className="max-w-8xl px-4 lg:px-14 mx-auto grid grid-cols-2 lg:grid-cols-4 gap-10">
+    <section className="w-full py-16">
+      <div className="max-w-8xl px-4 lg:px-28 mx-auto grid grid-cols-2 lg:grid-cols-4 gap-10">
         {features.map((item, i) => (
           <div key={i} className="flex flex-col items-center text-center gap-4">
             {/* Icon wrapper */}

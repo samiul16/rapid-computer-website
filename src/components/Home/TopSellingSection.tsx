@@ -109,7 +109,7 @@ const categories: Category[] = [
 const TopSellingSection: React.FC = () => {
   return (
     <main className="w-full py-16">
-      <div className="max-w-8xl mx-auto  px-4 lg:px-14 relative">
+      <div className="max-w-8xl mx-auto  px-4 lg:px-28 relative">
         {/* Header */}
         <section className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
           <SectionHeader2

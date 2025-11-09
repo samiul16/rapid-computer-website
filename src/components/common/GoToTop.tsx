@@ -31,7 +31,7 @@ const GoToTop = () => {
     isVisible && (
       <button
         onClick={scrollToTop}
-        className="flex items-center justify-center cursor-pointer fixed bottom-3 left-5 px-4 w-12 h-12 z-30 bg-brand-secondary text-white rounded-full shadow-lg  transition duration-300"
+        className="flex items-center justify-center cursor-pointer fixed bottom-3 left-5 px-4 w-12 h-12 z-30 bg-sky-600 text-white rounded-full shadow transition duration-300"
       >
         <ArrowUp className="animate-float-item-one" />
       </button>
