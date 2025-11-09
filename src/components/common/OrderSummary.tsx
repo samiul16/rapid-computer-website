@@ -13,19 +13,19 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
   subtotal,
   shippingFee,
   onApplyCoupon,
-  onCheckout,
+  // onCheckout,
 }) => {
   const [coupon, setCoupon] = useState("");
 
   const total = subtotal + shippingFee;
 
   return (
-    <div className="bg-[#20B8FB0D] p-6 rounded-2xl shadow space-y-4 outline outline-1 outline-gray-300 max-h-96 hover:bg-sky-100 transition-all duration-300">
+    <div className="bg-white/30 backdrop-blur-xl p-6 rounded-2xl space-y-4 outline-1 outline-gray-100 shadow-[2px_4px_10px_rgba(0,0,0,0.1)] max-h-96 hover:bg-sky-100 transition-all duration-300">
       {/* Title */}
-      <h3 className="font-bold text-lg">Order Summary</h3>
+      <h3 className="font-bold text-lg text-sky-500">Order Summary</h3>
 
       {/* Price Details */}
-      <div className="border-t pt-4 space-y-3">
+      <div className="border-t border-sky-200 pt-4 space-y-3">
         <div className="flex justify-between">
           <span>Subtotal</span>
           <span>AED {subtotal.toFixed(2)}</span>
@@ -34,7 +34,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
           <span>Shipping Fee</span>
           <span>AED {shippingFee.toFixed(2)}</span>
         </div>
-        <div className="border-t pt-3 flex justify-between font-bold">
+        <div className="border-t border-sky-200 pt-3 flex justify-between font-bold">
           <span>Total</span>
           <span>AED {total.toFixed(2)}</span>
         </div>
@@ -58,12 +58,12 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({
       </div>
 
       {/* Checkout */}
-      <button
+      {/* <button
         onClick={onCheckout}
         className="w-full bg-[#26ADDF] text-white font-bold rounded-full py-3 hover:bg-sky-500 transition cursor-pointer"
       >
         Proceed to Checkout
-      </button>
+      </button> */}
     </div>
   );
 };

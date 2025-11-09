@@ -275,7 +275,7 @@ const PaymentPage = () => {
         ]}
       />
 
-      <div className="max-w-7xl mx-auto mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
+      <div className="max-w-[1600px] mx-auto mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
         <div className="flex flex-col gap-6">
           <SidebarMenu
             onMenuItemClick={handleSidebarMenuClick}

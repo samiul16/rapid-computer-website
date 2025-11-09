@@ -7,14 +7,14 @@ import { ChevronRight } from "lucide-react"; // clean arrow icon
 interface BreadcrumbProps {
   items: {
     label: string;
-    href?: string; 
+    href?: string;
     active?: boolean;
   }[];
 }
 
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
   return (
-    <nav aria-label="breadcrumb" className="max-w-7xl mx-auto px-4 py-5">
+    <nav aria-label="breadcrumb" className="max-w-[1600px] mx-auto px-4 py-5">
       <ol className="flex items-center gap-2 text-md font-medium text-black">
         {items.map((item, idx) => {
           const isLast = idx === items.length - 1;

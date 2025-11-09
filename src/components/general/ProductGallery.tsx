@@ -11,10 +11,15 @@ import Image from "next/image";
 
 interface ProductGalleryProps {
   images: string[];
+  productStatus?: number;
 }
 
-export default function ProductGallery({ images }: ProductGalleryProps) {
+export default function ProductGallery({
+  images,
+  productStatus = 1,
+}: ProductGalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const isOutOfStock = productStatus === 0;
 
   const prevImage = () =>
     setSelectedIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
@@ -22,39 +27,29 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
     setSelectedIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
 
   return (
-    <div className="w-full flex flex-col md:flex-row gap-4">
-      {/* Thumbnails */}
-      <div className="flex md:flex-col gap-2 order-2 md:order-1 cursor-pointer">
-        {images.map((src, idx) => (
-          <button
-            key={idx}
-            onClick={() => setSelectedIndex(idx)}
-            className={`border rounded-md overflow-hidden w-16 h-16 flex-shrink-0 cursor-pointer ${
-              selectedIndex === idx
-                ? "ring-2 ring-sky-500"
-                : "hover:ring-2 hover:ring-gray-300"
-            }`}
-          >
-            <Image
-              src={src}
-              alt={`Thumbnail ${idx + 1}`}
-              width={64}
-              height={64}
-              className="object-cover w-full h-full"
-            />
-          </button>
-        ))}
-      </div>
-
+    <div className="w-full flex flex-col gap-4">
       {/* Main Image */}
-      <div className="relative flex-1 order-1 md:order-2 flex justify-center items-center shadow-lg  rounded-[32px]">
+      <div className="relative flex justify-center items-center shadow-lg rounded-[32px] bg-gray-50">
         <Image
           src={images[selectedIndex]}
           alt="Selected product"
           width={500}
           height={400}
-          className="object-contain min-h-[400px] md:min-h-[400px]"
+          className={`object-contain min-h-[400px] md:min-h-[400px] ${
+            isOutOfStock ? "grayscale opacity-75" : ""
+          }`}
         />
+
+        {/* Status Badge */}
+        {isOutOfStock ? (
+          <div className="absolute top-4 left-4 bg-red-600 text-white px-4 py-2 text-sm font-semibold rounded-lg z-10 shadow-lg">
+            OUT OF STOCK
+          </div>
+        ) : (
+          <div className="absolute top-4 left-4 bg-green-600 text-white px-4 py-2 text-sm font-semibold rounded-lg z-10 shadow-lg">
+            IN STOCK
+          </div>
+        )}
 
         {/* Navigation Arrows */}
         <button
@@ -79,6 +74,31 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
             <FiShare2 className="w-5 h-5 text-gray-800" />
           </button>
         </div>
+      </div>
+
+      {/* Thumbnails - Below and Centered */}
+      <div className="flex gap-2 justify-center cursor-pointer">
+        {images.map((src, idx) => (
+          <button
+            key={idx}
+            onClick={() => setSelectedIndex(idx)}
+            className={`border rounded-md overflow-hidden w-16 h-16 flex-shrink-0 cursor-pointer ${
+              selectedIndex === idx
+                ? "ring-2 ring-sky-500"
+                : "hover:ring-2 hover:ring-gray-300"
+            }`}
+          >
+            <Image
+              src={src}
+              alt={`Thumbnail ${idx + 1}`}
+              width={64}
+              height={64}
+              className={`object-cover w-full h-full ${
+                isOutOfStock ? "grayscale opacity-75" : ""
+              }`}
+            />
+          </button>
+        ))}
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ import CheckoutForm from "@/components/general/CheckoutForm";
 
 export default function Checkout() {
   return (
-    <main className="my-20 bg-slate-50">
+    <main className="my-20 bg-white">
       <Breadcrumb
         items={[
           { label: "Home", href: "/" },
