@@ -219,7 +219,7 @@ const FlashSaleGrid: React.FC = () => {
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          <div className="text-3xl font-bold text-gray-800">
+          <div className="text-4xl font-bold text-sky-500 text-shadow-md">
             <AnimatedTitle text="Hurry Up Sales" delay={200} />
           </div>
           <Timer />
