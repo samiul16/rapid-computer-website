@@ -6,89 +6,90 @@ import ButtonLink from "../common/ButtonLink";
 import ProductCard from "../common/ProductCard";
 import { Slider } from "../common/Slider";
 
-type Product = {
-  id: number;
-  title: string;
-  price: number;
-  oldPrice?: number;
-  discount: number;
-  rating: number;
-  sale?: boolean;
-  imageUrl: string;
-};
-
-const products: Product[] = [
+const products = [
   {
     id: 1,
-    title: "HAVIT HV-G92 Gamepad",
-    price: 120,
-    oldPrice: 160,
-    discount: 40,
+    title: "BEETLE /iSCAN EASY eXpress",
+    category: "POS Systems",
+    brand: "BEETLE",
+    price: 2500,
+    oldPrice: 2900,
+    discount: 14,
     rating: 5,
-    imageUrl: "/products/casing.webp",
+    features: ["Touch Screen", "Compact Design", "High Performance"],
+    imageUrl: "/products/modern BEETLE iSCAN EASY eXpress.jpg",
   },
   {
     id: 2,
-    title: "Servers",
-    price: 95,
-    oldPrice: 120,
-    discount: 20,
-    rating: 4,
-    imageUrl: "/products/server.jpg",
+    title: "BEETLE /iPOS plus",
+    category: "POS Systems",
+    brand: "BEETLE",
+    price: 2800,
+    oldPrice: 2800,
+    discount: 14,
+    rating: 5,
+    features: ["Advanced POS", "Durable", "Multi-functional"],
+    imageUrl: "/products/BEETLE iPOS plus .jpg",
   },
   {
     id: 3,
-    title: "Gaming Monitor",
-    price: 180,
-    oldPrice: 220,
-    discount: 18,
+    title: "BEETLE /iSCAN EASY Hybrid",
+    category: "POS Systems",
+    brand: "BEETLE",
+    price: 3000,
+    oldPrice: 3000,
+    discount: 14,
     rating: 5,
-    imageUrl: "/products/monitor.avif",
+    features: ["Hybrid System", "Flexible", "Reliable"],
+    imageUrl: "/products/BEETLE iSCAN EASY Hybrid.jpg",
   },
   {
     id: 4,
-    title: "Wireless Headphones",
-    price: 95,
-    oldPrice: 120,
-    discount: 20,
-    rating: 4,
-    imageUrl: "/products/headphone.webp",
+    title: "BEETLE/DN A-Series",
+    category: "POS Systems",
+    brand: "BEETLE",
+    price: 3200,
+    oldPrice: 3200,
+    discount: 14,
+    rating: 5,
+    features: ["A-Series", "Professional Grade", "High Efficiency"],
+    imageUrl: "/products/BEETLEDN A-Series.jpg",
   },
   {
     id: 5,
-    title: "Gaming Keyboard",
-    price: 180,
-    oldPrice: 220,
-    discount: 18,
+    title: "Diebold Nixdorf BEETLE /M-III",
+    category: "POS Systems",
+    brand: "Diebold Nixdorf",
+    price: 3500,
+    oldPrice: 3500,
+    discount: 14,
     rating: 5,
-    imageUrl: "https://placehold.co/150x120",
+    features: ["M-III Series", "Enterprise Level", "Robust"],
+    imageUrl: "/products/Diebold Nixdorf BEETLE M-III.jpg",
   },
   {
     id: 6,
-    title: "Wireless Headphones",
-    price: 95,
-    oldPrice: 120,
-    discount: 20,
-    rating: 4,
-    imageUrl: "https://placehold.co/150x120",
+    title: "DN Series EASY ONE",
+    category: "POS Systems",
+    brand: "Diebold Nixdorf",
+    price: 2900,
+    oldPrice: 2900,
+    discount: 14,
+    rating: 5,
+    features: ["Easy to Use", "Compact", "Efficient"],
+    imageUrl: "/products/DN Series EASY ONE.jpg",
   },
   {
     id: 7,
-    title: "Gaming Keyboard",
-    price: 180,
-    oldPrice: 220,
-    discount: 18,
-    rating: 5,
-    imageUrl: "https://placehold.co/150x120",
-  },
-  {
-    id: 8,
-    title: "Wireless Headphones",
-    price: 95,
-    oldPrice: 120,
-    discount: 20,
+    title: "Endura POS Terminal",
+    category: "POS Systems",
+    brand: "Endura",
+    price: 2700,
+    oldPrice: 2700,
+    discount: 14,
     rating: 4,
-    imageUrl: "https://placehold.co/150x120",
+    features: ["Durable", "Reliable", "Cost Effective"],
+    imageUrl: "/products/Endura POS Terminal.jpg",
   },
 ];
 
@@ -98,12 +99,12 @@ type Category = {
 };
 
 const categories: Category[] = [
-  { id: 1, name: "Mobile" },
-  { id: 2, name: "Headphones" },
-  { id: 3, name: "Laptop" },
-  { id: 4, name: "Accessories" },
-  { id: 5, name: "Monitor" },
-  { id: 6, name: "Desktop" },
+  { id: 1, name: "POS Systems" },
+  { id: 2, name: "POS Peripherals" },
+  { id: 3, name: "POS Printer" },
+  { id: 4, name: "Barcode Scanner" },
+  { id: 5, name: "PDT" },
+  { id: 6, name: "EAS Solutions" },
 ];
 
 const TopSellingSection: React.FC = () => {

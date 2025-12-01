@@ -25,7 +25,7 @@ import ShopByCategories from "./ShopByCategories";
 // import TopSellingSection from "./TopSellingSection";
 import FlashSaleBanner from "./FlashSaleBanner";
 import FlashSaleGrid from "./FlashSaleGrid";
-import PromotedSection from "./PromotedSection";
+// import PromotedSection from "./PromotedSection";
 import TopSellingSection from "./TopSellingSection";
 import BundleProducts from "./BundleProducts";
 import BrandSection from "./BrandSection";
