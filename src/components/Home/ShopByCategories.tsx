@@ -102,10 +102,10 @@ const CategorySection = () => {
     <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-30 py-8">
       {/* Title at top left */}
       <div className="mb-6 lg:mb-8">
-        <h2 className="text-4xl sm:text-4xl font-bold text-sky-500 text-shadow-md">
+        <h2 className="text-5xl sm:text-5xl font-bold text-sky-500 text-center text-shadow-md">
           Shop by Category
         </h2>
-        <p className="text-sm sm:text-base text-gray-600 mt-2">
+        <p className="text-sm sm:text-base text-gray-600 text-center mt-2">
           Discover products by your favorite categories
         </p>
       </div>

@@ -66,19 +66,19 @@ const AboutUsSection: React.FC = () => {
       id: 1,
       title: "Our Mission",
       description:
-        "Product description goes here for product 1. lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "To deliver reliable, innovative, and user-friendly computer solutions that empower our customers to achieve their digital goals effortlessly.",
     },
     {
       id: 2,
       title: "Our Vision",
       description:
-        "Product description goes here for product 2. lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "To be a globally recognized technology partner, trusted for excellence, innovation, and exceptional customer service.",
     },
     {
       id: 3,
       title: "Our Values",
       description:
-        "Product description goes here for product 3. lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Provide high-quality computing solutions tailored to every client and stay ahead with the latest technology trends and innovations. Ensure exceptional customer support and satisfaction. Promote sustainable and responsible technology usage.",
     },
   ];
 
@@ -91,17 +91,20 @@ const AboutUsSection: React.FC = () => {
             About Us
           </h2>
           <p className="text-xl sm:text-2xl font-semibold text-neutral-900 leading-7 max-w-[600px]">
-            Complete hassle-free experience to all customers with best prices
-            and offers!!
+            Fast, Reliable, and Trusted Tech Solutions
           </p>
           <div className="flex flex-col gap-4 max-w-[600px]">
             <p className="text-base sm:text-base font-normal f text-zinc-600 leading-relaxed">
-              At Rapid, our journey began with a simple idea — to create a
-              shopping experience thats fast, reliable, and customer-first. What
-              started as a small online store has grown into a trusted platform
-              for thousands of happy customers. We’re passionate about
-              delivering quality products with lightning-fast service, secure
-              payments, and dedicated support.
+              At Rapid, we believe that technology should be fast, reliable, and
+              accessible for everyone. Our mission is to make your digital
+              journey smoother by providing high-quality tech products, expert
+              solutions, and customer-first service — all delivered with speed
+              and efficiency. We specialize in offering a wide range of
+              computers, electronics, gadgets, accessories, and e-commerce
+              solutions designed to meet the needs of students, professionals,
+              gamers, and businesses. Whether you are upgrading your
+              workstation, building a custom PC, or looking for the latest tech
+              trends, Rapid delivers the most trusted options in the market.
             </p>
             <p className="text-base sm:text-base font-normal  text-zinc-600 leading-relaxed">
               Our mission is to make online shopping effortless, enjoyable, and

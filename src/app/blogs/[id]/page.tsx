@@ -86,7 +86,7 @@
 
 import React from "react";
 
-export default function page() {
+export default function Blog() {
   return (
     <div className="h-96">
       <span className="text-black">Here Create Blogs??</span>

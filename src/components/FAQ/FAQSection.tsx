@@ -9,24 +9,24 @@ const faqs = [
     category: "General FAQs",
     items: [
       {
-        question: "What is Rapid Computer?",
+        question: "What products do you offer?",
         answer:
-          "There are many variations of passage of Lorem Ipsum available, but the majority have suffered. There are many variations of passage of Lorem Ipsum available, but the majority There are many variations of passage of Lorem Ipsum available.",
-      },
-      {
-        question: "How can I place an order?",
-        answer:
-          "You can place an order through our website or mobile app easily. Just add products to your cart and checkout.",
+          "We provide a wide range of computers, electronics, gadgets, accessories, and e-commerce solutions.",
       },
       {
         question: "Do you offer warranty on products?",
         answer:
-          "Yes, all products come with standard manufacturer warranty. Extended warranty is also available for some categories.",
+          "Yes, all products come with a manufacturer or Rapid-backed warranty, depending on the item.",
       },
       {
-        question: "What payment methods are accepted?",
+        question: "Can I return or exchange a product?",
         answer:
-          "We accept credit cards, debit cards, PayPal, Apple Pay, and cash on delivery in selected regions.",
+          "Yes, we have a simple return and exchange policy within the specified period.",
+      },
+      {
+        question: "How can I contact customer support?",
+        answer:
+          "You can reach us via email, phone, or our website contact form for assistance.",
       },
     ],
   },
@@ -34,19 +34,18 @@ const faqs = [
     category: "Shipping FAQs",
     items: [
       {
-        question: "How long does shipping take?",
+        question: "Do you ship internationally?",
+        answer: "Yes, we offer international shipping to selected countries.",
+      },
+      {
+        question: "How long does delivery take?",
         answer:
-          "Shipping usually takes 3-5 business days depending on your location. Express shipping is also available.",
+          "Delivery time varies by location, typically 3–7 business days for local shipments and 7–15 days for international orders.",
       },
       {
         question: "Can I track my order?",
         answer:
-          "Yes, you will receive a tracking number by email once your order has shipped.",
-      },
-      {
-        question: "Do you ship internationally?",
-        answer:
-          "Yes, we ship to most countries worldwide. Shipping costs vary depending on location.",
+          "Yes, every order comes with a tracking number for real-time delivery updates.",
       },
     ],
   },

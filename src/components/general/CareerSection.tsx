@@ -7,11 +7,11 @@ import JobCard from "../common/JobCard";
 const CareerSection = () => {
   const benefits = [
     "Equal Opportunities",
-    "Leaders Support",
-    "Transparent Evaluation",
-    "Festival Celebration",
-    "All Weekends Off",
-    "Favorable Working Environment",
+    "Supportive Leadership",
+    "Transparent Evaluations",
+    "Festival Celebrations",
+    "Weekends Off",
+    "Positive Work Environment",
     "Learning & Development",
     "Recreational Activities",
     "Canteen Facility",

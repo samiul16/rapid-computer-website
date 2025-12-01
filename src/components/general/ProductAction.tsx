@@ -21,20 +21,20 @@ import toastAlert from "@/utils/toastConfig";
 import { toArabicNumerals } from "@/helpers/ui/Arabic";
 import Loading from "@/app/loading";
 
-interface ProductActionsProps {
-  product: {
-    id: number;
-    name: string;
-    arabic_name?: string;
-    image_url: string;
-    description?: string;
-    final_price: number;
-    price: number;
-    status?: number;
-  };
-}
+// interface ProductActionsProps {
+//   product: {
+//     id: number;
+//     name: string;
+//     arabic_name?: string;
+//     image_url: string;
+//     description?: string;
+//     final_price?: number;
+//     price: number;
+//     status?: number;
+//   };
+// }
 
-const ProductActions = ({ product }: ProductActionsProps) => {
+const ProductActions = ({ product }) => {
   const locale = useLocale();
   const t = useTranslations();
   const dispatch = useAppDispatch();

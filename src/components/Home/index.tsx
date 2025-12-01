@@ -20,7 +20,7 @@ import Header from "../common/Header";
 // import SubscribeUs from "../SubscribeUs/Subscribe";
 // import TopModal from "../OpeningModal/page";
 import BrandsIcons from "./BrandIcons";
-import CategorySection from "./CategorySection";
+// import CategorySection from "./CategorySection";
 import ShopByCategories from "./ShopByCategories";
 // import TopSellingSection from "./TopSellingSection";
 import FlashSaleBanner from "./FlashSaleBanner";
@@ -47,7 +47,7 @@ const HomeComponent = () => {
       <Header />
       <BrandsIcons />
       {/* <TopModal /> */}
-      <CategorySection />
+      {/* <CategorySection /> */}
       {/* <FoodCards /> */}
       <ShopByCategories />
       <FlashSaleBanner />

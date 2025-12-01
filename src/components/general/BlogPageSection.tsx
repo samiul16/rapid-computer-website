@@ -12,47 +12,86 @@ const blogs = [
   {
     id: 1,
     date: "26 Sep 2024",
-    category: "Needs",
-    title: "Top 10 Must-Have Gadgets for Your Home Office",
+    category: "Tech Reviews",
+    title: "Top 10 Laptops for Work & Study in 2025",
     description:
-      "Transform your workspace with these essential gadgets that enhance productivity and comfort...",
+      "Finding the right laptop can feel confusing with so many new models available. This blog highlights the top 10 laptops based on performance, battery life, and price—ideal for students, professionals, and multitaskers.",
     image: "https://placehold.co/320x220",
   },
   {
     id: 2,
     date: "26 Sep 2024",
-    category: "Furniture",
-    title: "Top 10 Must-Have Gadgets for Your Home Office",
+    category: "E-Commerce Tips",
+    title: "The Ultimate Guide to Building a Custom PC in 2025",
     description:
-      "Transform your workspace with these essential gadgets that enhance productivity and comfort...",
+      "Building your own PC gives you full control over performance and budget. This guide breaks down processors, graphics cards, and essential components—perfect for beginners and gamers starting their first build.",
     image: "https://placehold.co/320x220",
   },
   {
     id: 3,
     date: "26 Sep 2024",
-    category: "Furniture",
-    title: "Top 10 Must-Have Gadgets for Your Home Office",
+    category: "Gadget & Device Guides",
+    title: "5 Cybersecurity Mistakes E-Commerce Owners Must Avoid in 2025",
     description:
-      "Transform your workspace with these essential gadgets that enhance productivity and comfort...",
+      "E-commerce websites are becoming prime targets for digital threats. This article highlights common cybersecurity mistakes businesses make and explains how to protect your store, customer data, and revenue.",
     image: "https://placehold.co/320x220",
   },
   {
     id: 4,
     date: "26 Sep 2024",
-    category: "Technology",
-    title: "Top 10 Must-Have Gadgets for Your Home Office",
+    category: "Software & Apps",
+    title: "Gaming Accessories You Must Own in 2025 – Budget to Premium",
     description:
-      "Transform your workspace with these essential gadgets that enhance productivity and comfort...",
+      "Great accessories can drastically improve your gaming experience. We compare headsets, keyboards, mice, and chairs across all budgets to help you pick the right gear for comfort, performance, and style.",
     image: "https://placehold.co/320x220",
   },
   {
     id: 5,
     date: "26 Sep 2024",
-    category: "Arts",
-    title: "Top 10 Must-Have Gadgets for Your Home Office",
+    category: "Cybersecurity & Safety",
+    title: "SSD vs HDD: Which Storage Option Is Right for You in 2025?",
     description:
-      "Transform your workspace with these essential gadgets that enhance productivity and comfort...",
+      "Storage plays a huge role in your computer’s speed and performance. This blog compares SSDs and HDDs, explaining their advantages, limitations, and which option suits your needs and budget.",
     image: "https://placehold.co/320x220",
+  },
+];
+
+const latestBlogs = [
+  {
+    id: 1,
+    title:
+      "Top 10 Budget Laptops in 2025 – Best Value for Students & Professionals",
+    date: "",
+    category: "",
+    image: "",
+  },
+  {
+    id: 2,
+    title: "How to Choose the Right Gaming PC: A Beginner-Friendly Guide",
+    date: "",
+    category: "",
+    image: "",
+  },
+  {
+    id: 3,
+    title: "Why Your E-Commerce Store Needs Strong Cybersecurity in 2025",
+    date: "",
+    category: "",
+    image: "",
+  },
+  {
+    id: 4,
+    title: "SSD vs HDD: Which One Should You Choose in 2025?",
+    date: "",
+    category: "",
+    image: "",
+  },
+  {
+    id: 5,
+    title: "5 Must-Have Tech Gadgets Under AED 500 This Year",
+    date: "",
+    category: "",
+    image: "",
   },
 ];
 
@@ -111,7 +150,7 @@ const BlogPageComponents = () => {
               <span className="px-4">Latest Blogs</span>
             </div>
             <div className="flex flex-col gap-6 p-4">
-              {blogs.slice(0, 3).map((blog, i) => (
+              {latestBlogs.slice(0, 3).map((blog, i) => (
                 <div
                   key={i}
                   className="flex gap-4 cursor-pointer"
