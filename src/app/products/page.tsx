@@ -64,7 +64,7 @@ const products = [
     price: 2500,
     rating: 5,
     features: ["Touch Screen", "Compact Design", "High Performance"],
-    image: "/global/game.png",
+    image: "/products/modern BEETLE iSCAN EASY eXpress.jpg",
   },
   {
     id: 2,
@@ -74,7 +74,7 @@ const products = [
     price: 2800,
     rating: 5,
     features: ["Advanced POS", "Durable", "Multi-functional"],
-    image: "/products/beetle-iscan-2.jpeg",
+    image: "/products/BEETLE iPOS plus .jpg",
   },
   {
     id: 3,
@@ -84,7 +84,7 @@ const products = [
     price: 3000,
     rating: 5,
     features: ["Hybrid System", "Flexible", "Reliable"],
-    image: "/global/game.png",
+    image: "/products/BEETLE iSCAN EASY Hybrid.jpg",
   },
   {
     id: 4,
@@ -94,7 +94,7 @@ const products = [
     price: 3200,
     rating: 5,
     features: ["A-Series", "Professional Grade", "High Efficiency"],
-    image: "/global/game.png",
+    image: "/products/BEETLEDN A-Series.jpg",
   },
   {
     id: 5,
@@ -104,7 +104,7 @@ const products = [
     price: 3500,
     rating: 5,
     features: ["M-III Series", "Enterprise Level", "Robust"],
-    image: "/global/game.png",
+    image: "/products/Diebold Nixdorf BEETLE M-III.jpg",
   },
   {
     id: 6,
@@ -114,7 +114,7 @@ const products = [
     price: 2900,
     rating: 5,
     features: ["Easy to Use", "Compact", "Efficient"],
-    image: "/global/game.png",
+    image: "/products/DN Series EASY ONE.jpg",
   },
   {
     id: 7,
@@ -124,7 +124,7 @@ const products = [
     price: 2700,
     rating: 4,
     features: ["Durable", "Reliable", "Cost Effective"],
-    image: "/global/game.png",
+    image: "/products/Endura POS Terminal.jpg",
   },
   {
     id: 8,
@@ -134,7 +134,7 @@ const products = [
     price: 4500,
     rating: 5,
     features: ["Interactive", "Self-Service", "Modern Design"],
-    image: "/global/game.png",
+    image: "/products/K-two Interactive Kiosk.jpg",
   },
   {
     id: 9,
@@ -144,7 +144,7 @@ const products = [
     price: 2200,
     rating: 4,
     features: ["Affordable", "Reliable", "Easy Setup"],
-    image: "/global/game.png",
+    image: "/products/POZONE T810.jpg",
   },
   {
     id: 10,
@@ -154,7 +154,7 @@ const products = [
     price: 2400,
     rating: 4,
     features: ["Enhanced Features", "Touch Screen", "Fast"],
-    image: "/global/game.png",
+    image: "/products/POZONE T825.jpg",
   },
   {
     id: 11,
@@ -164,7 +164,7 @@ const products = [
     price: 300,
     rating: 4,
     features: ["Tablet Support", "Adjustable", "Sturdy"],
-    image: "/global/game.png",
+    image: "/products/POZONE Tablet Stand.jpg",
   },
   {
     id: 12,
@@ -174,7 +174,7 @@ const products = [
     price: 2600,
     rating: 5,
     features: ["Modern Design", "High Performance", "Reliable"],
-    image: "/global/game.png",
+    image: "/products/RIO Xander 9.jpg",
   },
   {
     id: 13,
@@ -184,7 +184,7 @@ const products = [
     price: 1800,
     rating: 4,
     features: ["Compact", "Portable", "Android Based"],
-    image: "/global/game.png",
+    image: "/products/SUNMI D2 MINI.jpg",
   },
   {
     id: 14,
@@ -194,7 +194,7 @@ const products = [
     price: 1900,
     rating: 4,
     features: ["Lightweight", "Efficient", "User Friendly"],
-    image: "/global/game.png",
+    image: "/products/SUNMI D2s LITE.jpg",
   },
   {
     id: 15,
@@ -204,7 +204,7 @@ const products = [
     price: 2100,
     rating: 5,
     features: ["Enhanced Version", "Fast Processing", "Reliable"],
-    image: "/global/game.png",
+    image: "/products/SUNMI D2s Plus.jpg",
   },
   {
     id: 16,
@@ -214,7 +214,7 @@ const products = [
     price: 2300,
     rating: 5,
     features: ["All-in-One", "Touch Screen", "Modern"],
-    image: "/global/game.png",
+    image: "/products/SUNMI K2.jpg",
   },
   {
     id: 17,
@@ -224,7 +224,7 @@ const products = [
     price: 2000,
     rating: 4,
     features: ["Tablet POS", "Portable", "Versatile"],
-    image: "/global/game.png",
+    image: "/products/SUNMI T2s.jpg",
   },
   {
     id: 18,
@@ -234,7 +234,7 @@ const products = [
     price: 1700,
     rating: 4,
     features: ["Budget Friendly", "Compact", "Efficient"],
-    image: "/global/game.png",
+    image: "/products/SUNMI T2s Lite.jpg",
   },
   {
     id: 19,
