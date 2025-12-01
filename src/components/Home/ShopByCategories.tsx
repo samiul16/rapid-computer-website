@@ -42,6 +42,704 @@ interface ApiResponse {
   items: ApiItem[];
 }
 
+const products = [
+  // POS Systems
+  {
+    id: 1,
+    name: "BEETLE /iSCAN EASY eXpress",
+    category: "POS Systems",
+    brand: "BEETLE",
+    price: 2500,
+    final_price: 2500,
+    rating: 5,
+    features: ["Touch Screen", "Compact Design", "High Performance"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 2,
+    name: "BEETLE /iPOS plus",
+    category: "POS Systems",
+    brand: "BEETLE",
+    price: 2800,
+    final_price: 2800,
+    rating: 5,
+    features: ["Advanced POS", "Durable", "Multi-functional"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 3,
+    name: "BEETLE /iSCAN EASY Hybrid",
+    category: "POS Systems",
+    brand: "BEETLE",
+    price: 3000,
+    final_price: 3000,
+    rating: 5,
+    features: ["Hybrid System", "Flexible", "Reliable"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 4,
+    name: "BEETLE/DN A-Series",
+    category: "POS Systems",
+    brand: "BEETLE",
+    price: 3200,
+    final_price: 3200,
+    rating: 5,
+    features: ["A-Series", "Professional Grade", "High Efficiency"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 5,
+    name: "Diebold Nixdorf BEETLE /M-III",
+    category: "POS Systems",
+    brand: "Diebold Nixdorf",
+    price: 3500,
+    final_price: 3500,
+    rating: 5,
+    features: ["M-III Series", "Enterprise Level", "Robust"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 6,
+    name: "DN Series EASY ONE",
+    category: "POS Systems",
+    brand: "Diebold Nixdorf",
+    price: 2900,
+    final_price: 2900,
+    rating: 5,
+    features: ["Easy to Use", "Compact", "Efficient"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 7,
+    name: "Endura POS Terminal",
+    category: "POS Systems",
+    brand: "Endura",
+    price: 2700,
+    final_price: 2700,
+    rating: 4,
+    features: ["Durable", "Reliable", "Cost Effective"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 8,
+    name: "K-two Interactive Kiosk",
+    category: "POS Systems",
+    brand: "K-two",
+    price: 4500,
+    final_price: 4500,
+    rating: 5,
+    features: ["Interactive", "Self-Service", "Modern Design"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 9,
+    name: "POZONE T810",
+    category: "POS Systems",
+    brand: "POZONE",
+    price: 2200,
+    final_price: 2200,
+    rating: 4,
+    features: ["Affordable", "Reliable", "Easy Setup"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 10,
+    name: "POZONE T825",
+    category: "POS Systems",
+    brand: "POZONE",
+    price: 2400,
+    final_price: 2400,
+    rating: 4,
+    features: ["Enhanced Features", "Touch Screen", "Fast"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 11,
+    name: "POZONE TABLET STANDS",
+    category: "POS Systems",
+    brand: "POZONE",
+    price: 300,
+    final_price: 300,
+    rating: 4,
+    features: ["Tablet Support", "Adjustable", "Sturdy"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 12,
+    name: "RIO Xander 9",
+    category: "POS Systems",
+    brand: "RIO",
+    price: 2600,
+    final_price: 2600,
+    rating: 5,
+    features: ["Modern Design", "High Performance", "Reliable"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 13,
+    name: "SUNMI D2 MINI",
+    category: "POS Systems",
+    brand: "SUNMI",
+    price: 1800,
+    final_price: 1800,
+    rating: 4,
+    features: ["Compact", "Portable", "Android Based"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 14,
+    name: "SUNMI D2s LITE",
+    category: "POS Systems",
+    brand: "SUNMI",
+    price: 1900,
+    final_price: 1900,
+    rating: 4,
+    features: ["Lightweight", "Efficient", "User Friendly"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 15,
+    name: "SUNMI D2s Plus",
+    category: "POS Systems",
+    brand: "SUNMI",
+    price: 2100,
+    final_price: 2100,
+    rating: 5,
+    features: ["Enhanced Version", "Fast Processing", "Reliable"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 16,
+    name: "SUNMI K2",
+    category: "POS Systems",
+    brand: "SUNMI",
+    price: 2300,
+    final_price: 2300,
+    rating: 5,
+    features: ["All-in-One", "Touch Screen", "Modern"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 17,
+    name: "SUNMI T2s",
+    category: "POS Systems",
+    brand: "SUNMI",
+    price: 2000,
+    final_price: 2000,
+    rating: 4,
+    features: ["Tablet POS", "Portable", "Versatile"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 18,
+    name: "SUNMI T2s Lite",
+    category: "POS Systems",
+    brand: "SUNMI",
+    price: 1700,
+    final_price: 1700,
+    rating: 4,
+    features: ["Budget Friendly", "Compact", "Efficient"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 19,
+    name: "Xtreme II V2 TOUCH POS TERMINAL",
+    category: "POS Systems",
+    brand: "Xtreme",
+    price: 2800,
+    final_price: 2800,
+    rating: 5,
+    features: ["Touch Interface", "High Performance", "Durable"],
+    imageUrl: "/global/game.png",
+  },
+
+  // POS Peripherals
+  {
+    id: 20,
+    name: "POZONE T80 PRICE CHECKER",
+    category: "POS Peripherals",
+    brand: "POZONE",
+    price: 800,
+    final_price: 800,
+    rating: 4,
+    features: ["Price Verification", "Easy to Use", "Accurate"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 21,
+    name: "POZONE BS-330 BARCODE SCANNER",
+    category: "POS Peripherals",
+    brand: "POZONE",
+    price: 350,
+    final_price: 350,
+    rating: 4,
+    features: ["Fast Scanning", "Reliable", "Ergonomic"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 22,
+    name: "POZONE BS-520 2D DESKTOP BARCODE SCANNER",
+    category: "POS Peripherals",
+    brand: "POZONE",
+    price: 450,
+    final_price: 450,
+    rating: 4,
+    features: ["2D Scanning", "Desktop Mount", "High Speed"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 23,
+    name: "POZONE MP-310B MOBILE PRINTER",
+    category: "POS Peripherals",
+    brand: "POZONE",
+    price: 600,
+    rating: 4,
+    features: ["Portable", "Bluetooth", "Compact"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 24,
+    name: "POZONE MP-410B MOBILE PRINTER",
+    category: "POS Peripherals",
+    brand: "POZONE",
+    price: 700,
+    rating: 4,
+    features: ["Enhanced Mobile Printing", "Fast", "Reliable"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 25,
+    name: "RIO Heavy Duty Cash Drawer RSC-420",
+    category: "POS Peripherals",
+    brand: "RIO",
+    price: 500,
+    rating: 5,
+    features: ["Heavy Duty", "Secure", "Durable"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 26,
+    name: "RIO Customer Display RPD 210",
+    category: "POS Peripherals",
+    brand: "RIO",
+    price: 400,
+    rating: 4,
+    features: ["Customer Facing", "Clear Display", "Easy Integration"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 27,
+    name: "RIO ROLLER CASH DRAWER RSC200",
+    category: "POS Peripherals",
+    brand: "RIO",
+    price: 450,
+    rating: 4,
+    features: ["Roller Design", "Smooth Operation", "Reliable"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 28,
+    name: "SUNMI 80mm Kitchen Cloud Printer",
+    category: "POS Peripherals",
+    brand: "SUNMI",
+    price: 550,
+    rating: 5,
+    features: ["Cloud Enabled", "Kitchen Use", "Fast Printing"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 29,
+    name: "SUNMI L2s",
+    category: "POS Peripherals",
+    brand: "SUNMI",
+    price: 1200,
+    rating: 5,
+    features: ["Handheld", "Scanner", "Multi-functional"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 30,
+    name: "SUNMI M2 MAX",
+    category: "POS Peripherals",
+    brand: "SUNMI",
+    price: 1400,
+    rating: 5,
+    features: ["Large Screen", "Powerful", "Versatile"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 31,
+    name: "SUNMI V2 PRO",
+    category: "POS Peripherals",
+    brand: "SUNMI",
+    price: 1100,
+    rating: 5,
+    features: ["Professional Grade", "Handheld POS", "Reliable"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 32,
+    name: "SUNMI V2s",
+    category: "POS Peripherals",
+    brand: "SUNMI",
+    price: 900,
+    rating: 4,
+    features: ["Compact", "Efficient", "User Friendly"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 33,
+    name: "SUNMI V2s PLUS",
+    category: "POS Peripherals",
+    brand: "SUNMI",
+    price: 1000,
+    rating: 5,
+    features: ["Enhanced Features", "Fast", "Reliable"],
+    imageUrl: "/global/game.png",
+  },
+
+  // POS Printer
+  {
+    id: 34,
+    name: "Pozone P302",
+    category: "POS Printer",
+    brand: "POZONE",
+    price: 400,
+    rating: 4,
+    features: ["Thermal Printer", "Fast", "Reliable"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 35,
+    name: "Pozone PFT4300 Fliptop Cash Drawer",
+    category: "POS Printer",
+    brand: "POZONE",
+    price: 350,
+    rating: 4,
+    features: ["Flip Top Design", "Secure", "Easy Access"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 36,
+    name: "Pozone PP610",
+    category: "POS Printer",
+    brand: "POZONE",
+    price: 450,
+    rating: 4,
+    features: ["High Speed", "Reliable", "Compact"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 37,
+    name: "RIO POS Printer RPP325 & RPP355",
+    category: "POS Printer",
+    brand: "RIO",
+    price: 500,
+    rating: 5,
+    features: ["Dual Model", "Fast Printing", "Durable"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 38,
+    name: "SEWOO LK-D30",
+    category: "POS Printer",
+    brand: "Sewoo",
+    price: 420,
+    rating: 4,
+    features: ["Desktop Printer", "Reliable", "Easy Setup"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 39,
+    name: "Sewoo SLK-TE213",
+    category: "POS Printer",
+    brand: "Sewoo",
+    price: 380,
+    rating: 4,
+    features: ["Thermal Printer", "Compact", "Efficient"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 40,
+    name: "Sewoo SLK",
+    category: "POS Printer",
+    brand: "Sewoo",
+    price: 400,
+    rating: 4,
+    features: ["Standard Model", "Reliable", "Cost Effective"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 41,
+    name: "Sewoo SLK-TS400",
+    category: "POS Printer",
+    brand: "Sewoo",
+    price: 480,
+    rating: 5,
+    features: ["High Performance", "Fast", "Durable"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 42,
+    name: "ZT231 RFID INDUSTRIAL PRINTER",
+    category: "POS Printer",
+    brand: "Zebra",
+    price: 2500,
+    rating: 5,
+    features: ["RFID Enabled", "Industrial Grade", "High Volume"],
+    imageUrl: "/global/game.png",
+  },
+
+  // Barcode Scanner
+  {
+    id: 43,
+    name: "Datalogic GRYPHON I GPS4400 2D",
+    category: "Barcode Scanner",
+    brand: "Datalogic",
+    price: 800,
+    rating: 5,
+    features: ["2D Scanning", "High Performance", "Ergonomic"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 44,
+    name: "Datalogic MAGELLAN 3200VSI",
+    category: "Barcode Scanner",
+    brand: "Datalogic",
+    price: 1200,
+    rating: 5,
+    features: ["Presentation Scanner", "Multi-plane", "Fast"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 45,
+    name: "Datalogic Quickscan I LITE QW2400",
+    category: "Barcode Scanner",
+    brand: "Datalogic",
+    price: 600,
+    rating: 4,
+    features: ["Lightweight", "Affordable", "Reliable"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 46,
+    name: "Datalogic Quickscan QD2400",
+    category: "Barcode Scanner",
+    brand: "Datalogic",
+    price: 700,
+    rating: 5,
+    features: ["Quick Scanning", "Durable", "Efficient"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 47,
+    name: "Zebra LS2208",
+    category: "Barcode Scanner",
+    brand: "Zebra",
+    price: 500,
+    rating: 4,
+    features: ["Entry Level", "Reliable", "Easy to Use"],
+    imageUrl: "/global/game.png",
+  },
+
+  // PDT (Portable Data Terminals)
+  {
+    id: 48,
+    name: "EC30 Enterprise Companion",
+    category: "PDT",
+    brand: "Zebra",
+    price: 1500,
+    rating: 5,
+    features: ["Enterprise Grade", "Rugged", "Android"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 49,
+    name: "EC50 and EC55 Enterprise Mobile Computers",
+    category: "PDT",
+    brand: "Zebra",
+    price: 1800,
+    rating: 5,
+    features: ["Mobile Computing", "Durable", "High Performance"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 50,
+    name: "M3 OX10",
+    category: "PDT",
+    brand: "M3",
+    price: 1600,
+    rating: 4,
+    features: ["Rugged Design", "Long Battery", "Reliable"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 51,
+    name: "MC2200 and MC2700 Mobile Computer",
+    category: "PDT",
+    brand: "Zebra",
+    price: 1400,
+    rating: 4,
+    features: ["Affordable", "Reliable", "Easy to Use"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 52,
+    name: "MC3300 Series Mobile Computer",
+    category: "PDT",
+    brand: "Zebra",
+    price: 2000,
+    rating: 5,
+    features: ["Professional Grade", "Versatile", "Powerful"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 53,
+    name: "PM550",
+    category: "PDT",
+    brand: "PM",
+    price: 1300,
+    rating: 4,
+    features: ["Compact", "Efficient", "Durable"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 54,
+    name: "PM85",
+    category: "PDT",
+    brand: "PM",
+    price: 1100,
+    rating: 4,
+    features: ["Budget Friendly", "Reliable", "Portable"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 55,
+    name: "PM850",
+    category: "PDT",
+    brand: "PM",
+    price: 1250,
+    rating: 4,
+    features: ["Enhanced Model", "Fast", "User Friendly"],
+    imageUrl: "/global/game.png",
+  },
+
+  // EAS Solutions
+  {
+    id: 56,
+    name: "Sensormatic Concealed Door or Wall System",
+    category: "EAS Solutions",
+    brand: "Sensormatic",
+    price: 3500,
+    rating: 5,
+    features: ["Concealed Design", "Security", "Reliable Detection"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 57,
+    name: "Sensormatic Synergy Series",
+    category: "EAS Solutions",
+    brand: "Sensormatic",
+    price: 4000,
+    rating: 5,
+    features: ["Advanced Detection", "Modern Design", "High Performance"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 58,
+    name: "Sensormatic Ultra Series",
+    category: "EAS Solutions",
+    brand: "Sensormatic",
+    price: 4500,
+    rating: 5,
+    features: ["Ultra Detection", "Premium", "Comprehensive Security"],
+    imageUrl: "/global/game.png",
+  },
+
+  // Mobile Printer
+  {
+    id: 59,
+    name: "RIO RMP-130 Mobile Printer (Wifi & Bluetooth)",
+    category: "Mobile Printer",
+    brand: "RIO",
+    price: 650,
+    rating: 4,
+    features: ["Wifi & Bluetooth", "Portable", "Fast Printing"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 60,
+    name: "RIO RMP-140 Mobile Printer (Wifi & Bluetooth)",
+    category: "Mobile Printer",
+    brand: "RIO",
+    price: 700,
+    rating: 4,
+    features: ["Enhanced Connectivity", "Compact", "Reliable"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 61,
+    name: "Sewoo LK-P20II",
+    category: "Mobile Printer",
+    brand: "Sewoo",
+    price: 550,
+    rating: 4,
+    features: ["Compact Design", "Portable", "Easy to Use"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 62,
+    name: "Sewoo LK-P25",
+    category: "Mobile Printer",
+    brand: "Sewoo",
+    price: 600,
+    rating: 4,
+    features: ["Enhanced Model", "Fast", "Durable"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 63,
+    name: "Sewoo LK-P30II",
+    category: "Mobile Printer",
+    brand: "Sewoo",
+    price: 650,
+    rating: 5,
+    features: ["High Performance", "Reliable", "Portable"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 64,
+    name: "Sewoo LK-P41",
+    category: "Mobile Printer",
+    brand: "Sewoo",
+    price: 700,
+    rating: 5,
+    features: ["Professional Grade", "Fast Printing", "Durable"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 65,
+    name: "ZD200 Series Desktop Printer",
+    category: "Mobile Printer",
+    brand: "Zebra",
+    price: 800,
+    rating: 4,
+    features: ["Desktop/Mobile", "Versatile", "Reliable"],
+    imageUrl: "/global/game.png",
+  },
+  {
+    id: 66,
+    name: "ZD400 Series 4-Inch Desktop Printers",
+    category: "Mobile Printer",
+    brand: "Zebra",
+    price: 900,
+    rating: 5,
+    features: ["4-Inch Width", "High Quality", "Fast"],
+    imageUrl: "/global/game.png",
+  },
+];
+
 const CategorySection = () => {
   const router = useRouter();
   const t = useTranslations();
@@ -83,11 +781,11 @@ const CategorySection = () => {
     return locale === "ar" ? toArabicNumerals(formatted) : formatted;
   };
 
-  const hasOffer = (item: ApiItem) => {
+  const hasOffer = (item) => {
     return parseFloat(item.offer_price) > 0;
   };
 
-  const getDiscountPercentage = (item: ApiItem) => {
+  const getDiscountPercentage = (item) => {
     if (!hasOffer(item)) return 0;
     const originalPrice = item.price;
     const offerPrice = parseFloat(item.offer_price);
@@ -97,6 +795,35 @@ const CategorySection = () => {
   if (isLoading) {
     return <Loading />;
   }
+
+  const avarage_rating = 5;
+
+  const categories = [
+    {
+      id: 1,
+      name: "POS Systems",
+      arabic_name: "POS Systems",
+      image_url: "/global/game.png",
+    },
+    {
+      id: 2,
+      name: "POS Peripherals",
+      arabic_name: "POS Peripherals",
+      image_url: "/global/game.png",
+    },
+    {
+      id: 3,
+      name: "Mobile Printer",
+      arabic_name: "Mobile Printer",
+      image_url: "/global/game.png",
+    },
+    {
+      id: 4,
+      name: "Mobile Printer",
+      arabic_name: "Mobile Printer",
+      image_url: "/global/game.png",
+    },
+  ];
 
   return (
     <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-30 py-8">
@@ -172,9 +899,9 @@ const CategorySection = () => {
                     </div>
                   </button>
 
-                  {foodsData?.group.map((group) => {
-                    const itemsInGroup = foodsData.items.filter(
-                      (item) => item.purchase_group_id === group.id
+                  {categories.map((group) => {
+                    const itemsInGroup = products.filter(
+                      (item) => item.category === group.name
                     ).length;
 
                     return (
@@ -271,7 +998,7 @@ const CategorySection = () => {
               }}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-2 gap-3 sm:gap-4 pb-4">
-                {filteredItems.map((item) => {
+                {products.map((item) => {
                   const discount = getDiscountPercentage(item);
 
                   return (
@@ -284,8 +1011,8 @@ const CategorySection = () => {
                         <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0">
                           <div className="w-full h-full rounded-xl overflow-hidden bg-gray-100 relative">
                             <Image
-                              src={item.image_url || "/global/game.png"}
-                              alt={getDisplayName(item.name, item.arabic_name)}
+                              src={item.imageUrl || "/global/game.png"}
+                              alt={getDisplayName(item.name, "")}
                               fill
                               className="object-cover transition-transform duration-300 group-hover:scale-105"
                             />
@@ -302,7 +1029,7 @@ const CategorySection = () => {
                         <div className="flex-1 flex flex-col justify-between min-w-0">
                           <div>
                             <h4 className="text-gray-900 font-semibold text-xs sm:text-sm line-clamp-2 mb-1 sm:mb-2 group-hover:text-blue-600 transition-colors duration-300">
-                              {getDisplayName(item.name, item.arabic_name)}
+                              {getDisplayName(item.name, "")}
                             </h4>
 
                             <div className="flex items-center gap-1 sm:gap-2 mb-1 sm:mb-2">
@@ -311,19 +1038,19 @@ const CategorySection = () => {
                                   <AiFillStar
                                     key={starIdx}
                                     className={`w-2.5 h-2.5 sm:w-3 sm:h-3 ${
-                                      starIdx < item.average_rating
+                                      starIdx < 5
                                         ? "text-amber-400"
                                         : "text-gray-300"
                                     }`}
                                   />
                                 ))}
                               </div>
-                              {item.average_rating > 0 && (
+                              {avarage_rating > 0 && (
                                 <span className="text-gray-500 text-xs font-medium">
                                   (
                                   {locale === "ar"
-                                    ? toArabicNumerals(item.average_rating)
-                                    : item.average_rating}
+                                    ? toArabicNumerals(avarage_rating)
+                                    : avarage_rating}
                                   .0)
                                 </span>
                               )}
@@ -337,9 +1064,9 @@ const CategorySection = () => {
                                   <>
                                     <span className="text-red-600">
                                       {t("Cart.Currency")}{" "}
-                                      {formatPrice(
+                                      {/* {formatPrice(
                                         parseFloat(item.offer_price)
-                                      )}
+                                      )} */}
                                     </span>
                                     <span className="text-gray-400 line-through text-xs">
                                       {formatPrice(item.price)}

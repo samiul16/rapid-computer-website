@@ -160,7 +160,7 @@ const ProductCardGrid: React.FC<ProductCardGridProps> = ({
           </div>
 
           <div className="flex items-center gap-3">
-            <span className="text-2xl font-bold text-blue-600">
+            <span className="text-2xl font-bold text-blue-500">
               AED {product.price}
             </span>
             {product.originalPrice && (

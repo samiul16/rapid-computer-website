@@ -13,7 +13,7 @@ const PrimaryBtn = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={cn(
-          "bg-sky-500 hover:bg-sky-400/80 duration-300 text-white rounded-full transition-all focus:outline-none cursor-pointer font-sans shadow hover:text-gray-100",
+          "bg-gradient-to-r from-sky-400 via-sky-500 to-blue-500 hover:bg-sky-400/80 duration-300 text-white rounded-full transition-all focus:outline-none cursor-pointer font-sans shadow hover:text-gray-100",
 
           {
             "px-3 py-1 text-sm": size === "sm",

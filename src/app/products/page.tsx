@@ -74,7 +74,7 @@ const products = [
     price: 2800,
     rating: 5,
     features: ["Advanced POS", "Durable", "Multi-functional"],
-    image: "/global/game.png",
+    image: "/products/beetle-iscan-2.jpeg",
   },
   {
     id: 3,
