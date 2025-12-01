@@ -8,15 +8,6 @@ import { FaShoppingCart } from "react-icons/fa";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-interface ProductCardProps {
-  title: string;
-  price: number;
-  oldPrice?: number;
-  discount: number;
-  rating: number;
-  imageUrl: string;
-}
-
 const BundleProducts: React.FC = () => {
   const router = useRouter();
 

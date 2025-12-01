@@ -54,7 +54,7 @@ const HomeComponent = () => {
 
       <FlashSaleGrid />
       <BundleProducts />
-      <PromotedSection />
+      {/* <PromotedSection /> */}
       <BrandSection />
       <TopSellingSection />
 

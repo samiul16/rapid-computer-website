@@ -490,7 +490,7 @@ const products = [
     price: 800,
     rating: 5,
     features: ["2D Scanning", "High Performance", "Ergonomic"],
-    image: "/global/game.png",
+    image: "/products/Datalogic GRYPHON I GPS4400 2D.jpg",
   },
   {
     id: 44,
