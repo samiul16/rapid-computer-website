@@ -26,6 +26,8 @@ export default function ProductGallery({
   const nextImage = () =>
     setSelectedIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
 
+  console.log("images[selectedIndex]", images[selectedIndex]);
+
   return (
     <div className="w-full flex flex-col gap-4">
       {/* Main Image */}

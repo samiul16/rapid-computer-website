@@ -19,14 +19,14 @@ type Product = {
 
 const products: Product[] = [
   {
-    id: 1,
-    title: "HAVIT HV-G92 Gamepad",
-    price: 120,
-    oldPrice: 160,
+    id: 82,
+    title: "Razer Cynosa Lite",
+    price: 50,
     discount: 40,
-    rating: 5,
-    imageUrl: "/products/Mobile.png",
+    rating: 4,
+    imageUrl: "/products/Razer Cynosa Lite.png",
   },
+
   {
     id: 2,
     title: "Wireless Headphones",
@@ -43,7 +43,7 @@ const products: Product[] = [
     oldPrice: 220,
     discount: 18,
     rating: 5,
-    imageUrl: "/products/Mobile-2.png",
+    imageUrl: "/products/Corsair K55 RGB.png",
   },
   {
     id: 4,
@@ -61,26 +61,9 @@ const products: Product[] = [
     oldPrice: 220,
     discount: 18,
     rating: 5,
-    imageUrl: "/products/Mobile-4.jpg",
+    imageUrl: "/products/Corsair K55 RGB.png",
   },
-  {
-    id: 6,
-    title: "Wireless Headphones",
-    price: 95,
-    oldPrice: 120,
-    discount: 20,
-    rating: 4,
-    imageUrl: "/products/Mobile-3.jpg",
-  },
-  {
-    id: 7,
-    title: "Gaming Keyboard",
-    price: 180,
-    oldPrice: 220,
-    discount: 18,
-    rating: 5,
-    imageUrl: "/products/Mobile-3.jpg",
-  },
+
   {
     id: 8,
     title: "Wireless Headphones",

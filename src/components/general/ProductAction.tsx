@@ -48,7 +48,7 @@ const ProductActions = ({ product }) => {
   const [showWhatsAppModal, setShowWhatsAppModal] = useState(false);
   const [whatsappNumber, setWhatsappNumber] = useState("");
 
-  const { id, name, arabic_name, final_price, status } = product || {};
+  const { id, title, arabic_name, price, status } = product || {};
 
   // Check if product is out of stock
   const isOutOfStock = status === 0;
@@ -206,7 +206,7 @@ const ProductActions = ({ product }) => {
     let shareUrl = "";
     const shareText = `Check out ${productName} - ${t(
       "product.currency"
-    )} ${Math.round(final_price)}`;
+    )} ${Math.round(price)}`;
 
     switch (platform.toLowerCase()) {
       case "facebook":
@@ -263,7 +263,7 @@ const ProductActions = ({ product }) => {
     const cleanNumber = whatsappNumber.replace(/[\s+]/g, "");
     const shareText = `Check out ${productName}!\n\n${t(
       "product.currency"
-    )} ${Math.round(final_price)}\n\nView details: ${productUrl}`;
+    )} ${Math.round(price)}\n\nView details: ${productUrl}`;
 
     const whatsappUrl = `https://wa.me/${cleanNumber}?text=${encodeURIComponent(
       shareText
@@ -435,7 +435,7 @@ const ProductActions = ({ product }) => {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           {/* Product Title - Left */}
           <h2 className="text-xl sm:text-2xl font-bold text-gray-800 flex-1">
-            {locale === "ar" ? arabic_name : name}
+            {locale === "ar" ? arabic_name : title}
           </h2>
 
           {/* Price - Right */}
@@ -443,8 +443,8 @@ const ProductActions = ({ product }) => {
             {t("product.currency")}
             {"\u00A0"}
             {locale === "ar"
-              ? toArabicNumerals(Math.round(final_price))
-              : Math.round(final_price)}
+              ? toArabicNumerals(Math.round(price))
+              : Math.round(price)}
           </span>
         </div>
 

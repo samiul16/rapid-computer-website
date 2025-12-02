@@ -10,6 +10,7 @@ interface JobCardProps {
   jobType: string;
   experience: string;
   deadline: string;
+  location: string;
   onApply?: () => void;
   image: string;
 }
@@ -21,14 +22,14 @@ const JobCard: React.FC<JobCardProps> = ({
   experience,
   deadline,
   image,
+  location,
 }) => {
   return (
     <div className="w-full p-6 bg-sky-400/5 rounded-3xl shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] backdrop-blur-[10px] flex flex-col md:flex-row gap-6 md:gap-4 items-start md:items-center">
-      
       {/* Left Icon / Badge */}
       <div className="flex-shrink-0 w-full md:w-44 flex flex-col justify-start items-center gap-3">
         <div className="relative w-24 h-24 md:w-14 md:h-14 rounded-[80px] bg-[#26ADDF] overflow-hidden">
-          <Image src={image} alt={title} fill className="object-cover p-3"  />
+          <Image src={image} alt={title} fill className="object-cover p-3" />
         </div>
         <div className="text-center text-neutral-900 text-xl md:text-xl font-semibold">
           {title}
@@ -54,6 +55,11 @@ const JobCard: React.FC<JobCardProps> = ({
           <div className="px-4 py-2 rounded-full outline outline-1 outline-offset-[-1px] outline-neutral-200 flex justify-center items-center">
             <span className="text-neutral-800 text-sm md:text-base font-medium">
               Deadline: {deadline}
+            </span>
+          </div>
+          <div className="px-4 py-2 rounded-full outline outline-1 outline-offset-[-1px] outline-neutral-200 flex justify-center items-center">
+            <span className="text-neutral-800 text-sm md:text-base font-medium">
+              Location: {location}
             </span>
           </div>
         </div>
