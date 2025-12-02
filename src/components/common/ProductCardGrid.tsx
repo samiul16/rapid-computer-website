@@ -74,13 +74,13 @@ const ProductCardGrid: React.FC<ProductCardGridProps> = ({
 
   return layout === "list" ? (
     // List Layout
-    <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-white via-white to-blue-50/30 border border-gray-100 hover:border-blue-200 transition-all duration-500 hover:shadow-xl cursor-pointer">
+    <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-r from-white via-white to-blue-50/30 border border-gray-100 hover:border-blue-200 transition-all duration-500 hover:shadow-xl cursor-pointer">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-blue-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       <div className="relative flex items-center p-6 gap-6">
         {/* Image Container */}
-        <div className="relative w-32 h-32 flex-shrink-0 overflow-hidden rounded-xl bg-gray-50 group-hover:scale-105 transition-transform duration-500">
+        <div className="relative w-24 h-32 flex-shrink-0 overflow-hidden rounded-xl bg-gray-50 group-hover:scale-105 transition-transform duration-500">
           {product.image ? (
             <>
               <Image

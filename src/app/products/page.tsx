@@ -1054,7 +1054,7 @@ export default function ProductsPage() {
         />
       </div>
 
-      <section className="max-w-8xl mx-auto my-20 px-4 lg:px-28">
+      <section className="max-w-8xl mx-auto my-20 px-4 lg:px-36">
         {/* Layout */}
         <div className="flex flex-col lg:flex-row gap-6 mt-6">
           {/* Sidebar */}
