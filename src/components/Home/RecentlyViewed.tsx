@@ -18,13 +18,12 @@ type Product = {
 
 const products: Product[] = [
   {
-    id: 1,
-    title: "HAVIT HV-G92 Gamepad",
-    price: 120,
-    oldPrice: 160,
-    discount: 40,
-    rating: 5,
-    imageUrl: "/products/casing.webp",
+    id: 79,
+    title: "HP KM300F",
+    price: 30,
+    discount: 10,
+    rating: 4,
+    imageUrl: "/products/HP KM300F.png",
   },
   {
     id: 2,
