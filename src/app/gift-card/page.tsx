@@ -65,21 +65,28 @@ export default function Page() {
   const features = [
     {
       icon: CreditCard,
-      title: "Buy gift card vouchers for companies",
+      title: "Send Digital Gift Cards Instantly to anyone, anywhere.",
       description:
         "Purchase flexible vouchers that businesses can use for their uniform needs",
       color: "blue",
     },
     {
       icon: Gift,
-      title: "Gift an embroidery service to another business",
+      title: "Choose Custom Amounts that fit your budget.",
       description:
         "Share the gift of professional embroidery services with partner companies",
       color: "purple",
     },
     {
       icon: Calendar,
-      title: "Preload amount for monthly uniform orders",
+      title: "Let Recipients Shop Freely from our entire product collection.",
+      description:
+        "Set up convenient prepaid accounts for recurring uniform requirements",
+      color: "green",
+    },
+    {
+      icon: Calendar,
+      title: "Enjoy Hassle-Free Redemption both online and in-store.",
       description:
         "Set up convenient prepaid accounts for recurring uniform requirements",
       color: "green",
@@ -87,10 +94,15 @@ export default function Page() {
   ];
 
   const useCases = [
-    { icon: Building, text: "Corporate gifting", color: "blue" },
-    { icon: Sparkles, text: "Business birthdays", color: "pink" },
-    { icon: Calendar, text: "Events", color: "purple" },
-    { icon: Users, text: "Team uniform support", color: "green" },
+    { icon: Building, text: "Birthdays & Anniversaries", color: "blue" },
+    { icon: Sparkles, text: "Festivals & Celebrations", color: "pink" },
+    {
+      icon: Calendar,
+      text: "Corporate Gifts & Employee Rewards",
+      color: "purple",
+    },
+    { icon: Users, text: "Thank-You Gifts", color: "green" },
+    { icon: Users, text: "Tech Lovers & Gadget Enthusiasts", color: "blue" },
   ];
 
   return (
@@ -135,9 +147,10 @@ export default function Page() {
               variants={itemVariants}
               className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
             >
-              Get ready for a revolutionary way to share the gift of
-              professional uniforms and embroidery services with businesses you
-              care about.
+              Surprise your loved ones with the perfect gift—Rapid Gift Cards.
+              Easy to buy, easy to redeem, and suitable for any occasion. Let
+              them choose exactly what they want from our wide range of tech
+              products and accessories.
             </motion.p>
           </motion.div>
 
