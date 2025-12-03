@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { PrimaryBtn } from "./PrimaryBtn";
+import { useRouter } from "next/navigation";
 
 interface JobCardProps {
   title: string;
@@ -13,6 +14,7 @@ interface JobCardProps {
   location: string;
   onApply?: () => void;
   image: string;
+  jobId: number;
 }
 
 const JobCard: React.FC<JobCardProps> = ({
@@ -23,7 +25,10 @@ const JobCard: React.FC<JobCardProps> = ({
   deadline,
   image,
   location,
+  jobId,
 }) => {
+  console.log("checking forjob id", jobId);
+  const router = useRouter();
   return (
     <div className="w-full p-6 bg-sky-400/5 rounded-3xl shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] backdrop-blur-[10px] flex flex-col md:flex-row gap-6 md:gap-4 items-start md:items-center">
       {/* Left Icon / Badge */}
@@ -67,7 +72,11 @@ const JobCard: React.FC<JobCardProps> = ({
 
       {/* Apply Button */}
       <div className="flex-shrink-0 w-full md:w-auto mt-4 md:mt-0">
-        <PrimaryBtn size="md" className="uppercase font-bold w-full md:w-auto">
+        <PrimaryBtn
+          size="md"
+          className="uppercase font-bold w-full md:w-auto"
+          onClick={() => router.push(`/jobs/${jobId}`)}
+        >
           Apply now
         </PrimaryBtn>
       </div>
