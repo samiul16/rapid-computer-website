@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import Laptop from "@/public/global/bg02.png";
+// import Laptop from "@/public/global/bg02.png";
 import { FaCalendar } from "react-icons/fa";
 import { PrimaryBtn } from "../common/PrimaryBtn";
 import Link from "next/link";
@@ -16,7 +16,7 @@ const blogs = [
     title: "Top 10 Laptops for Work & Study in 2025",
     description:
       "Finding the right laptop can feel confusing with so many new models available. This blog highlights the top 10 laptops based on performance, battery life, and price—ideal for students, professionals, and multitaskers.",
-    image: "https://placehold.co/320x220",
+    image: "/blogs/Top 10 Laptops for Work  Study in 2025.png",
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const blogs = [
     title: "The Ultimate Guide to Building a Custom PC in 2025",
     description:
       "Building your own PC gives you full control over performance and budget. This guide breaks down processors, graphics cards, and essential components—perfect for beginners and gamers starting their first build.",
-    image: "https://placehold.co/320x220",
+    image: "/blogs/The Ultimate Guide to Building a Custom PC in 2025.png",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const blogs = [
     title: "5 Cybersecurity Mistakes E-Commerce Owners Must Avoid in 2025",
     description:
       "E-commerce websites are becoming prime targets for digital threats. This article highlights common cybersecurity mistakes businesses make and explains how to protect your store, customer data, and revenue.",
-    image: "https://placehold.co/320x220",
+    image: "/blogs/How AI Is Changing the Future of E-Commerce in 2025.png",
   },
   {
     id: 4,
@@ -43,7 +43,8 @@ const blogs = [
     title: "Gaming Accessories You Must Own in 2025 – Budget to Premium",
     description:
       "Great accessories can drastically improve your gaming experience. We compare headsets, keyboards, mice, and chairs across all budgets to help you pick the right gear for comfort, performance, and style.",
-    image: "https://placehold.co/320x220",
+    image:
+      "/blogs/Gaming Accessories You Must Own in 2025 – Budget to Premium.png",
   },
   {
     id: 5,
@@ -52,7 +53,7 @@ const blogs = [
     title: "SSD vs HDD: Which Storage Option Is Right for You in 2025?",
     description:
       "Storage plays a huge role in your computer’s speed and performance. This blog compares SSDs and HDDs, explaining their advantages, limitations, and which option suits your needs and budget.",
-    image: "https://placehold.co/320x220",
+    image: "/blogs/SSD vs HDD Which One Should You Choose in 2025.png",
   },
 ];
 
@@ -63,28 +64,31 @@ const latestBlogs = [
       "Top 10 Budget Laptops in 2025 – Best Value for Students & Professionals",
     date: "",
     category: "",
-    image: "",
+    image:
+      "/blogs/Top 10 Budget Laptops in 2025 – Best Value for Students Professionals.png",
   },
   {
     id: 2,
     title: "How to Choose the Right Gaming PC: A Beginner-Friendly Guide",
     date: "",
     category: "",
-    image: "",
+    image:
+      "/blogs/How to Choose the Right Gaming PC A Beginner-Friendly Guide.png",
   },
   {
     id: 3,
     title: "Why Your E-Commerce Store Needs Strong Cybersecurity in 2025",
     date: "",
     category: "",
-    image: "",
+    image:
+      "/blogs/Why Your E-Commerce Store Needs Strong Cybersecurity in 2025.png",
   },
   {
     id: 4,
     title: "SSD vs HDD: Which One Should You Choose in 2025?",
     date: "",
     category: "",
-    image: "",
+    image: "/blogs/SSD vs HDD Which One Should You Choose in 2025.png",
   },
   {
     id: 5,
@@ -110,7 +114,7 @@ const BlogPageComponents = () => {
                 onClick={() => router.push(`/blogs/${blog.id}`)}
               >
                 <Image
-                  src={Laptop}
+                  src={blog.image}
                   alt={blog.title}
                   width={320}
                   height={220}
@@ -157,7 +161,9 @@ const BlogPageComponents = () => {
                   onClick={() => router.push(`/blogs/${blog.id}`)}
                 >
                   <Image
-                    src={Laptop}
+                    width={100}
+                    height={100}
+                    src={blog.image}
                     alt="thumbnail"
                     className="w-20 h-14 object-cover rounded-lg"
                   />
