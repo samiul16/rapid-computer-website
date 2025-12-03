@@ -317,25 +317,25 @@ const CategorySection = () => {
       id: 1,
       name: "POS Systems",
       arabic_name: "POS Systems",
-      image_url: "/global/game.png",
+      image_url: "/category/POS Systems.png",
     },
     {
       id: 2,
       name: "POS Peripherals",
       arabic_name: "POS Peripherals",
-      image_url: "/global/game.png",
+      image_url: "/category/POS Peripherals.png",
     },
     {
       id: 3,
-      name: "Mobile Printer",
-      arabic_name: "Mobile Printer",
-      image_url: "/global/game.png",
+      name: "PDT",
+      arabic_name: "PDT",
+      image_url: "/category/PDT.png",
     },
     {
       id: 4,
       name: "Mobile Printer",
       arabic_name: "Mobile Printer",
-      image_url: "/global/game.png",
+      image_url: "/category/Mobile Printer.png",
     },
   ];
 

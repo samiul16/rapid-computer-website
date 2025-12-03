@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import SectionHeader2 from "../common/SectionHeader2";
 import ButtonLink from "../common/ButtonLink";
 import ProductCard from "../common/ProductCard";
@@ -91,6 +91,30 @@ const products = [
     features: ["Durable", "Reliable", "Cost Effective"],
     imageUrl: "/products/Endura POS Terminal.jpg",
   },
+  {
+    id: 20,
+    title: "POZONE T80 PRICE CHECKER",
+    category: "POS Peripherals",
+    brand: "POZONE",
+    price: 800,
+    oldPrice: 800,
+    discount: 14,
+    rating: 4,
+    features: ["Price Verification", "Easy to Use", "Accurate"],
+    imageUrl: "/products/POZONE -T80 PRICE CHECKER.png",
+  },
+  {
+    id: 21,
+    title: "POZONE BS-330 BARCODE SCANNER",
+    category: "POS Peripherals",
+    brand: "POZONE",
+    discount: 14,
+    price: 350,
+    oldPrice: 350,
+    rating: 4,
+    features: ["Fast Scanning", "Reliable", "Ergonomic"],
+    imageUrl: "/products/POZONE BS-330 BARCODE SCANNER.png",
+  },
 ];
 
 type Category = {
@@ -108,6 +132,10 @@ const categories: Category[] = [
 ];
 
 const TopSellingSection: React.FC = () => {
+  const [selectedCategory, setSelectedCategory] = useState("POS Systems");
+  const filteredProducts = products.filter(
+    (product) => product.category === selectedCategory
+  );
   return (
     <main className="w-full py-16">
       <div className="max-w-8xl mx-auto  px-4 lg:px-28 relative">
@@ -122,14 +150,17 @@ const TopSellingSection: React.FC = () => {
 
         {/* Categories */}
         <section className="flex flex-wrap gap-3 mb-10">
-          {categories.map((cat, idx) => (
+          {categories.map((cat) => (
             <button
               key={cat.id}
               className={`px-6 py-2 rounded-full border cursor-pointer ${
-                idx === 0
+                selectedCategory === cat.name
                   ? "bg-[#20B8FB] text-white border-[#20B8FB] font-semibold"
                   : "text-gray-900 border-gray-300"
               } hover:bg-[#20B8FB] hover:text-white transition`}
+              onClick={() => {
+                setSelectedCategory(cat.name);
+              }}
             >
               {cat.name}
             </button>
@@ -137,7 +168,7 @@ const TopSellingSection: React.FC = () => {
         </section>
 
         <Slider
-          items={products}
+          items={filteredProducts}
           renderItem={(product) => <ProductCard {...product} />}
           itemsPerViewSm={1}
           itemsPerViewMd={2}

@@ -210,6 +210,7 @@ const CareerSection = () => {
                     (window.location.href = `mailto:${job.details.applyEmail}`)
                   }
                   image={job.image}
+                  jobId={job.id}
                 />
               ))}
             </div>
