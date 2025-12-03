@@ -17,7 +17,6 @@ import {
   AlertTriangle,
   Phone,
   MessageCircle,
- 
 } from "lucide-react";
 
 export default function Page() {
@@ -122,7 +121,7 @@ export default function Page() {
                 WhatsApp Support
               </h3>
               <p className="text-gray-600 mb-4">
-                Get instant help via WhatsApp chat
+                Get quick assistance instantly through WhatsApp.
               </p>
               {/* <button className="bg-green-500 text-white px-6 py-2 rounded-full hover:bg-green-600 transition-colors">
               Chat Now
@@ -138,7 +137,9 @@ export default function Page() {
                 <Phone className="w-8 h-8 text-blue-600" />
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-2">Call Us</h3>
-              <p className="text-gray-600 mb-4">Speak directly with our team</p>
+              <p className="text-gray-600 mb-4">
+                Speak directly with our support team for immediate help.
+              </p>
               {/* <button className="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors">
               Call Now
             </button> */}
@@ -155,7 +156,9 @@ export default function Page() {
               <h3 className="text-xl font-bold text-gray-800 mb-2">
                 Track Order
               </h3>
-              <p className="text-gray-600 mb-4">Check your order status</p>
+              <p className="text-gray-600 mb-4">
+                Check the real-time status of your order anytime.
+              </p>
               {/* <button className="bg-purple-500 text-white px-6 py-2 rounded-full hover:bg-purple-600 transition-colors">
               Track Now
             </button> */}
@@ -184,7 +187,8 @@ export default function Page() {
                 </div>
 
                 <p className="text-gray-600 mb-6">
-                  We deliver uniforms and custom-stitched garments all over UAE.
+                  We deliver uniforms and custom-made garments across the UAE
+                  with reliable and timely service.
                 </p>
 
                 <div className="space-y-6">
@@ -230,7 +234,7 @@ export default function Page() {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800 mb-3 flex items-center">
                       <Package className="w-5 h-5 text-purple-500 mr-2" />
-                      Delivery Types
+                      Delivery Options
                     </h3>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
@@ -241,7 +245,7 @@ export default function Page() {
                       </div>
                       <div className="flex items-center justify-between p-3 bg-green-50 rounded-lg">
                         <span className="text-gray-700">
-                          Local pickup from Ajman shop
+                          Pickup options for selected orders
                         </span>
                         <span className="text-sm text-green-600 font-medium">
                           Free
@@ -271,9 +275,8 @@ export default function Page() {
 
                 <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
                   <p className="text-yellow-800">
-                    Because we produce customized & embroidered uniforms,
-                    returns are not applicable after embroidery & stitching is
-                    completed.
+                    We ensure a smooth and hassle-free return experience for our
+                    customers.
                   </p>
                 </div>
 
@@ -285,9 +288,12 @@ export default function Page() {
                     </h3>
                     <div className="space-y-2">
                       {[
-                        "Wrong logo from our side",
-                        "Wrong size stitching by our team",
-                        "Wrong fabric/color supplied by our team",
+                        "Items must be unused and in their original condition.",
+                        "Returns must be requested within the allowed return window.",
+                        "Submit a return request with your order details.",
+                        "Our team will assist you with the pickup or drop-off instructions.",
+                        "Refunds are initiated after the returned item is inspected.",
+                        "Standard processing time: 5–10 working days.",
                       ].map((item, index) => (
                         <div key={index} className="flex items-start">
                           <div className="w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
@@ -304,8 +310,9 @@ export default function Page() {
                     </h3>
                     <div className="space-y-2">
                       {[
-                        "If the customer changes the design after approval",
-                        "If the size measurement given by the customer was wrong",
+                        "Used or damaged products.",
+                        "Customized, embroidered, or personalized items.",
+                        "Items without original packaging or tags.",
                       ].map((item, index) => (
                         <div key={index} className="flex items-start">
                           <div className="w-2 h-2 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
@@ -358,7 +365,9 @@ export default function Page() {
                     {
                       step: 2,
                       title: "Select fabric & colors",
-                      details: ["We will share available fabric options"],
+                      details: [
+                        "We’ll provide fabric options and color selections",
+                      ],
                     },
                     {
                       step: 3,
@@ -373,7 +382,9 @@ export default function Page() {
                     {
                       step: 5,
                       title: "Confirm order + advance payment",
-                      details: ["After advance received, we start production"],
+                      details: [
+                        "After confirmation and advance payment, production begins.",
+                      ],
                     },
                   ].map((item, index) => (
                     <div key={index} className="flex items-start">
@@ -421,26 +432,26 @@ export default function Page() {
                 </div>
 
                 <p className="text-gray-600 mb-6">
-                  You can track your order anytime by:
+                  Track your order easily at every stage of delivery.
                 </p>
 
                 <div className="grid grid-cols-1 gap-3 mb-6">
                   {[
                     {
                       icon: MessageCircle,
-                      text: "WhatsApp message",
+                      text: "Go to the Track Order section.",
                       bgColor: "bg-green-50",
                       iconColor: "text-green-600",
                     },
                     {
                       icon: Phone,
-                      text: "Calling our number",
+                      text: "Enter your order number or tracking ID.",
                       bgColor: "bg-blue-50",
                       iconColor: "text-blue-600",
                     },
                     {
                       icon: MessageCircle,
-                      text: "Visiting our WhatsApp Business chat",
+                      text: "View real-time updates instantly.",
                       bgColor: "bg-green-50",
                       iconColor: "text-green-600",
                     },
@@ -457,14 +468,15 @@ export default function Page() {
 
                 <div>
                   <h3 className="font-semibold text-gray-800 mb-3">
-                    We will update:
+                    Status Updates Include:
                   </h3>
                   <div className="space-y-2">
                     {[
-                      "Production Stage",
-                      "Embroidery Stage",
-                      "Stitching Stage",
-                      "Dispatch / Delivery details",
+                      "Order confirmed",
+                      "Processing",
+                      "Shipped",
+                      "Out for delivery",
+                      "Delivered",
                     ].map((stage, index) => (
                       <div key={index} className="flex items-center">
                         <CheckCircle className="w-4 h-4 text-green-500 mr-2" />
@@ -476,8 +488,8 @@ export default function Page() {
 
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6">
                   <p className="text-blue-800 text-sm">
-                    Order Status updates are usually given within 24 hours upon
-                    request.
+                    If tracking information is unclear, our support team is
+                    ready to assist anytime.
                   </p>
                 </div>
               </motion.div>
